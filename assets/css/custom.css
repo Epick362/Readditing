@@ -2,6 +2,155 @@
  * All your custom CSS should go into this file
  */
 
+html, body {
+	height: 100%;
+}
+
 body {
-   padding-top: 15px;
+	padding-top: 70px;
+}
+
+#wrap {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -60px;
+	padding: 0 0 60px;
+}
+
+#footer {
+	height: 60px;
+	background-color: #f5f5f5;
+}
+
+.container.content {
+	width: auto;
+	max-width: 900px;
+}
+
+.container .credit {
+	margin: 20px 0;
+}
+
+.navbar-reddit {
+  background-color: #f4f4f4;
+  border-color: #e7e7e7;
+}
+
+.navbar-reddit .navbar-brand {
+  color: #369;
+}
+
+.navbar-reddit .navbar-brand:hover,
+.navbar-reddit .navbar-brand:focus {
+  color: #369;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.navbar-reddit .navbar-text {
+  color: #777777;
+}
+
+.navbar-reddit .navbar-nav > li > a {
+  color: #369;
+}
+
+.navbar-reddit .navbar-nav > li > a:hover,
+.navbar-reddit .navbar-nav > li > a:focus {
+  color: #369;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.navbar-reddit .navbar-nav > li > a.dropdown-toggle:hover,
+.navbar-reddit .navbar-nav > li > a.dropdown-toggle:focus {
+	text-decoration: none;
+}
+
+.navbar-reddit .navbar-nav > .active > a,
+.navbar-reddit .navbar-nav > .active > a:hover,
+.navbar-reddit .navbar-nav > .active > a:focus {
+  color: #FF4500;
+  background-color: #fcfcfc;
+}
+
+.navbar-reddit .navbar-nav > .disabled > a,
+.navbar-reddit .navbar-nav > .disabled > a:hover,
+.navbar-reddit .navbar-nav > .disabled > a:focus {
+  color: #cccccc;
+  background-color: transparent;
+}
+
+.navbar-reddit .navbar-toggle {
+  border-color: #dddddd;
+}
+
+.navbar-reddit .navbar-toggle:hover,
+.navbar-reddit .navbar-toggle:focus {
+  background-color: #dddddd;
+}
+
+.navbar-reddit .navbar-toggle .icon-bar {
+  background-color: #cccccc;
+}
+
+.navbar-reddit .navbar-collapse,
+.navbar-reddit .navbar-form {
+  border-color: #e6e6e6;
+}
+
+.navbar-reddit .navbar-nav > .dropdown > a:hover .caret,
+.navbar-reddit .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #333333;
+  border-bottom-color: #333333;
+}
+
+.navbar-reddit .navbar-nav > .open > a,
+.navbar-reddit .navbar-nav > .open > a:hover,
+.navbar-reddit .navbar-nav > .open > a:focus {
+  color: #FF4500;
+  background-color: #fcfcfc;
+}
+
+.navbar-reddit .navbar-nav > .open > a .caret,
+.navbar-reddit .navbar-nav > .open > a:hover .caret,
+.navbar-reddit .navbar-nav > .open > a:focus .caret {
+  border-top-color: #555555;
+  border-bottom-color: #555555;
+}
+
+.navbar-reddit .navbar-nav > .dropdown > a .caret {
+  border-top-color: #777777;
+  border-bottom-color: #777777;
+}
+
+@media (max-width: 767px) {
+  .navbar-reddit .navbar-nav .open .dropdown-menu > li > a {
+    color: #777777;
+  }
+  .navbar-reddit .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-reddit .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333333;
+    background-color: transparent;
+  }
+  .navbar-reddit .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-reddit .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-reddit .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555555;
+    background-color: #e7e7e7;
+  }
+  .navbar-reddit .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-reddit .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-reddit .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #cccccc;
+    background-color: transparent;
+  }
+}
+
+.navbar-reddit .navbar-link {
+  color: #777777;
+}
+
+.navbar-reddit .navbar-link:hover {
+  color: #333333;
 }
