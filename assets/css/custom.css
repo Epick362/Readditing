@@ -4,6 +4,7 @@
 
 html, body {
 	height: 100%;
+	font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -19,12 +20,37 @@ body {
 
 #footer {
 	height: 60px;
-	background-color: #f5f5f5;
+	background-color: #f4f4f4;
 }
 
-.container.content {
+.brand-image {
+	width: 35px;
+	height: 35px;
+	background-color: #2980b9;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 34px;
+	color: #fff;
+	text-align: center;
+}
+
+.navbar-brand {
+	float: left;
+	padding: 8px 15px 5px 5px;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.img-post {
+	max-width: 816px;
 	width: auto;
-	max-width: 900px;
+}
+
+.container.right-sidebar {
+	position: fixed;
+	top: 70px;
+	width: 263px;
 }
 
 .container .credit {
@@ -43,7 +69,7 @@ body {
 .navbar-reddit .navbar-brand:hover,
 .navbar-reddit .navbar-brand:focus {
   color: #369;
-  text-decoration: underline;
+  text-decoration: none;
   background-color: transparent;
 }
 
@@ -153,4 +179,35 @@ body {
 
 .navbar-reddit .navbar-link:hover {
   color: #333333;
+}
+
+.panel {
+	margin-bottom: 40px;
+}
+
+.panel-heading {
+	font-size: 32px;
+}
+
+.panel-reddit {
+	border-color: #dddddd;
+	line-height: 1.7;
+}
+
+.panel-reddit > .panel-body {
+	font-family: 'Roboto';
+	font-size: 16px;
+}
+
+.panel-reddit > .panel-heading {
+  color: #333333;
+  border: 0;
+}
+
+.panel-reddit > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #dddddd;
+}
+
+.panel-reddit > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #dddddd;
 }
