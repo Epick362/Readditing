@@ -31,7 +31,7 @@
 							<li><a href="#">One more separated link</a></li>
 						</ul>
 <? }else{ ?>
-						<a href="#" class="dropdown-toggle"><i class="icon-user icon-large"></i> Log In </a>
+						<a href="#" class="dropdown-toggle"><i class="icon-user icon-large"></i> Sign In </a>
 <? } ?>
 					</li>
 				</ul>
