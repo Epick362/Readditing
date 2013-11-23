@@ -32,7 +32,7 @@ class R extends Main_Controller {
 					$item->kind = 'image';
 				}else{
 					$item->kind = 'misc';
-					$this->rest->initialize(array('server' => 'http://juicer.herokuapp.com/'));
+					$this->rest->initialize(array('server' => 'http://reader-api.herokuapp.com/'));
 					$_extracted = $this->rest->get('api/article', array('url' => $item->data->url));
 					if(isset($_extracted->article)) {
 						$item->data->_extracted = $_extracted->article;
