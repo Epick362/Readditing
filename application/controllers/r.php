@@ -15,7 +15,7 @@ class R extends Main_Controller {
 		if(!$subreddit) {
 			$data->feed = $this->rest->get('.json', $after_fullname)->data->children;
 		}else{
-			$data->feed = $this->rest->get('r/'.$subreddit.'/'.$show.'.json', $after_fullname)->data->children;
+			$data->feed = $this->rest->get('r/'.$subreddit.'/'.$show.'.json', $params)->data->children;
 		}
 		
 		uasort($data->feed, function($a, $b) {
