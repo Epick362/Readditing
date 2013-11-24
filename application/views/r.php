@@ -16,3 +16,4 @@
 <?
 	}
 ?>
+<a class="btn btn-block btn-primary" href="<?=base_url('r/'.$subreddit.'/'.$show.'/'.$post->data->id)?>">Next Page</a>

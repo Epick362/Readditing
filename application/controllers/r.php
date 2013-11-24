@@ -6,10 +6,16 @@ class R extends Main_Controller {
 		$data->show = $show;
 		$data->user = $this->user;
 
+		$params = array();
+
+		if($after) {
+			$params['after'] = 't3_'.$after;
+		}
+
 		if(!$subreddit) {
-			$data->feed = $this->rest->get('.json')->data->children;
+			$data->feed = $this->rest->get('.json', $after_fullname)->data->children;
 		}else{
-			$data->feed = $this->rest->get('r/'.$subreddit.'/'.$show.'.json')->data->children;
+			$data->feed = $this->rest->get('r/'.$subreddit.'/'.$show.'.json', $after_fullname)->data->children;
 		}
 		
 		uasort($data->feed, function($a, $b) {
