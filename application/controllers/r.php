@@ -2,7 +2,7 @@
 class R extends Main_Controller {
 
 	public function index($subreddit = null, $show = 'hot', $after = null) {
-		if($subreddit == 'frontpage') {
+		if($subreddit == 'frontpage' || $subreddit == null) {
 			$subreddit = null;
 			$data->subreddit = 'frontpage';
 		}else{
