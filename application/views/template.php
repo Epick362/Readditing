@@ -50,7 +50,7 @@
 						<div class="panel-body">
 <?
 							foreach($subreddits as $_subreddit) {
-								echo anchor(base_url('/'.$_subreddit->data->display_name), $_subreddit->data->display_name).'<br />';
+								echo anchor(base_url('r/'.$_subreddit->data->display_name), $_subreddit->data->display_name).'<br />';
 							}
 ?>							
 						</div>
