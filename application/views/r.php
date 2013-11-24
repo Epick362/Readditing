@@ -1,7 +1,7 @@
 <?
 	foreach($feed as $key => $post) {
 ?>
-			<div class="panel panel-reddit">
+			<div class="panel panel-reddit" id="<?=$post->data->id?>">
 				<div class="panel-heading">
 					<?=$post->data->title?>
 				</div>
@@ -16,4 +16,4 @@
 <?
 	}
 ?>
-<a class="btn btn-block btn-primary" href="<?=base_url('r/'.$subreddit.'/'.$show.'/'.$post->data->id)?>">Next Page</a>
+<a class="btn btn-block btn-primary" style="margin-bottom:20px" href="<?=base_url('r/'.$subreddit.'/'.$show.'/'.$post->data->id)?>">Next Page</a>
