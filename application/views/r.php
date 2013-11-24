@@ -16,4 +16,4 @@
 <?
 	}
 ?>
-<a class="btn btn-block btn-primary" style="margin-bottom:20px" href="<?=base_url('r/'.$subreddit.'/'.$show.'/'.$post->data->id)?>">Next Page</a>
+<a class="btn btn-block btn-primary" style="margin-bottom:40px" href="<?=base_url('r/'.$subreddit.'/'.$show.'/'.$post->data->id)?>">Next Page</a>
