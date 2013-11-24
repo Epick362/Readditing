@@ -62,7 +62,7 @@ class R extends Main_Controller {
 			$item->_display = $this->display->{$item->kind}($item);
 		}
 
-		$this->template->set('title', $subreddit);
+		$this->template->set('title', $data->subreddit);
 		$this->template->frontpage('r', $data);
 	}
 
