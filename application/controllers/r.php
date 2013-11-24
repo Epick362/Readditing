@@ -2,6 +2,7 @@
 class R extends Main_Controller {
 
 	public function index($subreddit = null, $show = 'hot', $after = null) {
+		if(!$subreddit) $subreddit = 'frontpage';
 		$data->subreddit = $subreddit;
 		$data->show = $show;
 		$data->user = $this->user;
@@ -12,7 +13,7 @@ class R extends Main_Controller {
 			$params['after'] = 't3_'.$after;
 		}
 
-		if(!$subreddit) {
+		if($subreddit == 'frontpage') {
 			$data->feed = $this->rest->get('.json', $params)->data->children;
 		}else{
 			$data->feed = $this->rest->get('r/'.$subreddit.'/'.$show.'.json', $params)->data->children;
@@ -57,11 +58,7 @@ class R extends Main_Controller {
 			$item->_display = $this->display->{$item->kind}($item);
 		}
 
-		if($subreddit == null) {
-			$this->template->set('title', 'frontpage');
-		}else{
-			$this->template->set('title', $subreddit);
-		}
+		$this->template->set('title', $subreddit);
 		$this->template->frontpage('r', $data);
 	}
 
