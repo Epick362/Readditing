@@ -2,3 +2,5 @@
 .swp
 application/cache
 application/logs
+application/config/config.php
+.htaccess
