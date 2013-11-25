@@ -31,7 +31,14 @@
 							<li><a href="#">One more separated link</a></li>
 						</ul>
 <? }else{ ?>
-						<a href="#" class="dropdown-toggle"><i class="icon-user icon-large"></i> Sign In </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-large"></i> Sign In </a>
+						<div class="dropdown-menu" style="padding:10px;">
+							<?=form_open(base_url('login/index'), array('class' => 'form-signin'))?>
+								<?=form_input(array('name' => 'user', 'class' => 'form-control', 'placeholder' => 'Username', 'type' => 'text')) ?>
+								<?=form_input(array('name' => 'passwd', 'class' => 'form-control', 'placeholder' => 'Password', 'type' => 'password')) ?>
+								<?=form_submit(array('class' => 'btn btn-primary btn-block'), 'Log In')?>
+							<?=form_close()?>
+						</div>
 <? } ?>
 					</li>
 				</ul>

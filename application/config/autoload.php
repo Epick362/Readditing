@@ -64,7 +64,7 @@ $autoload['libraries'] = array('REST', 'display', 'template', 'session', 'reddit
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url', 'form');
 
 
 /*

@@ -7,7 +7,8 @@ class Main_Controller extends MY_Controller
 		$this->login = $this->reddit->login('epick_362', 'osnipers362');
 		//$this->rest->debug();
 
-		$this->user = $this->reddit->getUser();
+		//$this->user = $this->reddit->getUser();
+		$this->user = null;
 		//$this->rest->debug();
    }
 }
