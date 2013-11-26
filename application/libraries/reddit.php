@@ -37,7 +37,7 @@ class reddit{
         $response = $this->_ci->rest->post('api/login', array('api_type' => 'json', 'user' => $username, 'passwd' => $password, 'rem' => 1));
 
         if (count($response->json->errors) > 0){
-            return "login error";    
+            return false;    
         } else {
             $this->modHash = $response->json->data->modhash;   
             $this->session = $response->json->data->cookie;
