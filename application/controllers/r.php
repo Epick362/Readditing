@@ -11,7 +11,7 @@ class R extends Main_Controller {
 		$data->show = $show;
 		$data->user = $this->user;
 
-		$params = array();
+		$params = array('count' => 20);
 
 		if($after) {
 			$params['after'] = 't3_'.$after;
