@@ -6,9 +6,13 @@ class Main_Controller extends MY_Controller
 		parent::__construct();
 		if($this->session->userdata('user') && $this->session->userdata('passwd')) {
 			$this->login = $this->reddit->login($this->session->userdata('user'), $this->session->userdata('passwd'));
-			$this->user  = null;
+			if($this->login) {
+				$this->user = $this->reddit->getUser();
+			}else{
+				$this->user = null;
+			}
 		}else{
-			$this->login = null;
+			$this->login = false;
 			$this->user = null;
 		}
    }
