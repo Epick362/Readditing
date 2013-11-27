@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH')) die();
-class Data extends Main_Controller {
+class User extends CI_Controller {
 	public function index() {
 		redirect(base_url());
 	}
@@ -11,15 +11,14 @@ class Data extends Main_Controller {
 		$this->form_validation->set_rules('passwd', 'Password', 'trim|required|xss_clean');
 		if ($this->form_validation->run())
 		{
-			$this->session->set_userdata('user', $this->input->post('user'));
-			$this->session->set_userdata('passwd', $this->input->post('passwd'));
+			$this->reddit->login($this->input->post('user'), $this->input->post('passwd'));
 		}
 
-		redirect($_SERVER['HTTP_REFERRER']);
+		redirect(base_url());
 	}
 
 	public function logout() {
-		$this->session->unset_userdata(array('user', 'passwd'));
-		redirect($_SERVER['HTTP_REFERRER']);
+		$this->session->unset_userdata('reddit_session');
+		redirect(base_url());
 	}
 }

@@ -29,7 +29,7 @@ class reddit{
 
         $this->_ci->rest->initialize(array('server' => $this->apiHost));
         $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
     }
 
 
@@ -42,7 +42,7 @@ class reddit{
             $this->modHash = $response->json->data->modhash;   
             $this->session = $response->json->data->cookie;
             $this->_ci->curl->set_cookies(array('reddit_session' => $response->json->data->cookie));
-            $this->_ci->session->set_userdata('cookie', $response->json->data->cookie);
+            $this->_ci->session->set_userdata('reddit_session', $response->json->data->cookie);
             return $this->modHash;
         }
     }
