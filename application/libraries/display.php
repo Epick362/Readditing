@@ -12,8 +12,8 @@ class Display
 
 	public function image($post) {
 		if($post->kind == 'image') {
-			//return '<center><img class="img-rounded img-post" src="'.$post->data->url.'" /></center>';
-			return 'image';
+			return '<center><img class="img-rounded img-post" src="'.$post->data->url.'" /></center>';
+			//return 'image';
 		}
 
 		return false;
