@@ -186,17 +186,17 @@ body {
 }
 
 .panel-heading {
-	font-size: 32px;
+	font-size: 2em;
 }
 
 .panel-reddit {
 	border-color: #dddddd;
-	line-height: 1.7;
+	line-height: 1.4;
 }
 
 .panel-reddit > .panel-body {
 	font-family: 'Roboto';
-	font-size: 16px;
+	font-size: 1.0em;
 }
 
 .panel-reddit > .panel-heading {

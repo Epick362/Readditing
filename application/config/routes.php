@@ -43,7 +43,7 @@ $route['404_override'] = '';
 
 
 $route['r/(:any)'] = 'r/index/$1';
-$route['r'] = 'r/index/frontpage/hot';
+$route['r'] = 'r/index/home/hot';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

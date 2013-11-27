@@ -53,7 +53,7 @@
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
 					<div class="panel panel-info">
-						<div class="panel-heading">Popular subreddits</div>
+						<div class="panel-heading">Subreddits</div>
 						<div class="panel-body">
 <?
 							foreach($subreddits as $_subreddit) {

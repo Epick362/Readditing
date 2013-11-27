@@ -2,9 +2,8 @@
 class R extends Main_Controller {
 
 	public function index($subreddit = null, $show = 'hot', $after = null) {
-		if($subreddit == 'frontpage' || $subreddit == null) {
-			$subreddit = null;
-			$data->subreddit = 'frontpage';
+		if(!$subreddit){
+			$data->subreddit = 'home';
 		}else{
 			$data->subreddit = $subreddit;
 		}
@@ -17,16 +16,13 @@ class R extends Main_Controller {
 			$params['after'] = 't3_'.$after;
 		}
 
-		if(!$subreddit) {
-			$data->feed = $this->rest->get('.json', $params)->data->children;
+		$data->feed = $this->reddit->getListing($subreddit, $show, $params);
+
+		if($this->user) {
+			$data->subreddits = $this->reddit->getSubscriptions();
 		}else{
-			$data->feed = $this->rest->get('r/'.$subreddit.'/'.$show.'.json', $params)->data->children;
+			$data->subreddits = $this->reddit->getPopular();
 		}
-		
-		uasort($data->feed, function($a, $b) {
-			return $b->data->score - $a->data->score;
-		});
-		$data->subreddits = $this->rest->get('subreddits/popular.json')->data->children;
 
 		$imageTypes = array('gif', 'jpg', 'jpeg', 'png');
 

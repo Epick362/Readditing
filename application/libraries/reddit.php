@@ -41,7 +41,6 @@ class reddit{
         } else {
             $this->modHash = $response->json->data->modhash;   
             $this->session = $response->json->data->cookie;
-            $this->_ci->curl->set_cookies(array('reddit_session' => $response->json->data->cookie));
             $this->_ci->session->set_userdata('reddit_session', $response->json->data->cookie);
             return $this->modHash;
         }
@@ -97,8 +96,7 @@ class reddit{
     * @link https://github.com/reddit/reddit/wiki/API%3A-mine.json
     */
     public function getSubscriptions(){
-        $urlSubscriptions = "http://www.reddit.com/reddits/mine.json";
-        return $this->runCurl($urlSubscriptions);
+        return $this->_ci->rest->get('reddits/mine.json')->data->children;
     }
     
     /**
@@ -108,14 +106,32 @@ class reddit{
     * @link http://www.reddit.com/dev/api#GET_listing
     * @param string $sr The subreddit name. Ex: technology, limit (integer): The number of posts to gather
     */
-    public function getListing($sr, $limit = 5){
-        $limit = (isset($limit)) ? "?limit=".$limit : "";
-        if($sr == 'home' || $sr == 'reddit' || !isset($sr)){
-            $urlListing = "http://www.reddit.com/.json{$limit}";
-        } else {
-            $urlListing = "http://www.reddit.com/r/{$sr}/.json{$limit}";
+    public function getListing($sr = null, $show = 'hot', $params = array()){
+        if(empty($params)) {
+            $params['limit'] = 10;
         }
-        return $this->runCurl($urlListing);
+
+        if($sr == 'home' || $sr == 'reddit' || !$sr){
+            $listing = $this->_ci->rest->get('.json', $params)->data->children;
+        } else {
+            $listing = $this->_ci->rest->get('r/'.$sr.'/'.$show.'.json', $params)->data->children;
+        }
+
+        uasort($listing, function($a, $b) {
+            return $b->data->score - $a->data->score;
+        });
+
+        return $listing;
+    }
+
+    /**
+    * Get page information
+    *
+    * Get most popular subreddits
+    */
+
+    public function getPopular() {
+        return $this->_ci->rest->get('subreddits/popular.json')->data->children;
     }
     
     /**

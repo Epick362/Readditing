@@ -9,8 +9,10 @@
 					<?=$post->_display?>
 				</div>
 				<div class="panel-footer">
-					<span><?=$post->data->subreddit?>: <?=$post->data->author?></span>
-					<span class="pull-right"><?=$post->data->num_comments?> comments</span>
+					<div class="row">
+						<div class="col-lg-6"><?=$post->data->subreddit?>: <?=$post->data->author?></div>
+						<div class="col-lg-6"><div class="pull-right"><a class="btn btn-xs btn-primary"><i class="icon-comments"></i> <?=$post->data->num_comments?></a></div></div>
+					</div>
 				</div>
 			</div>		
 <?

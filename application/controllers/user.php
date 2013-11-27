@@ -11,7 +11,7 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('passwd', 'Password', 'trim|required|xss_clean');
 		if ($this->form_validation->run())
 		{
-			$this->reddit->login($this->input->post('user'), $this->input->post('passwd'));
+			$login = $this->reddit->login($this->input->post('user'), $this->input->post('passwd'));
 		}
 
 		redirect(base_url());
