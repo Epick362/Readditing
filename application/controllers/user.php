@@ -21,4 +21,14 @@ class User extends CI_Controller {
 		$this->session->unset_userdata('reddit_session');
 		redirect(base_url());
 	}
+
+	public function go() {
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('subreddit', 'Subreddit', 'trim|xss_clean');
+		if ($this->form_validation->run()) {
+			redirect(base_url('r/'.$this->input->post('subreddit')));
+		}else{
+			redirect(base_url());
+		}
+	}
 }

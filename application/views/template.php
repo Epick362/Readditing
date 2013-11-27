@@ -17,6 +17,17 @@
 					<li class="<?=($show=='new')? 'active' : ''; ?>"><a href="<?=base_url('r/'.$subreddit.'/new')?>">New</a></li>
 					<li class="<?=($show=='rising')? 'active' : ''; ?>"><a href="<?=base_url('r/'.$subreddit.'/rising')?>">Rising</a></li>
 				</ul>
+				<div class="col-sm-3 col-md-3">
+					<?=form_open(base_url('user/go'), array('class' => 'navbar-form'))?>
+					<div class="input-group">
+						<span class="input-group-addon">r/</span>
+						<?=form_input(array('name' => 'subreddit', 'class' => 'form-control', 'placeholder' => 'subreddit', 'type' => 'text', 'value' => $subreddit)) ?>
+						<div class="input-group-btn">
+							<?=form_submit(array('class' => 'btn btn-primary'), 'Go!')?>
+						</div>
+					</div>
+					<?=form_close()?>
+				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 <? if($user) { ?>
