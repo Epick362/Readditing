@@ -86,11 +86,11 @@ $(document).ready(function() {
 	frontpage.init();
 
 	$('#comments-btn').on('click', function() {
-		console.log('ok');
+		console.log('click');
 		var postID = $(this).data('post');
 		console.log(postID);
-		var post = $('#'+postID);
+		var post = $(this).parent();
 
-		post.find('#comments-container').slideDown();
+		post.chilren('#comments-container').slideDown();
 	});
 });
