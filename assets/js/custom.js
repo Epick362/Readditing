@@ -91,6 +91,6 @@ $(document).ready(function() {
 		console.log(postID);
 		var post = $(this).parent();
 
-		post.chilren('#comments-container').slideDown();
+		$(post).find('#comments-container').slideDown();
 	});
 });
