@@ -185,6 +185,12 @@ body {
 	margin-bottom: 40px;
 }
 
+.panel-comments {
+  padding: 15px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
 .panel-heading {
 	font-size: 2em;
 }
@@ -241,4 +247,18 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+@media (max-width: 767px) {
+  .media-object {
+    display: none;
+  }
+
+  .media-list > .media > .media-body {
+    margin-left: 0;
+  }
+
+  .media-body {
+    margin-left: 35px;
+  }
 }

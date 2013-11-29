@@ -84,4 +84,13 @@ frontpage.public_function();
  */
 $(document).ready(function() {
 	frontpage.init();
+
+	$('#comments-btn').on('click', function() {
+		console.log('ok');
+		var postID = $(this).data('post');
+		console.log(postID);
+		var post = $('#'+postID);
+
+		post.find('#comments-container').slideDown();
+	});
 });
