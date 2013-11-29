@@ -12,6 +12,11 @@ class User extends CI_Controller {
 		if ($this->form_validation->run())
 		{
 			$login = $this->reddit->login($this->input->post('user'), $this->input->post('passwd'));
+			if($login) {
+				setFlashMessage('success', 'Welcome back '.$this->input->post('user').'!');
+			}else{
+				setFlashMessage('error', 'Incorrect user or password.');
+			}
 		}
 
 		redirect(base_url());
@@ -19,6 +24,7 @@ class User extends CI_Controller {
 
 	public function logout() {
 		$this->session->unset_userdata('reddit_session');
+		setFlashMessage('info', 'You have been sucessfully logged out.');
 		redirect(base_url());
 	}
 
@@ -28,6 +34,7 @@ class User extends CI_Controller {
 		if ($this->form_validation->run()) {
 			redirect(base_url('r/'.$this->input->post('subreddit')));
 		}else{
+			setFlashMessage('error', 'Incorrect data.');
 			redirect(base_url());
 		}
 	}

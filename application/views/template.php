@@ -57,6 +57,15 @@
 		</div><!-- /.container -->
 	</div>
 	<div class="container">
+<?
+		if($this->session->flashdata('message') && $this->session->flashdata('message_type');) {
+?>
+		<div class="alert alert-<?=$this->session->flashdata('message_type')?>">
+			<?=$this->session->flashdata('message') ?>
+		</div>
+<?
+		}
+?>
 		<div class="row">
 			<div class="col-md-9" role="main">
 				<?=$contents ?>
