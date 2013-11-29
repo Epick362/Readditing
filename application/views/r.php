@@ -14,6 +14,29 @@
 						<div class="col-lg-6"><div class="pull-right"><a id="comments-btn" data-post="<?=$post->data->id?>" class="btn btn-xs btn-primary"><i class="icon-comments"></i> <?=$post->data->num_comments?></a></div></div>
 					</div>
 				</div>
+				<div class="panel-body">
+					<ul class="media-list">
+						<li class="media">
+							<div class="media-body">
+								<h4 class="media-heading">Epick362</h4>
+								<p>What's up?</p>
+								<div class="media">
+									<div class="media-body">
+										<h4 class="media-heading">Stephen</h4>
+										Not much
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-body">
+								<h4 class="media-heading">Brain</h4>
+								So Doge
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
 <?
 	}
