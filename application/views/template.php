@@ -58,7 +58,7 @@
 	</div>
 	<div class="container">
 <?
-		if($this->session->flashdata('message') && $this->session->flashdata('message_type');) {
+		if($this->session->flashdata('message') && $this->session->flashdata('message_type')) {
 ?>
 		<div class="alert alert-<?=$this->session->flashdata('message_type')?>">
 			<?=$this->session->flashdata('message') ?>
