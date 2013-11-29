@@ -85,12 +85,12 @@ frontpage.public_function();
 $(document).ready(function() {
 	frontpage.init();
 
-	$('#comments-btn').on('click', function() {
+	$('.comments-btn').on('click', function() {
 		console.log('click');
 		var postID = $(this).data('post');
 		console.log(postID);
 		var post = $('#'+postID);
 
-		$(this).closest('.panel').find('#comments-container').slideDown();
+		$(this).closest('.panel').find('.comments-container').slideDown();
 	});
 });
