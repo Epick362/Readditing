@@ -61,8 +61,10 @@
 					</ul>
 				</div>
 				<div class="panel-footer">
-					<?=anchor(base_url('r/'.$post->data->subreddit), $post->data->subreddit)?> <span class="text-muted">by</span> <?=anchor('#', $post->data->author)?>
-					<div class="pull-right"><a id="comments-btn" data-post="<?=$post->data->id?>" class="btn btn-xs btn-primary"><i class="icon-comments"></i> <?=$post->data->num_comments?></a></div>
+					<div class="row">
+						<div class="col-lg-6"><?=anchor(base_url('r/'.$post->data->subreddit), $post->data->subreddit)?> <span class="text-muted">by</span> <?=anchor('#', $post->data->author)?></div>
+						<div class="col-lg-6"><div class="pull-right"><a id="comments-btn" data-post="<?=$post->data->id?>" class="btn btn-xs btn-primary"><i class="icon-comments"></i> <?=$post->data->num_comments?></a></div></div>
+					</div>
 				</div>
 			</div>
 <?
