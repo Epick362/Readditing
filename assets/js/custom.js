@@ -89,8 +89,8 @@ $(document).ready(function() {
 		console.log('click');
 		var postID = $(this).data('post');
 		console.log(postID);
-		var post = $(this).parent();
+		var post = $('#'+postID);
 
-		$(post).find('#comments-container').slideDown();
+		$(this).parent('.panel').find('#comments-container').slideDown();
 	});
 });
