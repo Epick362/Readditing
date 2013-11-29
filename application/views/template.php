@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="<?=base_url()?>"><div class="brand-image">r</div></a>
+				<a class="navbar-brand" href="<?=base_url()?>"><div class="brand-image">redditing</div></a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -89,7 +89,7 @@
 </div>
 <div id="footer">
 	<div class="container">
-		<p class="text-muted credit">RedditReader &copy; Filip Hajek. Elapsed Time: {elapsed_time} seconds.</p>
+		<p class="text-muted credit">Redditing &copy; All rights reserved. Elapsed Time: {elapsed_time} seconds.</p>
 	</div>
 </div>
 <?=$this->load->view('include/footer') ?>
