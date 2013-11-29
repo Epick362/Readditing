@@ -87,10 +87,6 @@ $(document).ready(function() {
 
 	$('.comments-btn').on('click', function() {
 		console.log('click');
-		var postID = $(this).data('post');
-		console.log(postID);
-		var post = $('#'+postID);
-
 		$(this).closest('.panel').find('.comments-container').slideDown();
 	});
 });
