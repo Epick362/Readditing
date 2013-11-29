@@ -91,6 +91,6 @@ $(document).ready(function() {
 		console.log(postID);
 		var post = $('#'+postID);
 
-		$(this).parent('.panel').find('#comments-container').slideDown();
+		$(this).closest('.panel').find('#comments-container').slideDown();
 	});
 });
