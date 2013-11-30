@@ -26,14 +26,13 @@ class reddit{
         log_message('debug', 'Reddit Library Initialized');
         $this->_ci->load->library('Curl');
         $this->_ci->load->library('REST');
-
-        $this->_ci->rest->initialize(array('server' => $this->apiHost));
-        $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
     }
 
 
     public function login($username, $password){
+        $this->_ci->rest->initialize(array('server' => $this->apiHost));
+        $this->_ci->rest->format('json');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
         $response = $this->_ci->rest->post('api/login', array('api_type' => 'json', 'user' => $username, 'passwd' => $password, 'rem' => 1));
 
         if (count($response->json->errors) > 0){
@@ -79,6 +78,47 @@ class reddit{
         }
     }
     
+    public function getFeed($sr = null, $show = 'hot', $params = array()) {
+        $data->feed = $this->getListing($sr, $show, $params);
+
+        $imageTypes = array('gif', 'jpg', 'jpeg', 'png');
+
+        foreach($data->feed as $item) {
+            if($item->data->over_18 == TRUE) { // NSFW FILTER
+                $item->kind = 'nsfw';
+                $item->data->title = NULL;
+            }else{
+                if($item->data->selftext_html) {
+                    $item->kind = 'selftext';
+                }elseif($item->data->media) {
+                    $item->kind = 'media';
+                }elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
+                    $item->kind = 'image';
+                }else{
+                    $item->kind = 'misc';
+                    $this->_ci->rest->initialize(array('server' => 'http://reader-api.herokuapp.com/'));
+                    $_extracted = $this->_ci->rest->get('api/article', array('url' => $item->data->url));
+                    $this->_ci->curl->set_defaults();
+                    if(isset($_extracted->article)) {
+                        $item->data->_extracted = $_extracted->article;
+                        if($item->data->_extracted->body) {
+                            if(strlen($item->data->_extracted->body) >= 250) {
+                                $item->kind = 'extractedtext';
+                            }elseif(isset($item->data->_extracted->image) && $item->data->_extracted->image->width >= 300) {
+                                $item->kind = 'image';
+                                $item->data->url = $item->data->_extracted->image->src;
+                            }
+                        }
+                    }
+                }
+            }
+
+            $item->_display = $this->_ci->display->{$item->kind}($item);
+        }
+
+        return $data->feed;
+    }
+
     /**
     * Get user
     *
@@ -86,6 +126,9 @@ class reddit{
     * @link https://github.com/reddit/reddit/wiki/API%3A-me.json
     */
     public function getUser(){
+        $this->_ci->rest->initialize(array('server' => $this->apiHost));
+        $this->_ci->rest->format('json');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
         return $this->_ci->rest->get('api/me.json');
     }
     
@@ -96,6 +139,9 @@ class reddit{
     * @link https://github.com/reddit/reddit/wiki/API%3A-mine.json
     */
     public function getSubscriptions(){
+        $this->_ci->rest->initialize(array('server' => $this->apiHost));
+        $this->_ci->rest->format('json');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
         return $this->_ci->rest->get('reddits/mine.json')->data->children;
     }
     
@@ -110,6 +156,9 @@ class reddit{
         if(empty($params)) {
             $params['limit'] = 10;
         }
+        $this->_ci->rest->initialize(array('server' => $this->apiHost));
+        $this->_ci->rest->format('json');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
 
         if($sr == 'home' || $sr == 'reddit' || !$sr){
             $listing = $this->_ci->rest->get('.json', $params)->data->children;
@@ -131,6 +180,9 @@ class reddit{
     */
 
     public function getPopular() {
+        $this->_ci->rest->initialize(array('server' => $this->apiHost));
+        $this->_ci->rest->format('json');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
         return $this->_ci->rest->get('subreddits/popular.json')->data->children;
     }
     

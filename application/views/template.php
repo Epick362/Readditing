@@ -92,4 +92,4 @@
 		<p class="text-muted credit">Readditing &copy; All rights reserved. Elapsed Time: {elapsed_time} seconds.</p>
 	</div>
 </div>
-<?=$this->load->view('include/footer') ?>
+<?=$this->load->view('include/footer', array('subreddit' => $subreddit, 'show' => $show)) ?>
