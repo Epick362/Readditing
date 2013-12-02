@@ -38,8 +38,9 @@
 	 var mayLoadContent = $(target).scrollTop()+opts.heightOffset >= $(document).height() - $(target).height();
 	 if (mayLoadContent){
 		 if (opts.beforeLoad != null){
-			opts.beforeLoad(); 
+			opts.beforeLoad();
 		 }
+		 opts.contentData.after = 't3_' + $('#feed').children('.panel').last().data('post');
 		 $(obj).children().attr('rel', 'loaded');
 		 $.ajax({
 			  type: 'POST',
@@ -56,7 +57,6 @@
 			  dataType: 'html'
 		 });
 	 }
-	 
   };
   
   $.fn.scrollPagination.init = function(obj, opts){

@@ -1,4 +1,4 @@
-<div class="panel panel-reddit" id="<?=$post->data->id?>">
+<div class="panel panel-reddit" data-post="<?=$post->data->id?>">
 	<div class="panel-heading">
 		<?=$post->data->title?>
 	</div>

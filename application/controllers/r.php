@@ -9,7 +9,7 @@ class R extends Main_Controller {
 		$data->show = $show;
 		$data->user = $this->user;
 
-		$params = array('limit' => 10);
+		$params = array('limit' => 5);
 
 		if($after) {
 			$params['after'] = 't3_'.$after;
