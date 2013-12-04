@@ -9,10 +9,9 @@
 */
 
 (function( $ ){
-	 
+ var waiting = false;	 
 		 
  $.fn.scrollPagination = function(options) {
-  	
 		var opts = $.extend($.fn.scrollPagination.defaults, options);  
 		var target = opts.scrollTarget;
 		if (target == null){
@@ -36,7 +35,7 @@
   $.fn.scrollPagination.loadContent = function(obj, opts){
 	 var target = opts.scrollTarget;
 	 var mayLoadContent = $(target).scrollTop()+opts.heightOffset >= $(document).height() - $(target).height();
-	 if (mayLoadContent){
+	 if (mayLoadContent && !waiting){
 		 if (opts.beforeLoad != null){
 			opts.beforeLoad();
 		 }
@@ -57,6 +56,7 @@
 			  dataType: 'html'
 		 });
 	 }
+	 waiting = false;
   };
   
   $.fn.scrollPagination.init = function(obj, opts){
