@@ -8,8 +8,7 @@
 **	Thank you.
 */
 
-(function( $ ){
- var waiting = false;	 
+(function( $ ){ 
 		 
  $.fn.scrollPagination = function(options) {
 		var opts = $.extend($.fn.scrollPagination.defaults, options);  
@@ -35,11 +34,16 @@
   $.fn.scrollPagination.loadContent = function(obj, opts){
 	 var target = opts.scrollTarget;
 	 var mayLoadContent = $(target).scrollTop()+opts.heightOffset >= $(document).height() - $(target).height();
+	 var waiting = false;
+	 if($(target).children('#loading').visible()) {
+	 	waiting = true;
+	 }
+
 	 if (mayLoadContent && !waiting){
 		 if (opts.beforeLoad != null){
 			opts.beforeLoad();
 		 }
-		 opts.contentData.after = 't3_' + $('#feed').children('.panel').last().data('post');
+		 opts.contentData.after = 't3_' + $(target).children('.panel').last().data('post');
 		 $(obj).children().attr('rel', 'loaded');
 		 $.ajax({
 			  type: 'POST',
@@ -56,7 +60,6 @@
 			  dataType: 'html'
 		 });
 	 }
-	 waiting = false;
   };
   
   $.fn.scrollPagination.init = function(obj, opts){
