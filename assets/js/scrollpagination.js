@@ -35,7 +35,7 @@
 	 var target = opts.scrollTarget;
 	 var mayLoadContent = $(target).scrollTop()+opts.heightOffset >= $(document).height() - $(target).height();
 	 var waiting = false;
-	 if($(target).children('#loading').visible()) {
+	 if($(target).children('#loading').is(':visible')) {
 	 	waiting = true;
 	 }
 
