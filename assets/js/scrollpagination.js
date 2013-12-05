@@ -37,6 +37,7 @@
 	 var waiting = false;
 	 if($(target).children('#loading').is(':visible')) {
 	 	waiting = true;
+	 	console.log('Waiting TRUE');
 	 }
 
 	 if (mayLoadContent && !waiting){
