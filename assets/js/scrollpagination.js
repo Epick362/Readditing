@@ -37,14 +37,13 @@
 	 var waiting = false;
 	 if($('#loading').is(':visible')) {
 	 	waiting = true;
-	 	console.log('Waiting: '+waiting);
 	 }
 
 	 if (mayLoadContent && !waiting){
 		 if (opts.beforeLoad != null){
 			opts.beforeLoad();
 		 }
-		 opts.contentData.after = 't3_' + $(target).children('.panel').last().data('post');
+		 opts.contentData.after = 't3_' + $(obj).children('.panel').last().data('post');
 		 $(obj).children().attr('rel', 'loaded');
 		 $.ajax({
 			  type: 'POST',
