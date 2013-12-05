@@ -11,5 +11,7 @@ class Main_Controller extends MY_Controller
 		}else{
 			$this->user = null;
 		}
+
+		setFlashMessage('warning', 'Article extractor has been disabled to optimize load times.');
    }
 }
