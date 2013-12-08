@@ -54,10 +54,19 @@ var Frontpage = function()
 	 }
 	 exports.init = init;
 
-	 function comments() {
+	 function comments(baseUrl, subreddit) {
 	 	$('.comments-btn').on('click', function() {
 			var postID = $(this).closest('.panel').data('post');
-			$(this).closest('.panel').find('.comments-container').slideDown();
+			 $.ajax({
+				  type: 'POST',
+				  url: baseUrl + 'ajax/getComments',
+				  data: {'subreddit': subreddit, 'article': postID},
+				  success: function(data){
+					$(this).closest('.panel').find('.comments-container').append(data);
+					$(this).closest('.panel').find('.comments-container').slideDown();
+				  },
+				  dataType: 'html'
+			 });
 		});
 	 }
 	 exports.comments = comments;
@@ -92,6 +101,4 @@ frontpage.public_function();
  */
 $(document).ready(function() {
 	frontpage.init();
-
-	frontpage.comments();
 });

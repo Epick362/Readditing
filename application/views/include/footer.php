@@ -6,6 +6,8 @@
 	<script src="<?php echo base_url('assets/js/custom.js') ?>"></script>
 	<script type="text/javascript">
 		$(function(){
+			frontpage.comments('<?=base_url()?>', '<?=$subreddit?>');
+
 			var lastID = $('#feed').children('.panel').last().data('post');
 
 			$('#feed').scrollPagination({
@@ -20,7 +22,7 @@
 				'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
 					 $('#loading').fadeOut();
 					 $(elementsLoaded).fadeIn();
-					 frontpage.comments();
+					 frontpage.comments('<?=base_url()?>', '<?=$subreddit?>');
 				}
 			});
 				   
@@ -32,7 +34,7 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-46225304-1', 'readditing.herokuapp.com');
+	  ga('create', 'UA-46225304-1', 'readditing.com');
 	  ga('send', 'pageview');
 
 	</script>
