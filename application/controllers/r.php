@@ -9,6 +9,8 @@ class R extends Main_Controller {
 		$data->show = $show;
 		$data->user = $this->user;
 
+		print_r($this->rest->get('r/'.$subreddit.'/comments/'.$postID)->data->children);
+
 		$params = array('limit' => 15);
 
 		if($after) {
