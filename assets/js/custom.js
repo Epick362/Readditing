@@ -68,6 +68,7 @@ var Frontpage = function()
 				  dataType: 'html'
 			 });
 		});
+		console.log('comments');
 	 }
 	 exports.comments = comments;
 
