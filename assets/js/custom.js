@@ -54,6 +54,14 @@ var Frontpage = function()
 	 }
 	 exports.init = init;
 
+	 function comments() {
+	 	$('.comments-btn').on('click', function() {
+			console.log('click');
+			$(this).closest('.panel').find('.comments-container').slideDown();
+		});
+	 }
+	 exports.comments = comments;
+
 	 /**
 	  * Last but not least, we have to return
 	  * the exports object.
@@ -85,8 +93,5 @@ frontpage.public_function();
 $(document).ready(function() {
 	frontpage.init();
 
-	$('.comments-btn').on('click', function() {
-		console.log('click');
-		$(this).closest('.panel').find('.comments-container').slideDown();
-	});
+	frontpage.comments();
 });

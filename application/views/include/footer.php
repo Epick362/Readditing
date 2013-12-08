@@ -20,6 +20,7 @@
 				'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
 					 $('#loading').fadeOut();
 					 $(elementsLoaded).fadeIn();
+					 frontpage.comments();
 				}
 			});
 				   
