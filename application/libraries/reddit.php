@@ -130,7 +130,7 @@ class reddit{
     public function getUser(){
         $this->_ci->rest->initialize(array('server' => $this->apiHost));
         $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
         return $this->_ci->rest->get('api/me.json');
     }
     
@@ -143,7 +143,7 @@ class reddit{
     public function getSubscriptions(){
         $this->_ci->rest->initialize(array('server' => $this->apiHost));
         $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
         return $this->_ci->rest->get('reddits/mine.json')->data->children;
     }
     
@@ -160,7 +160,7 @@ class reddit{
         }
         $this->_ci->rest->initialize(array('server' => $this->apiHost));
         $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
 
         if($sr == 'home' || $sr == 'reddit' || !$sr){
             $listing = $this->_ci->rest->get('.json', $params)->data->children;
@@ -184,10 +184,17 @@ class reddit{
     public function getPopular() {
         $this->_ci->rest->initialize(array('server' => $this->apiHost));
         $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
         return $this->_ci->rest->get('subreddits/popular.json')->data->children;
     }
     
+    public function getComments($subreddit, $postID) {
+        $this->_ci->rest->initialize(array('server' => $this->apiHost));
+        $this->_ci->rest->format('json');
+        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
+        return $this->_ci->rest->get('r/'.$subreddit.'/comments/'.$postID)->data->children;
+    }
+
     /**
     * Get page information
     *

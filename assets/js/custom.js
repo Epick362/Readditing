@@ -56,7 +56,7 @@ var Frontpage = function()
 
 	 function comments() {
 	 	$('.comments-btn').on('click', function() {
-			console.log('click');
+			var postID = $(this).closest('.panel').data('post');
 			$(this).closest('.panel').find('.comments-container').slideDown();
 		});
 	 }

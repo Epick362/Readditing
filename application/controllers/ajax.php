@@ -10,6 +10,13 @@ class Ajax extends Main_Controller {
 			return;
 		}
 	}
+
+	public function getComments() {
+		if($this->input->post('subreddit') && $this->input->post('article')) {
+			$comments = $this->reddit->getComments($this->input->post('subreddit'), $this->input->post('article'));
+			print_r($comments);
+		}
+	}
 }
 
 /* End of file Ajax.php */
