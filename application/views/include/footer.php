@@ -6,7 +6,7 @@
 	<script src="<?php echo base_url('assets/js/custom.js') ?>"></script>
 	<script type="text/javascript">
 		$(function(){
-			frontpage.comments('<?=base_url()?>', '<?=$subreddit?>');
+			frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
 
 			var lastID = $('#feed').children('.panel').last().data('post');
 

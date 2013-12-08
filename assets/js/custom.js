@@ -59,7 +59,7 @@ var Frontpage = function()
 			var postID = $(this).closest('.panel').data('post');
 			 $.ajax({
 				  type: 'POST',
-				  url: baseUrl + 'ajax/getComments',
+				  url: baseUrl,
 				  data: {'subreddit': subreddit, 'article': postID},
 				  success: function(data){
 					$(this).closest('.panel').find('.comments-container').append(data);

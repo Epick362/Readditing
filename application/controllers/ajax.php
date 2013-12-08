@@ -14,7 +14,7 @@ class Ajax extends Main_Controller {
 	public function getComments() {
 		if($this->input->post('subreddit') && $this->input->post('article')) {
 			$comments = $this->reddit->getComments($this->input->post('subreddit'), $this->input->post('article'));
-			print_r($comments);
+			echo 'comments';
 		}
 	}
 }
