@@ -195,7 +195,7 @@ class reddit{
         $this->_ci->rest->format('json');
         $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
         $response = $this->_ci->rest->get('r/'.$subreddit.'/comments/'.$postID.'.json');
-        echo '<pre>'; print_r($response); echo '</pre>';
+        echo '<pre>'; print_r($response[1]->data->children); echo '</pre>';
         return $response;
     }
 
