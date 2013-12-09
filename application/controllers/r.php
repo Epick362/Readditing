@@ -10,7 +10,7 @@ class R extends Main_Controller {
 		$data->user = $this->user;
 
 		$this->rest->initialize('http://reddit.com/');
-		echo '<pre>'; print_r($this->rest->get('r/'.$subreddit.'/comments/'.$postID.'.json')->data->children); echo '</pre>';
+		echo '<pre>'; print_r($this->rest->get('r/AskReddit/comments/1seelc.json')->data->children); echo '</pre>';
 
 		$params = array('limit' => 15);
 
