@@ -9,7 +9,7 @@ class R extends Main_Controller {
 		$data->show = $show;
 		$data->user = $this->user;
 
-		print_r($this->reddit->getComments('askReddit', '1seelc'));
+		echo '<pre>'; print_r($this->reddit->getComments('askReddit', '1seelc')); echo '</pre>';
 
 		$params = array('limit' => 15);
 
