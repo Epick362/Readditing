@@ -65,8 +65,9 @@ var Frontpage = function()
 				  url: baseUrl,
 				  data: {'subreddit': subreddit, 'article': postID},
 				  success: function(data){
+				  	console.log('request success');
 				  	var container = $(this).closest('.panel').find('.comments-container');
-				  	container.append('<ul class="media-list"></ul>');
+				  	container.html('<ul class="media-list"></ul>');
 					container.find('.media-list').append(data);
 					container.slideDown();
 				  },
