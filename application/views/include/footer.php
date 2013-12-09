@@ -20,7 +20,7 @@
 				'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
 					 $('#loading').fadeOut();
 					 $(elementsLoaded).fadeIn();
-					 frontpage.comments('<?=base_url()?>', '<?=$subreddit?>');
+					 frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
 				}
 			});
 				   
