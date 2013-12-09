@@ -55,8 +55,11 @@ var Frontpage = function()
 	 exports.init = init;
 
 	 function comments(baseUrl, subreddit) {
+	 	console.log('comment function start');
 	 	$('.comments-btn').on('click', function() {
+	 		console.log('click');
 			var postID = $(this).closest('.panel').data('post');
+			console.log(postID);
 			 $.ajax({
 				  type: 'POST',
 				  url: baseUrl,
@@ -70,6 +73,7 @@ var Frontpage = function()
 				  dataType: 'html'
 			 });
 		});
+		console.log('comment function end');
 	 }
 	 exports.comments = comments;
 
