@@ -1,7 +1,7 @@
 <div id="feed">
 <?
 	foreach($feed as $key => $post) {
-		echo $this->load->view('r_post', array('post' => $post));
+		echo $this->load->view('post_template', array('post' => $post));
 	}
 ?>
 </div>
