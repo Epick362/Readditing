@@ -4,7 +4,7 @@ class Ajax extends Main_Controller {
 		if($this->input->post('subreddit') && $this->input->post('show')) {
 			$feed = $this->reddit->getFeed($this->input->post('subreddit'), $this->input->post('show'), array('after' => $this->input->post('after'), 'limit' => 10));
 			foreach($feed as $key => $post) {
-				echo $this->load->view('r_post', array('post' => $post));
+				echo $this->load->view('post_template', array('post' => $post));
 			}
 		}else{
 			return;
@@ -14,7 +14,11 @@ class Ajax extends Main_Controller {
 	public function getComments() {
 		if($this->input->post('subreddit') && $this->input->post('article')) {
 			$comments = $this->reddit->getComments($this->input->post('subreddit'), $this->input->post('article'));
-			echo 'comments';
+			foreach($comments as $comment) {
+				echo $this->load->view('comment_template', array('comment' => $comment));
+			}
+		}else{
+			return;
 		}
 	}
 }

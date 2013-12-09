@@ -62,13 +62,15 @@ var Frontpage = function()
 				  url: baseUrl,
 				  data: {'subreddit': subreddit, 'article': postID},
 				  success: function(data){
-					$(this).closest('.panel').find('.comments-container').append(data);
-					$(this).closest('.panel').find('.comments-container').slideDown();
+				  	var container = $(this).closest('.panel').find('.comments-container');
+				  	container.append('<ul class="media-list">');
+					container.find('.media-list').append(data);
+					container.append('</ul>')
+					container.slideDown();
 				  },
 				  dataType: 'html'
 			 });
 		});
-		console.log('comments');
 	 }
 	 exports.comments = comments;
 
