@@ -16,7 +16,7 @@ class Ajax extends Main_Controller {
 			$listing = $this->reddit->getComments($this->input->post('subreddit'), $this->input->post('article'));
 			$comments = $listing[1]->data->children;
 			foreach($comments as $comment) {
-				echo $this->load->view('comment_template', array('comment' => $comment->data));
+				echo $this->load->view('comment_template', array('comment' => $comment));
 			}
 		}else{
 			return;
