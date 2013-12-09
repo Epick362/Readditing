@@ -168,9 +168,11 @@ class reddit{
             $listing = $this->_ci->rest->get('r/'.$sr.'/'.$show.'.json', $params)->data->children;
         }
 
+        /* FUCKS UP AUTOSCROLL
         uasort($listing, function($a, $b) {
             return $b->data->score - $a->data->score;
         });
+        */
 
         return $listing;
     }
