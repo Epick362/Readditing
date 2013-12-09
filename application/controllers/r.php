@@ -9,8 +9,7 @@ class R extends Main_Controller {
 		$data->show = $show;
 		$data->user = $this->user;
 
-		$this->rest->initialize('http://reddit.com/');
-		echo '<pre>'; print_r($this->rest->get('r/AskReddit/comments/1seelc.json')->data->children); echo '</pre>';
+		print_r($this->reddit->getComments('askReddit', '1seelc'));
 
 		$params = array('limit' => 15);
 

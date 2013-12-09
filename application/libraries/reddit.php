@@ -192,7 +192,7 @@ class reddit{
         $this->_ci->rest->initialize(array('server' => $this->apiHost));
         $this->_ci->rest->format('json');
         $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
-        return $this->_ci->rest->get('r/'.$subreddit.'/comments/'.$postID)->data->children;
+        return $this->_ci->rest->get('r/'.$subreddit.'/comments/'.$postID);
     }
 
     /**
