@@ -4,6 +4,6 @@
 	</a>
 	<div class="media-body">
 		<h4 class="media-heading"><?=$comment->data->author?></h4>
-		<p><?=$comment->data->body_html?></p>
+		<p><?=htmlspecialchars_decode($comment->data->body_html)?></p>
 	</div>
 </li>

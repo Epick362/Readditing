@@ -68,7 +68,7 @@ var Frontpage = function()
 				  success: function(data){
 				  	console.log('request success');
 				  	var container = $(this).closest('.panel').find('.comments-container');
-				  	container.html('<ul class="media-list"></ul>');
+				  	container.append('<ul class="media-list"></ul>');
 					container.find('.media-list').append(data);
 					container.slideDown();
 				  },
