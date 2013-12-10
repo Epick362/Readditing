@@ -7,6 +7,7 @@
 		<p><?=htmlspecialchars_decode($comment->data->body_html)?></p>
 		<?
 			foreach($comment->data->replies as $reply) {
+				print_r($reply);
 				if(isset($reply->data->author)) {
 					echo $this->load->view('comment_template', array('comment' => $reply));
 				}
