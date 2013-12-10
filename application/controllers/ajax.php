@@ -13,8 +13,7 @@ class Ajax extends Main_Controller {
 
 	public function getComments() {
 		if($this->input->post('subreddit') && $this->input->post('article')) {
-			$listing = $this->reddit->getComments($this->input->post('subreddit'), $this->input->post('article'));
-			$comments = $listing[1]->data->children;
+			$comments = $this->reddit->getComments($this->input->post('subreddit'), $this->input->post('article'));
 			foreach($comments as $comment) {
 				echo $this->load->view('comment_template', array('comment' => $comment));
 			}
