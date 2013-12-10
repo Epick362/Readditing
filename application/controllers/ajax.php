@@ -13,13 +13,9 @@ class Ajax extends Main_Controller {
 	}
 
 	public function getComments() {
-		echo $this->input->post('subreddit');
-		echo $this->input->post('article');
 		if($this->input->post('subreddit') && $this->input->post('article')) {
 			$comments = $this->reddit->getComments($this->input->post('subreddit'), $this->input->post('article'));
-			echo 'lol2';
 			foreach($comments as $key => $comment) {
-				echo 'lol key:'.$key;
 				echo $this->load->view('comment_template', array('comment' => $comment));
 			}
 		}else{

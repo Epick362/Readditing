@@ -54,11 +54,12 @@ var Frontpage = function()
 	 }
 	 exports.init = init;
 
-	 function comments(baseUrl, subreddit) {
+	 function comments(baseUrl) {
 	 	console.log('comment function start');
 	 	$('.comments-btn').on('click', function() {
 	 		console.log('click');
 			var postID = $(this).closest('.panel').data('post');
+			var subreddit = $(this).closest('.panel').data('subreddit');
 			console.log(postID);
 			 $.ajax({
 				  type: 'POST',
