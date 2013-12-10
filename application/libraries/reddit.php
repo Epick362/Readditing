@@ -189,6 +189,10 @@ class reddit{
         $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
         return $this->_ci->rest->get('subreddits/popular.json')->data->children;
     }
+
+    /*
+    * Get comments from article
+    */
     
     public function getComments($subreddit, $postID) {
         $this->_ci->rest->initialize(array('server' => $this->apiHost));
