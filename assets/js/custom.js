@@ -58,8 +58,9 @@ var Frontpage = function()
 	 	console.log('comment function start');
 	 	$('.comments-btn').on('click', function() {
 	 		console.log('click');
-			var postID = $(this).closest('.panel').data('post');
-			var subreddit = $(this).closest('.panel').data('subreddit');
+	 		var panel = $(this).closest('.panel');
+			var postID = panel.data('post');
+			var subreddit = panel.data('subreddit');
 			console.log(postID);
 			 $.ajax({
 				  type: 'POST',
@@ -67,9 +68,8 @@ var Frontpage = function()
 				  data: {'subreddit': subreddit, 'article': postID},
 				  success: function(data){
 				  	console.log('request success');
-				  	var container = $(this).closest('.panel').find('.comments-container');
-					container.find('.media-list').append(data);
-					container.slideDown();
+					panel.find('.media-list').append(data);
+					panel.find('.comments-container').slideDown();
 				  },
 				  dataType: 'html'
 			 });
