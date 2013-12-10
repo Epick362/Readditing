@@ -5,5 +5,12 @@
 	<div class="media-body">
 		<h4 class="media-heading"><?=$comment->data->author?></h4>
 		<p><?=htmlspecialchars_decode($comment->data->body_html)?></p>
+		<?
+			foreach($comment->data->replies as $reply) {
+				if(isset($reply->data->author)) {
+					echo $this->load->view('comment_template', array('comment' => $reply));
+				}
+			}
+		?>
 	</div>
 </li>
