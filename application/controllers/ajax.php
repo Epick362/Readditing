@@ -7,6 +7,7 @@ class Ajax extends Main_Controller {
 				echo $this->load->view('post_template', array('post' => $post));
 			}
 		}else{
+			echo 'No input';
 			return;
 		}
 	}
@@ -14,10 +15,11 @@ class Ajax extends Main_Controller {
 	public function getComments() {
 		if($this->input->post('subreddit') && $this->input->post('article')) {
 			$comments = $this->reddit->getComments($this->input->post('subreddit'), $this->input->post('article'));
-			foreach($comments as $comment) {
+			foreach($comments as $key => $comment) {
 				echo $this->load->view('comment_template', array('comment' => $comment));
 			}
 		}else{
+			echo 'No input';
 			return;
 		}
 	}
