@@ -6,9 +6,8 @@
 		<h4 class="media-heading"><?=$comment->data->author?></h4>
 		<p><?=htmlspecialchars_decode($comment->data->body_html)?></p>
 		<?
-			foreach($comment->data->replies as $reply) {
-				print_r($reply);
-				if(isset($reply->data->author)) {
+			foreach($comment->data->replies->data->children as $reply) {
+				if($reply->kind == 't1') {
 					echo $this->load->view('comment_template', array('comment' => $reply));
 				}
 			}
