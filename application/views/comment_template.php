@@ -8,6 +8,7 @@
 		<?
 			if($comment->data->replies) {
 				foreach($comment->data->replies->data->children as $reply) {
+					if($reply->kind == 't1') {
 					/*
 					if($reply->kind == 't1') {
 						echo $this->load->view('comment_template', array('comment' => $reply));
@@ -24,6 +25,7 @@
 				</div>
 			</div>
 		<?
+					}
 				}
 			}
 		?>
