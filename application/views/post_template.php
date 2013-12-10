@@ -6,6 +6,7 @@
 		<?=$post->_display?>
 	</div>
 	<div class="panel-comments comments-container" style="display:none">
+		<ul class="media-list"></ul>
 	</div>
 	<div class="panel-footer">
 		<div class="row">
