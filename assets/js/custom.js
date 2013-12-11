@@ -80,7 +80,8 @@ var Frontpage = function()
 
 	 function extractText() {
 	 	$('.unextracted-text').each(function() {
-	 		var url = $(this).data('url');
+	 		var url = encodeURI($(this).data('url'));
+	 		console.log(url);
 			 $.ajax({
 				  type: 'POST',
 				  url: 'http://reader-api.herokuapp.com/api/article',
