@@ -80,8 +80,7 @@ var Frontpage = function()
 
 	 function extractText() {
 	 	$('.unextracted-text').each(function() {
-	 		var url = encodeURI($(this).data('url'));
-	 		console.log(url);
+	 		var url = $(this).data('url');
 			 $.ajax({
 				  type: 'POST',
 				  url: 'http://reader-api.herokuapp.com/api/article',
@@ -91,8 +90,7 @@ var Frontpage = function()
 				  	console.log('extraction success');
 				  	$(this).html(data.article.body);
 				  	$(this).removeClass('.unextracted-text');
-				  },
-				  dataType: 'html'
+				  }
 			 });	 		
 	 	});
 	 }
