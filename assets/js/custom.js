@@ -85,6 +85,7 @@ var Frontpage = function()
 				  type: 'POST',
 				  url: 'http://reader-api.herokuapp.com/api/article',
 				  data: {'url': url},
+				  crossDomain: true,
 				  success: function(data){
 				  	console.log('extraction success');
 				  	$(this).html(data.article.body);
