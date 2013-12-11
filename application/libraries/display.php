@@ -33,7 +33,7 @@ class Display
 	}
 
 	public function ajax_extractedtext($post) {
-		return $this->_ci->view->load('extractedtext_template', array('post' => $post));
+		return $this->_ci->load->view('extractedtext_template', array('post' => $post));
 	}
 
 	public function extractedtext($post) {
