@@ -2,6 +2,11 @@
 
 class Display
 {
+    function __construct()
+    {
+        $this->_ci =& get_instance();
+    }
+
 	public function media($post) {
 		if($post->kind == 'media' && $post->data->media) {
 			return '<center>'.htmlspecialchars_decode($post->data->media_embed->content).'</center>';
@@ -28,7 +33,7 @@ class Display
 	}
 
 	public function ajax_extractedtext($post) {
-		return $this->view->load('extractedtext_template', array('post' => $post));
+		return $this->_ci->view->load('extractedtext_template', array('post' => $post));
 	}
 
 	public function extractedtext($post) {
