@@ -25,8 +25,6 @@ class R extends Main_Controller {
 			$data->subreddits = $this->reddit->getPopular();
 		}
 
-		setFlashMessage('warning', 'Article extractor has been disabled to optimize load times.');
-
 		$this->template->set('title', $data->subreddit);
 		$this->template->frontpage('r', $data);
 	}
