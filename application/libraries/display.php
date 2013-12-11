@@ -27,6 +27,10 @@ class Display
 		return false;
 	}
 
+	public function ajax_extractedtext($post) {
+		return $this->view->load('extractedtext_template', array('post' => $post));
+	}
+
 	public function extractedtext($post) {
 		if($post->kind == 'extractedtext') {
 			return nl2br($post->data->_extracted->body);

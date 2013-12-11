@@ -95,7 +95,7 @@ class reddit{
                 }elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
                     $item->kind = 'image';
                 }else{
-                    $item->kind = 'misc';
+                    $item->kind = 'ajax_extractedtext';
                     /*
                     $this->_ci->rest->initialize(array('server' => 'http://reader-api.herokuapp.com/'));
                     $_extracted = $this->_ci->rest->get('api/article', array('url' => $item->data->url));

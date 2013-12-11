@@ -78,6 +78,24 @@ var Frontpage = function()
 	 }
 	 exports.comments = comments;
 
+	 function extractText() {
+	 	$('.unextracted-text').each(function() {
+	 		var url = $(this).data('url');
+			 $.ajax({
+				  type: 'POST',
+				  url: 'http://reader-api.herokuapp.com/api/article',
+				  data: {'url': url},
+				  success: function(data){
+				  	console.log('extraction success');
+				  	$(this).html(data.article.body);
+				  	$(this).removeClass('.unextracted-text');
+				  },
+				  dataType: 'html'
+			 });	 		
+	 	});
+	 }
+	 exports.extractText = extractText;
+
 	 /**
 	  * Last but not least, we have to return
 	  * the exports object.

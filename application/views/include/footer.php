@@ -5,6 +5,7 @@
 	<script type="text/javascript">
 		$(function(){
 			frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
+			frontpage.extractText();
 
 			var lastID = $('#feed').children('.panel').last().data('post');
 
@@ -21,6 +22,7 @@
 					 $('#loading').fadeOut();
 					 $(elementsLoaded).fadeIn();
 					 frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
+					 frontpage.extractText();
 				}
 			});
 				   

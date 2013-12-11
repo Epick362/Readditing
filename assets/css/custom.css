@@ -213,6 +213,10 @@ body {
   border-bottom-color: #dddddd;
 }
 
+.unextracted-text {
+  height: 200px;
+  overflow-y: auto;
+}
 
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
