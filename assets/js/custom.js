@@ -17,7 +17,7 @@ var Frontpage = function()
 	         var toLong = this.length>n,
 	             s_ = toLong ? this.substr(0,n-1) : this;
 	         s_ = useWordBoundary && toLong ? s_.substr(0,s_.lastIndexOf(' ')) : s_;
-	         return  toLong ? s_ + '&hellip; <a class="btn btn-info btn-mini btn-block btn-showmore">Show More</a>' : s_;
+	         return  toLong ? s_ + '&hellip; <a class="btn btn-mini btn-block btn-showmore">Show More</a>' : s_;
 	      };
 	/**
 	 * The exports variable is responsible for
@@ -99,13 +99,14 @@ var Frontpage = function()
 				  	console.log('extraction success');
 				  	if(data.article.body) {
 				  		var content = data.article.body;
-				  		var content_short = content.trunc(300, true);
+				  		var content_short = content.trunc(250, true);
 				  		content = content.replace(/\r\n/g, "<br />");
 				  		panel.html(content_short);
+				  		panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
 				  	}else if(data.article.image != null){
 				  		panel.html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
 				  	}else{
-				  		panel.html('<div class="alert alert-danger">There was an error... Sorry about that</div>');
+				  		panel.html('<div class="alert alert-danger"><p>There was an error... Sorry about that</p><p>Go to: <a href="'+url+'" target="_blank">Link</a></p></div>');
 				  	}
 				  },
 				  error: function(data) {
