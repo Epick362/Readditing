@@ -89,7 +89,7 @@ var Frontpage = function()
 				  success: function(data){
 				  	console.log('extraction success');
 				  	$(this).html(data.article.body);
-				  }
+				  },
 				  error: function(data) {
 				  	console.log('extraction error');
 				  	$(this).html('<div class="alert alert-error">There was an error...</div>');
