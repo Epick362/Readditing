@@ -82,14 +82,17 @@ var Frontpage = function()
 	 	$('.unextracted-text').each(function() {
 	 		var url = $(this).data('url');
 			 $.ajax({
-				  type: 'POST',
+				  type: 'GET',
 				  url: 'http://reader-api.herokuapp.com/api/article',
 				  data: {'url': url},
 				  crossDomain: true,
 				  success: function(data){
 				  	console.log('extraction success');
 				  	$(this).html(data.article.body);
-				  	$(this).removeClass('.unextracted-text');
+				  }
+				  error: function(data) {
+				  	console.log('extraction error');
+				  	$(this).html('<div class="alert alert-error">There was an error...</div>');
 				  }
 			 });	 		
 	 	});
