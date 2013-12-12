@@ -90,9 +90,11 @@ var Frontpage = function()
 				  success: function(data){
 				  	console.log('extraction success');
 				  	if(data.article.body) {
-				  		panel.html(data.article.body).replace(/\r\n/g, "<br />");
+				  		var content = data.article.body;
+				  		content = content.replace(/\r\n/g, "<br />");
+				  		panel.html(data.article.body);
 				  		panel.append('<a class="btn btn-info show-more">Show More</a>');
-				  	}else if(data.article.image.length > 0){
+				  	}else if(data.article.image != null){
 				  		panel.html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
 				  	}else{
 				  		panel.html('<div class="alert alert-danger">There was an error... Sorry about that</div>');
