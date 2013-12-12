@@ -213,9 +213,15 @@ body {
   border-bottom-color: #dddddd;
 }
 
-.unextracted-text {
-  max-height: 200px;
-  overflow-y: auto;
+.extracted-text {
+  height: 100px;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.extracted-text .show-more {
+  position: absolute;
+  bottom: 0;
 }
 
 .form-signin .form-signin-heading,

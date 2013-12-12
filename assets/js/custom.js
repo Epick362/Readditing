@@ -79,7 +79,7 @@ var Frontpage = function()
 	 exports.comments = comments;
 
 	 function extractText() {
-	 	$('.unextracted-text').each(function() {
+	 	$('.extracted-text').each(function() {
 	 		var url = $(this).data('url');
 	 		var panel = $(this);
 			 $.ajax({
@@ -90,16 +90,16 @@ var Frontpage = function()
 				  success: function(data){
 				  	console.log('extraction success');
 				  	if(data.article.body) {
-				  		panel.html(data.article.body);
-				  	}else if(data.article.image){
+				  		panel.html(data.article.body).replace(/\r\n/g, "<br />");
+				  	}else if(data.article.image.length > 0){
 				  		panel.html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
 				  	}else{
-				  		panel.html('<div class="alert alert-error">There was an error...</div>');
+				  		panel.html('<div class="alert alert-danger">There was an error... Sorry about that</div>');
 				  	}
 				  },
 				  error: function(data) {
 				  	console.log('extraction error');
-				  	html.html('<div class="alert alert-error">There was an error...</div>');
+				  	html.html('<div class="alert alert-danger">There was an error... Sorry about that</div>');
 				  }
 			 });	 		
 	 	});

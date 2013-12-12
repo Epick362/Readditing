@@ -33,7 +33,7 @@ class Display
 	}
 
 	public function ajax_extractedtext($post) {
-		return '<div class="unextracted-text" data-post="'.$post->data->id.'" data-url="'.$post->data->url.'"><div class="alert alert-info"><i class="icon-refresh icon-spin"></i> Loading...</div></div>';
+		return '<div class="extracted-text" data-post="'.$post->data->id.'" data-url="'.$post->data->url.'"><div class="alert alert-info"><i class="icon-refresh icon-spin"></i> Loading...</div></div>';
 	}
 
 	public function extractedtext($post) {
