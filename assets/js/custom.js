@@ -17,7 +17,7 @@ var Frontpage = function()
 	         var toLong = this.length>n,
 	             s_ = toLong ? this.substr(0,n-1) : this;
 	         s_ = useWordBoundary && toLong ? s_.substr(0,s_.lastIndexOf(' ')) : s_;
-	         return  toLong ? s_ + '&hellip; <a class="btn btn-mini btn-block btn-showmore">Show More</a>' : s_;
+	         return  toLong ? s_ + '&hellip; <a style="margin-top:10px" class="btn btn-default btn-mini btn-block btn-showmore">Show More</a>' : s_;
 	      };
 	/**
 	 * The exports variable is responsible for
