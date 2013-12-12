@@ -88,6 +88,7 @@ var Frontpage = function()
 				  crossDomain: true,
 				  success: function(data){
 				  	console.log('extraction success');
+				  	alert(data.article.body);
 				  	$(this).append(data.article.body);
 				  },
 				  error: function(data) {
