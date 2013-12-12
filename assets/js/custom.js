@@ -91,6 +91,7 @@ var Frontpage = function()
 				  	console.log('extraction success');
 				  	if(data.article.body) {
 				  		panel.html(data.article.body).replace(/\r\n/g, "<br />");
+				  		panel.append('<a class="btn btn-info show-more">Show More</a>');
 				  	}else if(data.article.image.length > 0){
 				  		panel.html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
 				  	}else{
