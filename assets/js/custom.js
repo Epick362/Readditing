@@ -81,6 +81,7 @@ var Frontpage = function()
 	 function extractText() {
 	 	$('.unextracted-text').each(function() {
 	 		var url = $(this).data('url');
+	 		var panel = $(this);
 			 $.ajax({
 				  type: 'GET',
 				  url: 'http://reader-api.herokuapp.com/api/article',
@@ -88,12 +89,17 @@ var Frontpage = function()
 				  crossDomain: true,
 				  success: function(data){
 				  	console.log('extraction success');
-				  	alert(data.article.body);
-				  	$(this).append(data.article.body);
+				  	if(data.article.body) {
+				  		panel.html(data.article.body);
+				  	}else if(data.article.image){
+				  		panel.html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
+				  	}else{
+				  		panel.html('<div class="alert alert-error">There was an error...</div>');
+				  	}
 				  },
 				  error: function(data) {
 				  	console.log('extraction error');
-				  	$(this).html('<div class="alert alert-error">There was an error...</div>');
+				  	html.html('<div class="alert alert-error">There was an error...</div>');
 				  }
 			 });	 		
 	 	});
