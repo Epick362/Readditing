@@ -6,6 +6,7 @@
 		$(function(){
 			frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
 			frontpage.extractText();
+			frontpage.showMore();
 
 			var lastID = $('#feed').children('.panel').last().data('post');
 
@@ -23,6 +24,7 @@
 					 $(elementsLoaded).fadeIn();
 					 frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
 					 frontpage.extractText();
+					 frontpage.showMore();
 				}
 			});
 				   

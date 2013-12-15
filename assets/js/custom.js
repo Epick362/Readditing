@@ -118,6 +118,17 @@ var Frontpage = function()
 	 }
 	 exports.extractText = extractText;
 
+	 function showMore() {
+	 	$('.btn-showmore').on('click', function() {
+	 		var fulltext = $(this).closest('.panel').find('.full-text');
+	 		var extractedtext = $(this).closest('.panel').find('.extracted-text');
+
+	 		extractedtext.slideUp('fast');
+	 		fulltext.slideDown();
+	 	});
+	 }
+	 exports.showMore = showMore;
+
 	 /**
 	  * Last but not least, we have to return
 	  * the exports object.
