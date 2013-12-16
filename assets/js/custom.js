@@ -26,6 +26,11 @@ var Frontpage = function()
 	 */
 	var exports = {};
 
+	function nl2br (str, is_xhtml) {
+	    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+	    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+	}
+
 	/**
 	 * Write your public functions like this.
 	 * Make sure you include it into the exports
@@ -110,7 +115,7 @@ var Frontpage = function()
 				  	if(data.article.body) {
 				  		var content = data.article.body;
 				  		var content_short = content.trunc(250, true);
-				  		content = content.replace(/\r\n/g, "<br />");
+				  		content = content.nl2br();
 				  		panel.html(content_short);
 				  		panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
 				  	}else if(data.article.image != null){
