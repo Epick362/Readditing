@@ -74,7 +74,7 @@
 			</div>
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
-<? if($subreddits) { ?>
+<? if(isset($subreddits)) { ?>
 					<div class="panel panel-info">
 						<div class="panel-heading">Subreddits</div>
 						<div class="panel-body">
