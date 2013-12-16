@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) die();
 class User extends Main_Controller {
 	public function index($username = null) {
-		if(!$username && $this->user->name) {
-			$username = $this->user->name;
+		if(!$username && $this->user->data->name) {
+			$username = $this->user->data->name;
 		}else{
 			redirect(base_url());
 		}
