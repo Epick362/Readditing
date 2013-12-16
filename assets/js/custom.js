@@ -120,8 +120,9 @@ var Frontpage = function()
 
 	 function showMore() {
 	 	$('.btn-showmore').on('click', function() {
-	 		var fulltext = $(this).closest('.panel').find('.full-text');
-	 		var extractedtext = $(this).closest('.panel').find('.extracted-text');
+	 		console.log('showmore-click');
+	 		var fulltext = $(this).closest('.panel-body').find('.full-text');
+	 		var extractedtext = $(this).closest('.panel-body').find('.extracted-text');
 
 	 		extractedtext.slideUp();
 	 		fulltext.slideDown();
