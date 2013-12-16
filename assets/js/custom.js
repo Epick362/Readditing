@@ -17,7 +17,7 @@ var Frontpage = function()
 	         var toLong = this.length>n,
 	             s_ = toLong ? this.substr(0,n-1) : this;
 	         s_ = useWordBoundary && toLong ? s_.substr(0,s_.lastIndexOf(' ')) : s_;
-	         return  toLong ? s_ + '&hellip; <a class="btn btn-default btn-mini btn-block showmore">Show More</a>' : s_;
+	         return  toLong ? s_ + '&hellip;' : s_;
 	      };
 	/**
 	 * The exports variable is responsible for
@@ -115,6 +115,7 @@ var Frontpage = function()
 				  		var content_short = content.trunc(250, true);
 				  		content = content.replace(/\r\n/g, "<br />");
 				  		panel.html(content_short);
+				  		panel.append('<a class="btn btn-default btn-mini btn-block showmore">Show More</a>');
 				  		panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
 				  	}else if(data.article.image != null){
 				  		panel.html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
