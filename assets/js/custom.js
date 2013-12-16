@@ -96,7 +96,7 @@ var Frontpage = function()
 	 		var extractedtext = $(this).closest('.panel-body').find('.extracted-text');
 
 	 		extractedtext.hide();
-	 		fulltext.slideDown();
+	 		fulltext.fadeIn('fast');
 	 	});
 	 }
 	 exports.showMore = showMore;
