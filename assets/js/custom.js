@@ -86,6 +86,19 @@ var Frontpage = function()
 	 }
 	 exports.comments = comments;
 
+
+	 function showMore() {
+	 	$('.btn-showmore').on('click', function() {
+	 		console.log('showmore-click');
+	 		var fulltext = $(this).closest('.panel-body').find('.full-text');
+	 		var extractedtext = $(this).closest('.panel-body').find('.extracted-text');
+
+	 		extractedtext.slideUp();
+	 		fulltext.slideDown();
+	 	});
+	 }
+	 exports.showMore = showMore;
+
 	 function extractText() {
 	 	$('.extracted-text').each(function() {
 	 		var url = $(this).data('url');
@@ -117,18 +130,6 @@ var Frontpage = function()
 	 	});
 	 }
 	 exports.extractText = extractText;
-
-	 function showMore() {
-	 	$('.btn-showmore').on('click', function() {
-	 		console.log('showmore-click');
-	 		var fulltext = $(this).closest('.panel-body').find('.full-text');
-	 		var extractedtext = $(this).closest('.panel-body').find('.extracted-text');
-
-	 		extractedtext.slideUp();
-	 		fulltext.slideDown();
-	 	});
-	 }
-	 exports.showMore = showMore;
 
 	 /**
 	  * Last but not least, we have to return
