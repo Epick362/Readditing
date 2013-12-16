@@ -80,7 +80,7 @@ var Frontpage = function()
 					panel.find('.media-list').append(data);
 					panel.find('.comments-container').slideDown();
 				  	// apply event handlers
-				  	init();
+				  	showMore();
 				  },
 				  dataType: 'html'
 			 });
@@ -124,8 +124,6 @@ var Frontpage = function()
 				  	}else{
 				  		panel.html('<div class="alert alert-danger"><p>There was an error... Sorry about that</p><p>Go to: <a href="'+url+'" target="_blank">Link</a></p></div>');
 				  	}
-				  	// apply event handlers
-				  	init();
 				  },
 				  error: function(data) {
 				  	console.log('extraction error');
