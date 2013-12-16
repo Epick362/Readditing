@@ -79,8 +79,6 @@ var Frontpage = function()
 				  	console.log('request success');
 					panel.find('.media-list').append(data);
 					panel.find('.comments-container').slideDown();
-				  	// apply event handlers
-				  	showMore();
 				  },
 				  dataType: 'html'
 			 });
@@ -124,6 +122,7 @@ var Frontpage = function()
 				  	}else{
 				  		panel.html('<div class="alert alert-danger"><p>There was an error... Sorry about that</p><p>Go to: <a href="'+url+'" target="_blank">Link</a></p></div>');
 				  	}
+				  	showMore();
 				  },
 				  error: function(data) {
 				  	console.log('extraction error');
