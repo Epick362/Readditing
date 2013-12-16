@@ -1,7 +1,16 @@
 <?php if (!defined('BASEPATH')) die();
-class User extends CI_Controller {
-	public function index() {
-		redirect(base_url());
+class User extends Main_Controller {
+	public function index($username = null) {
+		if(!$username && $this->user->name) {
+			$username = $this->user->name;
+		}else{
+			redirect(base_url());
+		}
+
+		$data->username = $username;
+
+		$this->template->set('title', $username);
+		$this->template->frontpage('user', $data);
 	}
 
 	public function login() {
