@@ -9,8 +9,6 @@ class R extends Main_Controller {
 		$data->show = $show;
 		$data->user = $this->user;
 
-		//echo '<pre>'; print_r($this->reddit->getComments('leagueoflegends', '1shguf')); echo '</pre>';
-
 		$params = array('limit' => 15);
 
 		if($after) {

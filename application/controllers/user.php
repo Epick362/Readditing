@@ -8,6 +8,8 @@ class User extends Main_Controller {
 		}
 
 		$data->username = $username;
+		$data->subreddit = '';
+		$data->show = '';
 
 		$this->template->set('title', $username);
 		$this->template->frontpage('user', $data);

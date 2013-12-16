@@ -12,11 +12,13 @@
 				<a class="navbar-brand" href="<?=base_url()?>"><div class="brand-image">r</div></a>
 			</div>
 			<div class="collapse navbar-collapse">
+<? if($subreddit) { ?>
 				<ul class="nav navbar-nav">
 					<li class="<?=($show=='hot')? 'active' : ''; ?>"><a href="<?=base_url('r/'.$subreddit.'/hot')?>">Hot</a></li>
 					<li class="<?=($show=='new')? 'active' : ''; ?>"><a href="<?=base_url('r/'.$subreddit.'/new')?>">New</a></li>
 					<li class="<?=($show=='rising')? 'active' : ''; ?>"><a href="<?=base_url('r/'.$subreddit.'/rising')?>">Rising</a></li>
 				</ul>
+<? } ?>
 				<div class="col-sm-4 col-md-4">
 					<?=form_open(base_url('user/go'), array('class' => 'navbar-form'))?>
 					<div class="input-group">
@@ -72,6 +74,7 @@
 			</div>
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
+<? if($subreddits) { ?>
 					<div class="panel panel-info">
 						<div class="panel-heading">Subreddits</div>
 						<div class="panel-body">
@@ -82,6 +85,7 @@
 ?>							
 						</div>
 					</div>
+<? } ?>
 				</div>
 			</div>
 		</div>
