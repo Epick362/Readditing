@@ -3,7 +3,7 @@ class User extends Main_Controller {
 	public function index($username = null) {
 		if(!$username && $this->user->data->name) {
 			$username = $this->user->data->name;
-		}else{
+		}elseif(!$username){
 			redirect(base_url());
 		}
 
