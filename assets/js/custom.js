@@ -58,7 +58,8 @@ var Frontpage = function()
 	  */
 	 function init()
 	 {
-
+	 	extractText();
+	 	showMore();
 	 }
 	 exports.init = init;
 
@@ -78,6 +79,8 @@ var Frontpage = function()
 				  	console.log('request success');
 					panel.find('.media-list').append(data);
 					panel.find('.comments-container').slideDown();
+				  	// apply event handlers
+				  	init();
 				  },
 				  dataType: 'html'
 			 });
@@ -121,6 +124,8 @@ var Frontpage = function()
 				  	}else{
 				  		panel.html('<div class="alert alert-danger"><p>There was an error... Sorry about that</p><p>Go to: <a href="'+url+'" target="_blank">Link</a></p></div>');
 				  	}
+				  	// apply event handlers
+				  	init();
 				  },
 				  error: function(data) {
 				  	console.log('extraction error');
@@ -161,5 +166,4 @@ frontpage.public_function();
  */
 $(document).ready(function() {
 	frontpage.init();
-	frontpage.showMore();
 });
