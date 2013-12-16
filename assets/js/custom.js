@@ -17,7 +17,7 @@ var Frontpage = function()
 	         var toLong = this.length>n,
 	             s_ = toLong ? this.substr(0,n-1) : this;
 	         s_ = useWordBoundary && toLong ? s_.substr(0,s_.lastIndexOf(' ')) : s_;
-	         return  toLong ? s_ + '&hellip; <a style="margin-top:10px" class="btn btn-default btn-mini btn-block btn-showmore">Show More</a>' : s_;
+	         return  toLong ? s_ + '&hellip; <a class="btn btn-default btn-mini btn-block showmore">Show More</a>' : s_;
 	      };
 	/**
 	 * The exports variable is responsible for
@@ -88,7 +88,7 @@ var Frontpage = function()
 
 
 	 function showMore() {
-	 	$('.btn-showmore').on('click', function() {
+	 	$('.showmore').on('click', function() {
 	 		console.log('showmore-click');
 	 		var fulltext = $(this).closest('.panel-body').find('.full-text');
 	 		var extractedtext = $(this).closest('.panel-body').find('.extracted-text');

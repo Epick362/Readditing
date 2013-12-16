@@ -219,9 +219,8 @@ body {
   position: relative;
 }
 
-.extracted-text .show-more {
-  position: absolute;
-  bottom: 0;
+.extracted-text .showmore {
+  margin-top: 10px;
 }
 
 .form-signin .form-signin-heading,
