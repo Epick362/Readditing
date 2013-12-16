@@ -115,7 +115,7 @@ var Frontpage = function()
 				  	if(data.article.body) {
 				  		var content = data.article.body;
 				  		var content_short = content.trunc(250, true);
-				  		content = content.nl2br();
+				  		content = nl2br(content);
 				  		panel.html(content_short);
 				  		panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
 				  	}else if(data.article.image != null){
