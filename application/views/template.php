@@ -53,6 +53,7 @@
 							<?=form_open(base_url('user/login'), array('class' => 'form-signin'))?>
 								<?=form_input(array('name' => 'user', 'class' => 'form-control', 'placeholder' => 'Username', 'type' => 'text')) ?>
 								<?=form_input(array('name' => 'passwd', 'class' => 'form-control', 'placeholder' => 'Password', 'type' => 'password')) ?>
+								<div class="alert alert-info"><i>Please note that we do not collect or store your login information in any way</i></div>
 								<?=form_submit(array('class' => 'btn btn-primary btn-block'), 'Log In')?>
 							<?=form_close()?>
 						</div>
