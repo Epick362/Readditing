@@ -1,6 +1,6 @@
 <div class="panel panel-reddit" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>">
 	<div class="panel-heading">
-		<?=$post->data->title?> <?=anchor($post->data->url, '('.$post->data->domain.')') ?>
+		<?=$post->data->title?> <?=anchor($post->data->url, '('.$post->data->domain.')', array('target' => '_blank')) ?>
 	</div>
 	<div class="panel-body">
 		<?=$post->_display?>
