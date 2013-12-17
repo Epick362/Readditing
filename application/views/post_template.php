@@ -1,6 +1,6 @@
 <div class="panel panel-reddit" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>">
 	<div class="panel-heading">
-		<?=$post->data->title?>
+		<?=$post->data->title?> <?=anchor($post->data->domain, '('.$post->data->domain.')') ?>
 	</div>
 	<div class="panel-body">
 		<?=$post->_display?>
