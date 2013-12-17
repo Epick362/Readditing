@@ -35,12 +35,16 @@
 <? if($user) { ?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-large"></i> <?=$user->data->name?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
+							<li><a href="#">Overview</a></li>
+							<li><a href="#">Comments</a></li>
+							<li><a href="#">Submitted</a></li>
+							<li><a href="#">Gilded</a></li>
+							<li><a href="#">Liked</a></li>
+							<li><a href="#">Disliked</a></li>
+							<li><a href="#">Saved</a></li>
 							<li class="divider"></li>
-							<li class="dropdown-header">Nav header</li>
-							<li><a href="#">Separated link</a></li>
+							<li><a href="#">Inbox</a></li>
+							<li><a href="#">Preferences</a></li>
 							<li><a href="<?=base_url('user/logout')?>">Logout</a></li>
 						</ul>
 <? }else{ ?>

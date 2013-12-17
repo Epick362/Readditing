@@ -12,7 +12,7 @@ class User extends Main_Controller {
 		$data->show = '';
 		$data->user = $this->user;
 
-		$this->template->set('title', $username);
+		$this->template->set('title', $username.'\'s user profile');
 		$this->template->frontpage('user', $data);
 	}
 
