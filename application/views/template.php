@@ -49,7 +49,7 @@
 						</ul>
 <? }else{ ?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-large"></i> Sign In </a>
-						<div class="dropdown-menu" style="padding:10px;">
+						<div class="dropdown-menu" style="width:200px;padding:10px;">
 							<?=form_open(base_url('user/login'), array('class' => 'form-signin'))?>
 								<?=form_input(array('name' => 'user', 'class' => 'form-control', 'placeholder' => 'Username', 'type' => 'text')) ?>
 								<?=form_input(array('name' => 'passwd', 'class' => 'form-control', 'placeholder' => 'Password', 'type' => 'password')) ?>
