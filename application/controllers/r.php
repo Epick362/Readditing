@@ -3,6 +3,8 @@ class R extends Main_Controller {
 	public function index($subreddit = null, $show = 'hot', $after = null) {
 		$data = new stdClass();
 
+		phpinfo();
+
 		if(!$subreddit){
 			$data->subreddit = 'home';
 		}else{
