@@ -73,6 +73,7 @@ var Frontpage = function()
 	 		var panel = $(this).closest('.panel');
 			var postID = panel.data('post');
 			var subreddit = panel.data('subreddit');
+	 		$(this).html('<i class="icon-refresh icon-spin"></i> Loading...');
 			console.log(postID);
 			 $.ajax({
 				  type: 'POST',
