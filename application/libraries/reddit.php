@@ -27,7 +27,7 @@ class reddit{
         $this->_ci->load->library('Curl');
         $this->_ci->load->library('REST');
 
-        $provider = $this->oauth2->provider('reddit', array('id' => '7Ojt4UvaXdlfIg', 'secret' => 'diuIcaD4ejI0ZUlQXbDqRTxBRjA'));
+        $provider = $this->_ci->oauth2->provider('reddit', array('id' => '7Ojt4UvaXdlfIg', 'secret' => 'diuIcaD4ejI0ZUlQXbDqRTxBRjA'));
         print_r($provider);
     }
 
