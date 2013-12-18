@@ -192,11 +192,11 @@ var Frontpage = function()
 
     function upvotesHandler() {
 		$("figure.upvote").bind("upvote:added", function(e) {
-			var post = $(this).closest('panel').data('post');
+			var post = $(this).closest('.panel').data('post');
 			 $.ajax({
 				  type: 'POST',
 				  url: 'http://readditing.herokuapp.com/ajax/vote',
-				  data: {'fullname': 't3_'+post, 'dir': 1},
+				  data: {'fullname': 't3_'+post, 'dir': '1'},
 				  success: function(data){
 				  	alert('upvoted!');
 				  },
@@ -208,11 +208,11 @@ var Frontpage = function()
 		});
 
 		$("figure.upvote").bind("upvote:removed", function(e) {
-			var post = $(this).closest('panel').data('post');
+			var post = $(this).closest('.panel').data('post');
 			 $.ajax({
 				  type: 'POST',
 				  url: 'http://readditing.herokuapp.com/ajax/vote',
-				  data: {'fullname': 't3_'+post, 'dir': 0},
+				  data: {'fullname': 't3_'+post, 'dir': '0'},
 				  success: function(data){
 				  	alert('upvote removed!');
 				  },
