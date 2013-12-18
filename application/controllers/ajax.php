@@ -25,6 +25,16 @@ class Ajax extends Main_Controller {
 			return;
 		}
 	}
+
+	public function upvote() {
+		if($this->input->post('fullname') && $this->input->post('dir')) {
+			$response = $this->reddit->addVote($this->input->post('fullname'), $this->input->post('dir'));
+			echo $response;
+		}else{
+			echo 'No input';
+			return;			
+		}
+	}
 }
 
 /* End of file Ajax.php */

@@ -66,13 +66,14 @@ var Frontpage = function()
 	 	extractText();
 	 	showMore();
 	 	scrollPosts();
+	 	comments();
 
 		$("figure.upvoteable").upvoteable();
 	 	upvotesHandler();
 	 }
 	 exports.init = init;
 
-	 function comments(baseUrl) {
+	 function comments() {
 	 	$('.comments-btn').on('click', function() {
 	 		var button = $(this);
 	 		var panel = $(this).closest('.panel');
@@ -81,7 +82,7 @@ var Frontpage = function()
 	 		button.html('<i class="icon-refresh icon-spin"></i> Loading...');
 			 $.ajax({
 				  type: 'POST',
-				  url: baseUrl,
+				  url: 'http://readditing.herokuapp.com/ajax/getComments',
 				  data: {'subreddit': subreddit, 'article': postID},
 				  success: function(data){
 				  	console.log('request success');
@@ -191,15 +192,35 @@ var Frontpage = function()
 
     function upvotesHandler() {
 		$("figure.upvote").bind("upvote:added", function(e) {
-
-			alert('UPVOTED!');
-
+			var post = $(this).data('id');
+			 $.ajax({
+				  type: 'POST',
+				  url: 'http://readditing.herokuapp.com/ajax/upvote',
+				  data: {'fullname': 't3_'+post, 'dir': 1},
+				  success: function(data){
+				  	alert('upvoted!');
+				  },
+				  error: function() {
+				  	alert('error');
+				  },
+				  dataType: 'html'
+			 });
 		});
 
 		$("figure.upvote").bind("upvote:removed", function(e) {
-
-			alert('Upvote removed!');
-
+			var post = $(this).data('id');
+			 $.ajax({
+				  type: 'POST',
+				  url: 'http://readditing.herokuapp.com/ajax/upvote',
+				  data: {'fullname': 't3_'+post, 'dir': 0},
+				  success: function(data){
+				  	alert('upvote removed!');
+				  },
+				  error: function() {
+				  	alert('error');
+				  },
+				  dataType: 'html'
+			 });
 		});
     }
 

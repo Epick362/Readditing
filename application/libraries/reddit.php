@@ -28,12 +28,16 @@ class reddit{
         $this->_ci->load->library('REST');
     }
 
-
-    public function login($username, $password){
+    private function restQuery($method, $url, $data = array()) {
         $this->_ci->rest->initialize(array('server' => $this->apiHost));
         $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.herokuapp.com)');
-        $response = $this->_ci->rest->post('api/login', array('api_type' => 'json', 'user' => $username, 'passwd' => $password, 'rem' => 1));
+        $this->_ci->rest->http_header('user-agent', 'Readditing web-app (readditing.herokuapp.com)');
+        return $this->_ci->rest->{$method}($url, $data);
+    }
+
+
+    public function login($username, $password){
+        $response = $this->restQuery('post', 'api/login', array('api_type' => 'json', 'user' => $username, 'passwd' => $password, 'rem' => 1));
 
         if (count($response->json->errors) > 0){
             return false;    
@@ -129,10 +133,7 @@ class reddit{
     * @link https://github.com/reddit/reddit/wiki/API%3A-me.json
     */
     public function getUser(){
-        $this->_ci->rest->initialize(array('server' => $this->apiHost));
-        $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
-        return $this->_ci->rest->get('api/me.json');
+        return $this->restQuery('get', 'api/me.json');
     }
     
     /**
@@ -142,10 +143,7 @@ class reddit{
     * @link https://github.com/reddit/reddit/wiki/API%3A-mine.json
     */
     public function getSubscriptions(){
-        $this->_ci->rest->initialize(array('server' => $this->apiHost));
-        $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
-        return $this->_ci->rest->get('reddits/mine.json')->data->children;
+        return $this->restQuery('get', 'reddits/mine.json')->data->children;
     }
     
     /**
@@ -159,21 +157,12 @@ class reddit{
         if(empty($params)) {
             $params['limit'] = 10;
         }
-        $this->_ci->rest->initialize(array('server' => $this->apiHost));
-        $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
 
         if($sr == 'home' || $sr == 'reddit' || !$sr){
-            $listing = $this->_ci->rest->get('.json', $params)->data->children;
+            $listing = $this->restQuery('get', '.json', $params)->data->children;
         } else {
-            $listing = $this->_ci->rest->get('r/'.$sr.'/'.$show.'.json', $params)->data->children;
+            $listing = $this->restQuery('get', 'r/'.$sr.'/'.$show.'.json', $params)->data->children;
         }
-
-        /* FUCKS UP AUTOSCROLL
-        uasort($listing, function($a, $b) {
-            return $b->data->score - $a->data->score;
-        });
-        */
 
         return $listing;
     }
@@ -185,10 +174,7 @@ class reddit{
     */
 
     public function getPopular() {
-        $this->_ci->rest->initialize(array('server' => $this->apiHost));
-        $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
-        return $this->_ci->rest->get('subreddits/popular.json')->data->children;
+        return $this->restQuery('get', 'subreddits/popular.json')->data->children;
     }
 
     /*
@@ -196,10 +182,7 @@ class reddit{
     */
     
     public function getComments($subreddit, $postID) {
-        $this->_ci->rest->initialize(array('server' => $this->apiHost));
-        $this->_ci->rest->format('json');
-        $this->_ci->rest->http_header('user-agent', 'Reddit Reader web-app (redditreader.com)');
-        $response = $this->_ci->rest->get('r/'.$subreddit.'/comments/'.$postID.'.json', array('depth' => 3));
+        $response = $this->restQuery('get', 'r/'.$subreddit.'/comments/'.$postID.'.json', array('depth' => 3));
         return $response[1]->data->children;
     }
 
@@ -372,14 +355,8 @@ class reddit{
     * @param int $vote The vote to be made (1 = upvote, 0 = no vote,
     *                  -1 = downvote)
     */
-    public function addVote($name, $vote = 1){
-        $response = null;
-        if ($name){
-            $urlVote = "{$this->apiHost}/vote";
-            $postData = sprintf("id=%s&dir=%s&uh=%s", $name, $vote, $this->modHash);
-            $response = $this->runCurl($urlVote, $postData);
-        }
-        return $response;
+    public function addVote($fullname, $vote = 1){
+        return $this->restQuery('post', 'api/vote', array('id' => $fullname, 'dir' => $vote));
     }
     
     /**

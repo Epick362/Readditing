@@ -6,8 +6,6 @@
 	<script src="<?php echo base_url('assets/js/custom.js') ?>"></script>
 	<script type="text/javascript">
 		$(function(){
-			frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
-
 			var lastID = $('#feed').children('.panel').last().data('post');
 
 			$('#feed').scrollPagination({
@@ -22,7 +20,6 @@
 				'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
 					 $('#loading').fadeOut();
 					 $(elementsLoaded).fadeIn();
-					 frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
 					 frontpage.init();
 				}
 			});
