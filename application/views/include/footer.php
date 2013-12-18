@@ -2,6 +2,7 @@
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/scrollpagination.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/custom.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/scrollTo.min.js') ?>"></script>
 	<script type="text/javascript">
 		$(function(){
 			frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
