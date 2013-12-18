@@ -5,7 +5,6 @@ class Main_Controller extends MY_Controller
    {
 		parent::__construct();
 		if($this->session->userdata('reddit_session')) {
-			$this->curl->set_cookies(array('reddit_session' => $this->session->userdata('reddit_session')));
 			$this->user = $this->reddit->getUser();
 			//$this->user = null;
 		}else{
