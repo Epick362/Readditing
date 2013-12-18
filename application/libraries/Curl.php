@@ -293,6 +293,11 @@ class Curl {
 			$this->option(CURLOPT_HTTPHEADER, $this->headers);
 		}
 
+        if($this->_ci->session->userdata('reddit_session')) {
+        	$this->option(CURLOPT_COOKIE, $this->_ci->session->userdata('reddit_session'));
+            //$this->_ci->curl->set_cookies(array('reddit_session' => $this->_ci->session->userdata('reddit_session')));
+        }		
+
 		$this->options();
 
 		// Execute the request & and hide all output
