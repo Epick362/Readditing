@@ -9,7 +9,7 @@ class Display
 
 	public function media($post) {
 		if($post->kind == 'media' && $post->data->media) {
-			return '<center>'.htmlspecialchars_decode($post->data->media_embed->content).'</center>';
+			return '<div class="embed-wrapper">'.htmlspecialchars_decode($post->data->media_embed->content).'</div>';
 		}
 
 		return false;
