@@ -15,12 +15,12 @@ class OAuth2_Provider_Reddit extends OAuth2_Provider
 
 	public function url_authorize()
 	{
-		return 'https://ssl.reddit.com/';
+		return 'https://ssl.reddit.com/api/v1/authorize';
 	}
 
 	public function url_access_token()
 	{
-		return 'https://oauth.reddit.com/';
+		return 'https://ssl.reddit.com/api/v1/access_token';
 	}
 
 	public function get_user_info(OAuth2_Token_Access $token)
