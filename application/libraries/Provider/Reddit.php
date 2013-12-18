@@ -25,21 +25,15 @@ class OAuth2_Provider_Reddit extends OAuth2_Provider
 
 	public function get_user_info(OAuth2_Token_Access $token)
 	{
-		$opts = array(
-			'https' => array(
-				'method' => 'GET',
-				'header' => 'Authorization: Bearer '.$token->access_token
-			)
-		);
-		$_default_opts = stream_context_get_params(stream_context_get_default());
-		
-		$opts = array_merge_recursive($_default_opts['options'], $opts);
-		$context = stream_context_create($opts);
-		$url = 'https://oauth.reddit.com/api/v1/me.json';
-
-		$user = json_decode(file_get_contents($url,false,$context));
-
-		// Create a response from the request
-		return $user;
+	    $ch = curl_init();
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+	    curl_setopt($ch, CURLOPT_HEADER, array('Authorization: bearer '.$token->access_token));
+	    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	    curl_setopt($ch, CURLOPT_URL, $url);
+	    curl_setopt($ch, CURLOPT_REFERER, $url);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	    $result = curl_exec($ch);
+	    curl_close($ch);
+	    return $result;
 	}
 }
