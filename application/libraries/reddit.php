@@ -34,7 +34,7 @@ class reddit{
         $this->_ci->rest->http_header('user-agent', 'Readditing web-app (readditing.herokuapp.com)');
 
         if($this->_ci->session->userdata('reddit_session')) {
-            $this->_ci->curl->set_cookies(array('reddit_session' => $this->session->userdata('reddit_session')));
+            $this->_ci->curl->set_cookies(array('reddit_session' => $this->_ci->session->userdata('reddit_session')));
         }
 
         return $this->_ci->rest->{$method}($url, $data);
