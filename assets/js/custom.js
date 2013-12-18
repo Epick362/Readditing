@@ -71,11 +71,11 @@ var Frontpage = function()
 
 	 function comments(baseUrl) {
 	 	$('.comments-btn').on('click', function() {
+	 		var button = $(this);
 	 		var panel = $(this).closest('.panel');
 			var postID = panel.data('post');
 			var subreddit = panel.data('subreddit');
-	 		$(this).html('<i class="icon-refresh icon-spin"></i> Loading...');
-			console.log(postID);
+	 		button.html('<i class="icon-refresh icon-spin"></i> Loading...');
 			 $.ajax({
 				  type: 'POST',
 				  url: baseUrl,
@@ -84,6 +84,11 @@ var Frontpage = function()
 				  	console.log('request success');
 					panel.find('.media-list').append(data);
 					panel.find('.comments-container').slideDown();
+				  },
+				  error: function() {
+				  	button.removeClass('btn-primary');
+				  	button.addClass('btn-danger');
+				  	button.html('Could not fetch comments');
 				  },
 				  dataType: 'html'
 			 });
