@@ -84,6 +84,9 @@ var Frontpage = function()
 				  	console.log('request success');
 					panel.find('.media-list').append(data);
 					panel.find('.comments-container').slideDown();
+					button.removeClass('btn-primary');
+					button.addClass('btn-success');
+					button.html('Loaded');
 				  },
 				  error: function() {
 				  	button.removeClass('btn-primary');

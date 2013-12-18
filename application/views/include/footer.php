@@ -1,8 +1,9 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/scrollpagination.js') ?>"></script>
-	<script src="<?php echo base_url('assets/js/custom.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/upvoteable.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/scrollTo.min.js') ?>"></script>
+	<script src="<?php echo base_url('assets/js/custom.js') ?>"></script>
 	<script type="text/javascript">
 		$(function(){
 			frontpage.comments('<?=base_url('ajax/getComments')?>', '<?=$subreddit?>');
@@ -25,7 +26,8 @@
 					 frontpage.init();
 				}
 			});
-				   
+
+			$("figure.upvoteable").upvoteable();	   
 		});
 	</script>
 	<script>
