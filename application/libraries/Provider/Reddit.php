@@ -26,7 +26,7 @@ class OAuth2_Provider_Reddit extends OAuth2_Provider
 	public function get_user_info(OAuth2_Token_Access $token)
 	{
 		$opts = array(
-			'http' => array(
+			'https' => array(
 				'method' => 'GET',
 				'header' => 'Authorization: Bearer '.$token->access_token
 			)
