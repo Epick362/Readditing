@@ -160,7 +160,7 @@ var Frontpage = function()
         if (scroll) {
             $.scrollTo(scroll, {
                 duration: 750,
-                offset: -40       
+                offset: {top: -50, left: 0}       
             });
         }
 
