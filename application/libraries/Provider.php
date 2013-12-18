@@ -172,8 +172,16 @@ abstract class OAuth2_Provider
 			case 'GET':
 
 				// Need to switch to Request library, but need to test it on one that works
-				$url .= '?'.http_build_query($params);
-				$response = file_get_contents($url);
+				$ci = get_instance();
+
+				$ci->load->library('CURL');
+
+				$ci->curl
+					->create($url)
+					->post($params, array('failonerror' => false));
+
+				$response = $ci->curl->execute();
+
 
 				parse_str($response, $return);
 
@@ -193,7 +201,7 @@ abstract class OAuth2_Provider
 				*/
 
 				$opts = array(
-					'http' => array(
+					'https' => array(
 						'method'  => 'POST',
 						'header'  => 'Content-type: application/x-www-form-urlencoded',
 						'content' => http_build_query($params),
