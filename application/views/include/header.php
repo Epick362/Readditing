@@ -12,6 +12,7 @@
    <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
    <link href="<?php echo base_url('assets/css/font-awesome.css') ?>" rel="stylesheet">
    <link href="<?php echo base_url('assets/css/custom.css') ?>" rel="stylesheet">
+   <link href="<?php echo base_url('assets/css/upvoteable.css') ?>" rel="stylesheet">
    <link rel="shortcut icon" href="<?=base_url('assets/img/favicon.ico')?>" type="image/x-icon">
    <link rel="icon" href="<?=base_url('assets/img/favicon.ico')?>" type="image/x-icon">
 </head>
