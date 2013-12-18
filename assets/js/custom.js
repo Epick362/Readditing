@@ -66,6 +66,7 @@ var Frontpage = function()
 	 	extractText();
 	 	showMore();
 	 	scrollPosts();
+	 	upvotesHandler();
 	 }
 	 exports.init = init;
 
@@ -185,6 +186,20 @@ var Frontpage = function()
 		});
     }
     exports.scrollPosts = scrollPosts;
+
+    function upvotesHandler() {
+		$("figure.upvote").bind("upvote:added", function(e) {
+
+			alert('UPVOTED!');
+
+		});
+
+		$("figure.upvote").bind("upvote:removed", function(e) {
+
+			alert('Upvote removed!');
+
+		});
+    }
 
 	 /**
 	  * Last but not least, we have to return
