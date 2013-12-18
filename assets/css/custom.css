@@ -259,16 +259,17 @@ body {
   width: auto;
 }
 
-.embed-wrapper {
+.media-wrapper {
     position: relative;
     margin: 0 auto;
     padding-bottom: 56.25%;
     padding-top: 30px; height: 0; overflow: hidden;
 }
  
-.embed-wrapper iframe,
-.embed-wrapper object,
-.embed-wrapper embed {
+.media-wrapper iframe,
+.media-wrapper object,
+.media-wrapper embed,
+.media-wrapper img {
     position: absolute;
     top: 0;
     left: 0;

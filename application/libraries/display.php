@@ -9,7 +9,7 @@ class Display
 
 	public function media($post) {
 		if($post->kind == 'media' && $post->data->media) {
-			return '<div class="embed-wrapper">'.htmlspecialchars_decode($post->data->media_embed->content).'</div>';
+			return '<div class="media-wrapper">'.htmlspecialchars_decode($post->data->media_embed->content).'</div>';
 		}
 
 		return false;
@@ -17,7 +17,7 @@ class Display
 
 	public function image($post) {
 		if($post->kind == 'image') {
-			return '<center><img class="img-rounded img-post" src="'.$post->data->url.'" /></center>';
+			return '<div class="media-wrapper"><img class="img-rounded img-post" src="'.$post->data->url.'" /></div>';
 			//return 'image';
 		}
 
