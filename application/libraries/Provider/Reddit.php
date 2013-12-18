@@ -25,6 +25,7 @@ class OAuth2_Provider_Reddit extends OAuth2_Provider
 
 	public function get_user_info(OAuth2_Token_Access $token)
 	{
+		$url = 'https://oauth.reddit.com/api/v1/me.json';
 	    $ch = curl_init();
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 	    curl_setopt($ch, CURLOPT_HEADER, array('Authorization: bearer '.$token->access_token));
