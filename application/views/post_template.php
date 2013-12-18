@@ -3,18 +3,20 @@
 		<?=$post->data->title?> <?=anchor($post->data->url, '('.$post->data->domain.')', array('target' => '_blank')) ?>
 	</div>
 	<div class="panel-body">
-		<figure class="upvote upvoteable" data-id="1">
-			<a class="upvoteobject">
-				<div class="opening">
-					<div class="circle">&nbsp;</div>
-				</div>
-			</a>
+		<div class="upvote-wrapper">
+			<figure class="upvote upvoteable" data-id="1">
+				<a class="upvoteobject">
+					<div class="opening">
+						<div class="circle">&nbsp;</div>
+					</div>
+				</a>
 
-			<a href="#upvote" class="count">
-				<span class="num"><?=$post->data->score?></span>
-				<span class="txt">Upvotes</span>
-			</a>
-		</figure>		
+				<a href="#upvote" class="count">
+					<span class="num"><?=$post->data->score?></span>
+					<span class="txt">Upvotes</span>
+				</a>
+			</figure>			
+		</div>
 		<?=$post->_display?>
 	</div>
 	<div class="panel-comments comments-container" style="display:none">

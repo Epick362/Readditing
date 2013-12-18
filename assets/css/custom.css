@@ -277,6 +277,10 @@ body {
     height: 100%;
 }
 
+.upvote-wrapper {
+  position: relative;
+}
+
 @media (max-width: 1200px) {
   .img-post {
     max-width: 666px;
