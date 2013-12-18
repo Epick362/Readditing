@@ -27,7 +27,7 @@
 				}
 			});
 
-			$("figure.upvoteable").upvoteable();	   
+			$("figure.upvoteable").upvoteable();
 		});
 	</script>
 	<script>
