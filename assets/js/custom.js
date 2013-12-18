@@ -66,6 +66,8 @@ var Frontpage = function()
 	 	extractText();
 	 	showMore();
 	 	scrollPosts();
+
+		$("figure.upvoteable").upvoteable();
 	 	upvotesHandler();
 	 }
 	 exports.init = init;

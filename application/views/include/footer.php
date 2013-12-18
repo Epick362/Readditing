@@ -26,8 +26,6 @@
 					 frontpage.init();
 				}
 			});
-
-			$("figure.upvoteable").upvoteable();
 		});
 	</script>
 	<script>
