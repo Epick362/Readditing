@@ -91,10 +91,6 @@
 						</div>
 					</div>
 <? } ?>
-					<div id="nav-dock"> 
-						<a id="prev" href="#">↑ Prev</a> 
-						<a id="next" href="#">↓ Next</a>
-					</div>
 				</div>
 			</div>
 		</div>
