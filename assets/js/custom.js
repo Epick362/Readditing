@@ -159,7 +159,8 @@ var Frontpage = function()
 
         if (scroll) {
             $.scrollTo(scroll, {
-                duration: 750     
+                duration: 250,
+                queue: false     
             });
         }
 

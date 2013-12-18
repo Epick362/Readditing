@@ -66,6 +66,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9" role="main">
+				<div class="alert alert-success">You can now scoll to next post by pressing N key!</div>
 <?
 		if($this->session->flashdata('message') && $this->session->flashdata('message_type')) {
 ?>
