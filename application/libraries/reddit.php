@@ -47,7 +47,8 @@ class reddit{
         if (count($response->json->errors) > 0){
             return false;    
         } else {
-            $this->modHash = $response->json->data->modhash;   
+            $this->modHash = $response->json->data->modhash;  
+            $this->_ci->session->set_userdata('modhash', $response->json->data->modhash); 
             $this->session = $response->json->data->cookie;
             $this->_ci->session->set_userdata('reddit_session', $response->json->data->cookie);
             return $this->modHash;
@@ -361,7 +362,7 @@ class reddit{
     *                  -1 = downvote)
     */
     public function addVote($fullname, $vote = 1){
-        return $this->restQuery('post', 'api/vote', array('id' => $fullname, 'dir' => $vote));
+        return $this->restQuery('post', 'api/vote', array('id' => $fullname, 'dir' => $vote, 'uh' => $this->_ci->session->userdata('modhash')));
     }
     
     /**
