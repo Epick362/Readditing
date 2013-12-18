@@ -65,6 +65,7 @@ var Frontpage = function()
 	 {
 	 	extractText();
 	 	showMore();
+	 	scrollPosts();
 	 }
 	 exports.init = init;
 
@@ -135,7 +136,7 @@ var Frontpage = function()
 	 }
 	 exports.extractText = extractText;
 
-    function scroll(direction) {
+    function scroller(direction) {
 
         var scroll, i,
                 positions = [],
@@ -160,16 +161,12 @@ var Frontpage = function()
         return false;
     }
 
-    $("#next,#prev").click(function() {        
-        return scroll($(this).attr('id'));        
-    });
-
-    $(".scrolltoanchor").click(function() {
-        $.scrollTo($($(this).attr("href")), {
-            duration: 750
-        });
-        return false;
-    });
+    function scrollPosts() {
+	    $("#next,#prev").on('click', function() {        
+	        return scroller($(this).attr('id'));        
+	    });
+    }
+    exports.scrollPosts = scrollPosts;
 
 	 /**
 	  * Last but not least, we have to return
