@@ -4,7 +4,7 @@ class Ajax extends Main_Controller {
 		if($this->input->post('subreddit') && $this->input->post('show')) {
 			$feed = $this->reddit->getFeed($this->input->post('subreddit'), $this->input->post('show'), array('after' => $this->input->post('after'), 'limit' => 10));
 			foreach($feed as $key => $post) {
-				echo $this->load->view('post_template', array('post' => $post));
+				echo $this->load->view('post_template', array('post' => $post, 'user' => $this->user));
 			}
 		}else{
 			echo 'No input';
