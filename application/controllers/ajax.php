@@ -28,7 +28,7 @@ class Ajax extends Main_Controller {
 		}
 	}
 
-	public function upvote() {
+	public function vote() {
 		if($this->input->post('fullname') && $this->input->post('dir')) {
 			$response = $this->reddit->addVote($this->input->post('fullname'), $this->input->post('dir'));
 			print_r($response);

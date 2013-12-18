@@ -195,7 +195,7 @@ var Frontpage = function()
 			var post = $(this).closest('panel').data('post');
 			 $.ajax({
 				  type: 'POST',
-				  url: 'http://readditing.herokuapp.com/ajax/upvote',
+				  url: 'http://readditing.herokuapp.com/ajax/vote',
 				  data: {'fullname': 't3_'+post, 'dir': 1},
 				  success: function(data){
 				  	alert('upvoted!');
@@ -211,7 +211,7 @@ var Frontpage = function()
 			var post = $(this).closest('panel').data('post');
 			 $.ajax({
 				  type: 'POST',
-				  url: 'http://readditing.herokuapp.com/ajax/upvote',
+				  url: 'http://readditing.herokuapp.com/ajax/vote',
 				  data: {'fullname': 't3_'+post, 'dir': 0},
 				  success: function(data){
 				  	alert('upvote removed!');
