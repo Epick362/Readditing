@@ -149,7 +149,7 @@ var Frontpage = function()
                 collection = $('.panel');
 
         collection.each(function() {
-            positions.push(parseInt($(this).offset()['top'],10));
+            positions.push(parseInt($(this).offset()['top'] + 60, 10));
         });
 
         for(i = 0; i < positions.length; i++) {
@@ -159,8 +159,7 @@ var Frontpage = function()
 
         if (scroll) {
             $.scrollTo(scroll, {
-                duration: 750,
-                offset: {top: -70, left: 0}       
+                duration: 750     
             });
         }
 
