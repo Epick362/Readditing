@@ -192,7 +192,7 @@ var Frontpage = function()
 
     function upvotesHandler() {
 		$("figure.upvote").bind("upvote:added", function(e) {
-			var post = $(this).data('id');
+			var post = $(this).closest('panel').data('post');
 			 $.ajax({
 				  type: 'POST',
 				  url: 'http://readditing.herokuapp.com/ajax/upvote',
@@ -208,7 +208,7 @@ var Frontpage = function()
 		});
 
 		$("figure.upvote").bind("upvote:removed", function(e) {
-			var post = $(this).data('id');
+			var post = $(this).closest('panel').data('post');
 			 $.ajax({
 				  type: 'POST',
 				  url: 'http://readditing.herokuapp.com/ajax/upvote',

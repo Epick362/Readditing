@@ -1,6 +1,6 @@
 <div class="panel panel-reddit" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>">
 	<div class="upvote-wrapper">
-		<figure class="upvote <? if($user) {echo 'upvoteable';} ?>" data-id="1">
+		<figure class="upvote <? if($user) {echo 'upvoteable';} ?>">
 			<a class="upvoteobject">
 				<div class="opening">
 					<div class="circle">&nbsp;</div>

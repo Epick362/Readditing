@@ -7,6 +7,7 @@ class Ajax extends Main_Controller {
 				echo $this->load->view('post_template', array('post' => $post, 'user' => $this->user));
 			}
 		}else{
+			http_response_code(400);
 			echo 'No input';
 			return;
 		}
@@ -21,6 +22,7 @@ class Ajax extends Main_Controller {
 				}
 			}
 		}else{
+			http_response_code(400);
 			echo 'No input';
 			return;
 		}
@@ -31,6 +33,7 @@ class Ajax extends Main_Controller {
 			$response = $this->reddit->addVote($this->input->post('fullname'), $this->input->post('dir'));
 			echo $response;
 		}else{
+			http_response_code(400);
 			echo 'No input';
 			return;			
 		}
