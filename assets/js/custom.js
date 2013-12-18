@@ -149,7 +149,7 @@ var Frontpage = function()
                 collection = $('.panel');
 
         collection.each(function() {
-            positions.push(parseInt($(this).offset()['top'] + 60, 10));
+            positions.push(parseInt($(this).offset()['top'], 10));
         });
 
         for(i = 0; i < positions.length; i++) {
