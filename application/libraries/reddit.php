@@ -79,6 +79,7 @@ class reddit{
     }
     
     public function getFeed($sr = null, $show = 'hot', $params = array()) {
+        $data = new stdClass();
         $data->feed = $this->getListing($sr, $show, $params);
 
         $imageTypes = array('gif', 'jpg', 'jpeg', 'png');
