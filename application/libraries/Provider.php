@@ -174,7 +174,7 @@ abstract class OAuth2_Provider
 				// Need to switch to Request library, but need to test it on one that works
 				$ci = get_instance();
 
-				$ci->load->library('CURL');
+				$ci->load->library('Curl');
 
 				$ci->curl
 					->create($url)
