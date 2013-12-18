@@ -27,7 +27,7 @@ class User extends Main_Controller {
 			if($login) {
 				setFlashMessage('success', 'Welcome back '.$this->input->post('user').'!');
 			}else{
-				setFlashMessage('error', 'Incorrect user or password.');
+				setFlashMessage('warning', 'Incorrect user or password.');
 			}
 		}
 
@@ -46,7 +46,7 @@ class User extends Main_Controller {
 		if ($this->form_validation->run()) {
 			redirect(base_url('r/'.$this->input->post('subreddit')));
 		}else{
-			setFlashMessage('error', 'Incorrect data.');
+			setFlashMessage('warning', 'Incorrect data.');
 			redirect(base_url());
 		}
 	}
