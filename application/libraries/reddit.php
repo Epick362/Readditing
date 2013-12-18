@@ -26,10 +26,6 @@ class reddit{
         log_message('debug', 'Reddit Library Initialized');
         $this->_ci->load->library('Curl');
         $this->_ci->load->library('REST');
-        $this->_ci->load->library('OAuth2');
-
-        $provider = $this->_ci->oauth2->provider('reddit', array('id' => '7Ojt4UvaXdlfIg', 'secret' => 'diuIcaD4ejI0ZUlQXbDqRTxBRjA'));
-        print_r($provider);
     }
 
     private function restQuery($method, $url, $data = array()) {

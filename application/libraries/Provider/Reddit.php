@@ -25,9 +25,13 @@ class OAuth2_Provider_Reddit extends OAuth2_Provider
 
 	public function get_user_info(OAuth2_Token_Access $token)
 	{
+		$url = 'https://oauth.reddit.com/api/v1/me.json?'.http_build_query(array(
+			'oauth_token' => $token->access_token,
+		));
+
+		$user = json_decode(file_get_contents($url));
+
 		// Create a response from the request
-		return array(
-			'uid' => $token->access_token,
-		);
+		return $user;
 	}
 }
