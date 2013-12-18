@@ -167,9 +167,18 @@ var Frontpage = function()
     }
 
     function scrollPosts() {
-	    $("#next,#prev").on('click', function() {        
-	        return scroller($(this).attr('id'));        
-	    });
+		$(window).keydown (function(event) {
+	        switch (event.which) {
+	            case 78:  // Alt-N = next
+	            case 110: // Alt-n = next
+	                scroller('next');
+	                break;
+	            case 80:  // Alt-P = prev
+	            case 112: // Alt-p = prev
+	                scroller('prev');
+	                break;
+	        }
+		});
     }
     exports.scrollPosts = scrollPosts;
 
