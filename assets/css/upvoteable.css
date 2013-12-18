@@ -53,8 +53,8 @@ figure {
 
 figure.upvote {
   position: absolute;
-  left: -100px;
-  top: 50px;
+  left: -90px;
+  top: 10px;
   text-align: center;
 }
 

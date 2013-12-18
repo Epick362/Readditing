@@ -1,22 +1,22 @@
 <div class="panel panel-reddit" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>">
+	<div class="upvote-wrapper">
+		<figure class="upvote upvoteable" data-id="1">
+			<a class="upvoteobject">
+				<div class="opening">
+					<div class="circle">&nbsp;</div>
+				</div>
+			</a>
+
+			<a href="#upvote" class="count">
+				<span class="num"><?=$post->data->ups?></span>
+				<span class="txt">Upvotes</span>
+			</a>
+		</figure>			
+	</div>
 	<div class="panel-heading">
 		<?=$post->data->title?> <?=anchor($post->data->url, '('.$post->data->domain.')', array('target' => '_blank')) ?>
 	</div>
 	<div class="panel-body">
-		<div class="upvote-wrapper">
-			<figure class="upvote upvoteable" data-id="1">
-				<a class="upvoteobject">
-					<div class="opening">
-						<div class="circle">&nbsp;</div>
-					</div>
-				</a>
-
-				<a href="#upvote" class="count">
-					<span class="num"><?=$post->data->score?></span>
-					<span class="txt">Upvotes</span>
-				</a>
-			</figure>			
-		</div>
 		<?=$post->_display?>
 	</div>
 	<div class="panel-comments comments-container" style="display:none">
