@@ -1,6 +1,6 @@
 <div class="panel panel-reddit" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>">
 	<div class="upvote-wrapper">
-		<figure class="upvote <? if($user) {echo 'upvoteable';} ?>">
+		<figure class="upvote <? if($user) {echo 'upvoteable';} ?> <? if($post->data->liked) {echo 'complete';} ?>">
 			<a class="upvoteobject">
 				<div class="opening">
 					<div class="circle">&nbsp;</div>
@@ -18,7 +18,6 @@
 	</div>
 	<div class="panel-body">
 		<?=$post->_display?>
-		<pre><?print_r($post) ?></pre>
 	</div>
 	<div class="panel-comments comments-container" style="display:none">
 		<ul class="media-list"></ul>
