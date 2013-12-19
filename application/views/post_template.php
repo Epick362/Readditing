@@ -18,6 +18,7 @@
 	</div>
 	<div class="panel-body">
 		<?=$post->_display?>
+		<pre><?print_r($post) ?></pre>
 	</div>
 	<div class="panel-comments comments-container" style="display:none">
 		<ul class="media-list"></ul>
