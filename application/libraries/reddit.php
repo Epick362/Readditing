@@ -10,7 +10,7 @@
 */
 class reddit{
     //private $apiHost = "http://www.reddit.com/api";
-    private $apiHost = "http://www.reddit.com/";
+    private $apiHost = "https://ssl.reddit.com/";
     private $modHash = null;
     private $session = null;
     
