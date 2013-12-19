@@ -294,8 +294,8 @@ class Curl {
 		}
 
         if($this->_ci->session->userdata('reddit_session')) {
-        	$this->option(CURLOPT_COOKIE, $this->_ci->session->userdata('reddit_session'));
-            //$this->_ci->curl->set_cookies(array('reddit_session' => $this->_ci->session->userdata('reddit_session')));
+        	//$this->option(CURLOPT_COOKIE, $this->_ci->session->userdata('reddit_session'));
+            $this->_ci->curl->set_cookies(array('reddit_session' => $this->_ci->session->userdata('reddit_session')));
         }		
 
 		$this->options();
