@@ -198,10 +198,10 @@ var Frontpage = function()
 				  url: 'http://readditing.herokuapp.com/ajax/vote',
 				  data: {'fullname': 't3_'+post, 'dir': '1'},
 				  success: function(data){
-				  	alert('upvoted!');
+				  	//alert('upvoted!');
 				  },
 				  error: function() {
-				  	alert('error');
+				  	//alert('error');
 				  },
 				  dataType: 'html'
 			 });
