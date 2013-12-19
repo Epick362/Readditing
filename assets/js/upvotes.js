@@ -28,7 +28,7 @@
       return this.element.hasClass('upvoteable');
     };
 
-    Upvoteable.prototype.isKudod = function() {
+    Upvoteable.prototype.isUpvoted = function() {
       return this.element.hasClass('complete');
     };
 
@@ -41,7 +41,7 @@
     };
 
     Upvoteable.prototype.end = function() {
-      if (this.isUpvoteable() && !this.isKudod()) {
+      if (this.isUpvoteable() && !this.isUpvoted()) {
         this.element.trigger('upvote:inactive');
         this.element.removeClass('active');
         if (this.timer != null) {
