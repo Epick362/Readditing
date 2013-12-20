@@ -35,13 +35,13 @@
 <? if($user) { ?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-large"></i> <?=$user->data->name?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Overview</a></li>
-							<li><a href="#">Comments</a></li>
-							<li><a href="#">Submitted</a></li>
-							<li><a href="#">Gilded</a></li>
-							<li><a href="#">Liked</a></li>
-							<li><a href="#">Disliked</a></li>
-							<li><a href="#">Saved</a></li>
+							<li><a href="<?=base_url($user->data->name.'/overview')?>">Overview</a></li>
+							<li><a href="<?=base_url($user->data->name.'/comments')?>">Comments</a></li>
+							<li><a href="<?=base_url($user->data->name.'/submitted')?>">Submitted</a></li>
+							<li><a href="<?=base_url($user->data->name.'/gilded')?>">Gilded</a></li>
+							<li><a href="<?=base_url($user->data->name.'/liked')?>">Liked</a></li>
+							<li><a href="<?=base_url($user->data->name.'/disliked')?>">Disliked</a></li>
+							<li><a href="<?=base_url($user->data->name.'/saved')?>">Saved</a></li>
 							<li class="divider"></li>
 							<li><a href="#">Inbox</a></li>
 							<li><a href="#">Preferences</a></li>
