@@ -128,7 +128,7 @@ class reddit{
 
                 $item->_display = $this->_ci->display->{$item->kind}($item);
             }else{
-                $item->kind = 'comment';
+                echo '<pre>'; print_r($item); echo '</pre>';
             }
         }
 
