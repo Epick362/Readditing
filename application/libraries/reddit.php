@@ -127,6 +127,8 @@ class reddit{
                 }
 
                 $item->_display = $this->_ci->display->{$item->kind}($item);
+            }else{
+                unset($item);
             }
         }
 
