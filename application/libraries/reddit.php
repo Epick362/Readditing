@@ -187,6 +187,19 @@ class reddit{
         return $response[1]->data->children;
     }
 
+    /*
+    * Get user listings
+    */
+    
+    public function getUserListings($username, $category) {
+        $response = $this->restQuery('get', 'user/'.$username.'/'.$category.'.json');
+        if($response->data->children) {
+            return $response->data->children;
+        }else{
+            return false;
+        }
+    }
+
     /**
     * Get page information
     *
