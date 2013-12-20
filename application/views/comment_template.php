@@ -12,6 +12,6 @@
 		</ul>	
 	</div>
 	<div class="panel-footer">
-		Posted in <?=anchor('#', $post->data->link_title)?> by <?=anchor(base_url('user/'.$post->data->link_author), $post->data->link_author)?>
+		Posted in <?=anchor('#', $comment->data->link_title)?> by <?=anchor(base_url('user/'.$comment->data->link_author), $comment->data->link_author)?>
 	</div>
 </div>
