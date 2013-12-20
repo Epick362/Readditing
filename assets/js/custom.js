@@ -125,23 +125,23 @@ var Frontpage = function()
 				  data: {'url': url},
 				  crossDomain: true,
 				  success: function(data){
-				  	console.log('extraction success');
 				  	if(data.article.body) {
-				  		var content = data.article.body;
-				  		var content_short = content.trunc(250, true);
-				  		content = nl2br(content);
-				  		panel.html(content_short);
-				  		panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
-				  	}else if(data.article.image != null){
-				  		panel.parent().html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
-				  	}else{
-				  		panel.html('<div class="alert alert-danger"><p>There was an error... Sorry about that</p><p>Go to: <a href="'+url+'" target="_blank">Link</a></p></div>');
+				  		if(data.article.body.length >= 250) {
+							var content = data.article.body;
+							var content_short = content.trunc(230, true);
+							content = nl2br(content);
+							panel.html(content_short);
+							panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
+				  			showMore();
+				  		}else if(data.article.image != null && data.article.image.width >= 300) {
+				  			panel.parent().html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
+				  		}else{
+				  			panel.html('<div class="alert alert-warning"><p>We couldn\'t extract the content of this link for you. Sorry about that</p><p>To open the link in new window click: <a href="'+url+'" target="_blank">Here</a></p></div>');
+				  		}
 				  	}
-				  	showMore();
 				  },
 				  error: function(data) {
-				  	console.log('extraction error');
-				  	panel.html('<div class="alert alert-danger"><p>There was an error... Sorry about that</p><p>Go to: <a href="'+url+'" target="_blank">Link</a></p></div>');
+				  	panel.html('<div class="alert alert-danger"><p>There was an error while communicating with the server... Sorry about that</p><p>To open the link in new window click: <a href="'+url+'" target="_blank">Here</a></p></div>');
 				  }
 			 });	 		
 	 	});
