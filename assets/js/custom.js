@@ -133,7 +133,7 @@ var Frontpage = function()
 				  		panel.html(content_short);
 				  		panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
 				  	}else if(data.article.image != null){
-				  		panel.html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
+				  		panel.parent().html('<img class="img-rounded img-post" src="'+data.article.image.src+'" />');
 				  	}else{
 				  		panel.html('<div class="alert alert-danger"><p>There was an error... Sorry about that</p><p>Go to: <a href="'+url+'" target="_blank">Link</a></p></div>');
 				  	}
