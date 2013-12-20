@@ -94,34 +94,36 @@ class reddit{
         $imageTypes = array('gif', 'jpg', 'jpeg', 'png');
 
         foreach($feed as $item) {
-            if($item->data->over_18 == TRUE) { // NSFW FILTER
-                $item->kind = 'nsfw';
-                $item->data->title = NULL;
-            }else{
-                if($item->data->selftext_html) {
-                    $item->kind = 'selftext';
-                }elseif($item->data->media) {
-                    $item->kind = 'media';
-                }elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
-                    $item->kind = 'image';
+            if($item->kind == 't3') {
+                if($item->data->over_18 == TRUE) { // NSFW FILTER
+                    $item->kind = 'nsfw';
+                    $item->data->title = NULL;
                 }else{
-                    $item->kind = 'ajax_extractedtext';
-                    /*
-                    $this->_ci->rest->initialize(array('server' => 'http://reader-api.herokuapp.com/'));
-                    $_extracted = $this->_ci->rest->get('api/article', array('url' => $item->data->url));
-                    $this->_ci->curl->set_defaults();
-                    if(isset($_extracted->article)) {
-                        $item->data->_extracted = $_extracted->article;
-                        if($item->data->_extracted->body) {
-                            if(strlen($item->data->_extracted->body) >= 250) {
-                                $item->kind = 'extractedtext';
-                            }elseif(isset($item->data->_extracted->image) && $item->data->_extracted->image->width >= 300) {
-                                $item->kind = 'image';
-                                $item->data->url = $item->data->_extracted->image->src;
+                    if($item->data->selftext_html) {
+                        $item->kind = 'selftext';
+                    }elseif($item->data->media) {
+                        $item->kind = 'media';
+                    }elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
+                        $item->kind = 'image';
+                    }else{
+                        $item->kind = 'ajax_extractedtext';
+                        /*
+                        $this->_ci->rest->initialize(array('server' => 'http://reader-api.herokuapp.com/'));
+                        $_extracted = $this->_ci->rest->get('api/article', array('url' => $item->data->url));
+                        $this->_ci->curl->set_defaults();
+                        if(isset($_extracted->article)) {
+                            $item->data->_extracted = $_extracted->article;
+                            if($item->data->_extracted->body) {
+                                if(strlen($item->data->_extracted->body) >= 250) {
+                                    $item->kind = 'extractedtext';
+                                }elseif(isset($item->data->_extracted->image) && $item->data->_extracted->image->width >= 300) {
+                                    $item->kind = 'image';
+                                    $item->data->url = $item->data->_extracted->image->src;
+                                }
                             }
                         }
+                        */
                     }
-                    */
                 }
             }
 
