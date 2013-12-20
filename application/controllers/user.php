@@ -14,9 +14,19 @@ class User extends Main_Controller {
 		$data->user = $this->user;
 		$data->category = $category;
 
-		$data->listing = $this->reddit->getUserListings($username, $category);
-		$data->feed = $this->reddit->displayFeed($data->listing);
-		$this->template->frontpage('user', $data);
+		if($username == $this->user->data->name) {
+			$categories = array('overview', 'comments', 'submitted', 'gilded', 'liked', 'disliked', 'saved');
+		}else{
+			$categories = array('overview', 'comments', 'submitted', 'gilded');
+		}
+
+		if(in_array($category, $categories)) {
+			$data->listing = $this->reddit->getUserListings($username, $category);
+			$data->feed = $this->reddit->displayFeed($data->listing);
+			$this->template->frontpage('user', $data);
+		}else{
+			redirect(base_url('user/'));
+		}
 	}
 
 	public function login() {
