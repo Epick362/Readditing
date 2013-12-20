@@ -1,6 +1,7 @@
 <?php if (!defined('BASEPATH')) die();
 class User extends Main_Controller {
 	public function index($username = null, $category = null) {
+		$this->template->set('title', $username.'\'s user profile');
 		if(!$username && $this->user->data->name) {
 			$username = $this->user->data->name;
 		}elseif(!$username){
@@ -15,10 +16,9 @@ class User extends Main_Controller {
 
 		if($category) {
 			$data->listing = $this->reddit->getUserListings($username, $category);
+			$data->feed = $this->reddit->displayFeed($data->listing);
+			$this->template->frontpage('user', $data);
 		}
-
-		$this->template->set('title', $username.'\'s user profile');
-		$this->template->frontpage('user', $data);
 	}
 
 	public function login() {

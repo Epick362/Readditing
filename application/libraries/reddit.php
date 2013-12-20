@@ -87,9 +87,13 @@ class reddit{
         $data = new stdClass();
         $data->feed = $this->getListing($sr, $show, $params);
 
+        return $this->displayFeed($data->feed);
+    }
+
+    public function displayFeed($feed) {
         $imageTypes = array('gif', 'jpg', 'jpeg', 'png');
 
-        foreach($data->feed as $item) {
+        foreach($feed as $item) {
             if($item->data->over_18 == TRUE) { // NSFW FILTER
                 $item->kind = 'nsfw';
                 $item->data->title = NULL;
@@ -124,7 +128,7 @@ class reddit{
             $item->_display = $this->_ci->display->{$item->kind}($item);
         }
 
-        return $data->feed;
+        return $feed;   
     }
 
     /**
