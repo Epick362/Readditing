@@ -1,13 +1,14 @@
 <?php if (!defined('BASEPATH')) die();
 class User extends Main_Controller {
 	public function index($username = null, $category = 'overview') {
-		$this->template->set('title', $username.'\'s user profile');
 		if(!$username && $this->user->data->name) {
 			$username = $this->user->data->name;
 		}elseif(!$username){
 			redirect(base_url());
 		}
 
+		$this->template->set('title', $username.'\'s user profile');
+		
 		$data->username = $username;
 		$data->subreddit = '';
 		$data->show = '';
