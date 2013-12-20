@@ -7,4 +7,3 @@
 	}
 ?>
 </div>
-<div id="loading" class="alert alert-info" style="display:none"><i class="icon-refresh icon-spin"></i> Loading...</div>
