@@ -1,4 +1,4 @@
-<h1><?=$username?></h1>
+<h1><?=$category?> by <?=$username?></h1>
 <hr />
 <div id="feed">
 <?

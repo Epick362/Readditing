@@ -12,6 +12,7 @@ class User extends Main_Controller {
 		$data->subreddit = '';
 		$data->show = '';
 		$data->user = $this->user;
+		$data->category = $category;
 
 
 		if($category) {
