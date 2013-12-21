@@ -6,7 +6,7 @@ class Main_Controller extends MY_Controller
 		parent::__construct();
 		if($this->session->userdata('reddit_session')) {
 			$this->user = $this->reddit->getUser();
-			//$this->user = null;
+			//$this->user = null;/
 		}else{
 			$this->user = null;
 		}
