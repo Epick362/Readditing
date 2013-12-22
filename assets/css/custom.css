@@ -260,7 +260,7 @@ body {
 }
 
 .media-body {
-  font: 'Roboto', 'Montserrat', Arial;
+  font-family: 'Roboto', 'Montserrat', Arial;
   font-size: 14px;
 }
 
