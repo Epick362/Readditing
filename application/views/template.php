@@ -91,7 +91,7 @@
 						</div>
 					</div>
 <? } ?>
-					<?=anchor('#', 'About')?> <?=anchor('#', 'Terms of Service')?>
+					<?=anchor('#', 'About')?> · <?=anchor('#', 'ToS')?> · <?=anchor('#', 'Contact')?>
 				</div>
 			</div>
 		</div>
