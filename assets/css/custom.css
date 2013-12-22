@@ -259,6 +259,11 @@ body {
   width: auto;
 }
 
+.media-body {
+  font: 'Roboto', 'Montserrat', Arial;
+  font-size: 14px;
+}
+
 .media-wrapper {
     position: relative;
     margin: 0 auto;
