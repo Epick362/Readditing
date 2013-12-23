@@ -1809,10 +1809,12 @@ class Mongo_db
 	{
 		$options = array();
 		
+		/*
 		if ($this->_persist === TRUE)
 		{
 			$options['persist'] = $this->_persist_key;
 		}
+		*/
 		
 		if ($this->_replica_set !== FALSE)
 		{
