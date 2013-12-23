@@ -15,9 +15,11 @@
 		}
 
 		public function saveArticle($url, $data) {
-			$insert = array('url' => $url, 'data' => $data, 'generated' => time());
+			if(!$this->_ci->cimongo->where(array('url' => $url))->get('articles')->row()) {
+				$insert = array('url' => $url, 'data' => $data, 'generated' => time());
 
-			return $this->_ci->cimongo->insert('articles', $insert);
+				return $this->_ci->cimongo->insert('articles', $insert);
+			}
 		}
 	}
 ?>
