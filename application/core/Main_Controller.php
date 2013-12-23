@@ -9,6 +9,6 @@ class Main_Controller extends MY_Controller
 			//$this->user = null;/
 		}else{
 			$this->user = null;
-		} 
+		}
    }
 }
