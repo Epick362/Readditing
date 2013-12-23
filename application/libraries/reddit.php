@@ -106,6 +106,7 @@ class reddit{
 					}elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
 						$item->kind = 'image';
 					}else{
+						$item->kind = 'misc';
 						$record = $this->_ci->storage->getArticle($item->data->url);
 						if($record) {
 							if(isset($record->article)) {
