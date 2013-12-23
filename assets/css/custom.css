@@ -190,6 +190,7 @@ body {
 .panel-reddit {
 	border-color: #dddddd;
 	line-height: 1.4;
+  margin-bottom: 40px;
 }
 
 .panel-reddit > .panel-body {
