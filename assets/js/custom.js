@@ -117,39 +117,41 @@ var Frontpage = function()
 
 	 function extractText() {
 	 	$('.extracted-text').each(function() {
-	 		var url = $(this).data('url');
-	 		var panel = $(this);
-			 $.ajax({
-				  type: 'GET',
-				  url: 'http://reader-api.herokuapp.com/api/article',
-				  data: {'url': url},
-				  crossDomain: true,
-				  success: function(data){
-					$.ajax({
-					  type: 'POST',
-					  url: 'http://readditing.herokuapp.com/ajax/saveArticle',
-					  data: {'url': url, 'data': data}
-					});
+	 		if($(this).data('url')) {
+		 		var url = $(this).data('url');
+		 		var panel = $(this);
+				 $.ajax({
+					  type: 'GET',
+					  url: 'http://reader-api.herokuapp.com/api/article',
+					  data: {'url': url},
+					  crossDomain: true,
+					  success: function(data){
+						$.ajax({
+						  type: 'POST',
+						  url: 'http://readditing.herokuapp.com/ajax/saveArticle',
+						  data: {'url': url, 'data': data}
+						});
 
-				  	if(data.article.body) {
-				  		if(data.article.body.length >= 250) {
-							var content = data.article.body;
-							var content_short = content.trunc(230, true);
-							content = nl2br(content);
-							panel.html(content_short);
-							panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
-				  			showMore();
-				  		}else if(data.article.image != null && data.article.image.width >= 300) {
-				  			panel.parent().html('<center><img class="img-rounded img-post" src="'+data.article.image.src+'" /></center>');
-				  		}else{
-				  			panel.html('<div class="alert alert-warning"><p>We couldn\'t extract the content of this link for you. Sorry about that</p><p>To open the link in new window click: <a href="'+url+'" target="_blank">Here</a></p></div>');
-				  		}
-				  	}
-				  },
-				  error: function(data) {
-				  	panel.html('<div class="alert alert-danger"><p>There was an error while communicating with the server... Sorry about that</p><p>To open the link in new window click: <a href="'+url+'" target="_blank">Here</a></p></div>');
-				  }
-			 });	 		
+					  	if(data.article.body) {
+					  		if(data.article.body.length >= 250) {
+								var content = data.article.body;
+								var content_short = content.trunc(230, true);
+								content = nl2br(content);
+								panel.html(content_short);
+								panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
+					  			showMore();
+					  		}else if(data.article.image != null && data.article.image.width >= 300) {
+					  			panel.parent().html('<center><img class="img-rounded img-post" src="'+data.article.image.src+'" /></center>');
+					  		}else{
+					  			panel.html('<div class="alert alert-warning"><p>We couldn\'t extract the content of this link for you. Sorry about that</p><p>To open the link in new window click: <a href="'+url+'" target="_blank">Here</a></p></div>');
+					  		}
+					  	}
+					  },
+					  error: function(data) {
+					  	panel.html('<div class="alert alert-danger"><p>There was an error while communicating with the server... Sorry about that</p><p>To open the link in new window click: <a href="'+url+'" target="_blank">Here</a></p></div>');
+					  }
+				 });	
+	 		} 		
 	 	});
 	 }
 	 exports.extractText = extractText;
