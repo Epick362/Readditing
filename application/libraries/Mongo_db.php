@@ -1846,8 +1846,10 @@ class Mongo_db
 	 */
 	private function _connection_string() 
 	{		
-		if(isset($_SERVER['MONGOHQ_URL'])) {
-			$this->_connection_string = $_SERVER['MONGOHQ_URL'];
+		$MONGOHQ_URL = getenv("MONGOHQ_URL");
+		print_r($MONGOHQ_URL);
+		if($MONGOHQ_URL) {
+			$this->_connection_string = $MONGOHQ_URL;
 		}else{
 			$this->_host = trim($this->_config_data['mongo_hostbase']);
 			$this->_user = trim($this->_config_data['mongo_username']);
