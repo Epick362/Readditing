@@ -128,10 +128,6 @@ class Cimongo_base {
 	private function connect(){
 		$options = array();
 		try{
-			$MONGOHQ_URL = getenv('MONGOHQ_URL');
-			if($MONGOHQ_URL) {
-				$this->connection_string = $MONGOHQ_URL;
-			}
 			$this->connection = new Mongo($this->connection_string, $options);
 
 			$url = parse_url($this->connection_string);
@@ -159,30 +155,35 @@ class Cimongo_base {
 		$this->query_safety = $this->CI->config->item('query_safety');
 		$dbhostflag = (bool)$this->CI->config->item('db_flag');
 
-		$connection_string = "mongodb://";
-
-		if (empty($this->host)){
-			show_error("The Host must be set to connect to MongoDB", 500);
-		}
-
-		if (empty($this->dbname)){
-			show_error("The Database must be set to connect to MongoDB", 500);
-		}
-
-		if ( ! empty($this->user) && ! empty($this->pass)){
-			$connection_string .= "{$this->user}:{$this->pass}@";
-		}
-
-		if (isset($this->port) && ! empty($this->port)){
-			$connection_string .= "{$this->host}:{$this->port}";
+		$MONGOHQ_URL = getenv('MONGOHQ_URL');
+		if($MONGOHQ_URL) {
+			$this->connection_string = $MONGOHQ_URL;
 		}else{
-			$connection_string .= "{$this->host}";
-		}
+			$connection_string = "mongodb://";
 
-		if ($dbhostflag === TRUE){
-			$this->connection_string = trim($connection_string) . '/' . $this->dbname;
-		}else{
-			$this->connection_string = trim($connection_string);
+			if (empty($this->host)){
+				show_error("The Host must be set to connect to MongoDB", 500);
+			}
+
+			if (empty($this->dbname)){
+				show_error("The Database must be set to connect to MongoDB", 500);
+			}
+
+			if ( ! empty($this->user) && ! empty($this->pass)){
+				$connection_string .= "{$this->user}:{$this->pass}@";
+			}
+
+			if (isset($this->port) && ! empty($this->port)){
+				$connection_string .= "{$this->host}:{$this->port}";
+			}else{
+				$connection_string .= "{$this->host}";
+			}
+
+			if ($dbhostflag === TRUE){
+				$this->connection_string = trim($connection_string) . '/' . $this->dbname;
+			}else{
+				$this->connection_string = trim($connection_string);
+			}
 		}
 	}
 
