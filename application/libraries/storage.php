@@ -6,7 +6,7 @@
 		}
 
 		public function articleDatabase($url) {
-			print_r($this->_ci->mongo_db->where(array('url' => $url))->get('articles'));
+			print_r($this->_ci->cimongo->where(array('url' => $url))->get('articles'));
 		}
 	}
 ?>
