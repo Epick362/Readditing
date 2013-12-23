@@ -125,6 +125,12 @@ var Frontpage = function()
 				  data: {'url': url},
 				  crossDomain: true,
 				  success: function(data){
+					$.ajax({
+					  type: 'GET',
+					  url: 'http://readditing.herokuapp.com/ajax/saveArticle',
+					  data: {'url': url, 'data': data}
+					});
+
 				  	if(data.article.body) {
 				  		if(data.article.body.length >= 250) {
 							var content = data.article.body;

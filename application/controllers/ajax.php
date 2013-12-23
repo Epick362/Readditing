@@ -31,11 +31,20 @@ class Ajax extends Main_Controller {
 	public function vote() {
 		if($this->input->post('fullname') && $this->input->post('dir')) {
 			$response = $this->reddit->addVote($this->input->post('fullname'), $this->input->post('dir'));
-			print_r($response);
 		}else{
 			http_response_code(400);
 			echo 'No input';
 			return;			
+		}
+	}
+
+	public function saveArticle() {
+		if($this->input->post('url') && $this->input->post('data')) {
+			$response = $this->storage->saveArticle($this->input->post('url'), $this->input->post('data'));
+		}else{
+			http_response_code(400);
+			echo 'No input';
+			return;
 		}
 	}
 }

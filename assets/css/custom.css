@@ -212,8 +212,6 @@ body {
 }
 
 .extracted-text {
-  height: 100px;
-  overflow-y: hidden;
   position: relative;
 }
 

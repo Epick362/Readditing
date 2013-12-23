@@ -106,7 +106,7 @@ class reddit{
 					}elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
 						$item->kind = 'image';
 					}else{
-						$article = $this->_ci->storage->articleDatabase($item->data->url);
+						$article = $this->_ci->storage->getArticle($item->data->url);
 						if($article) {
 							$item->kind = 'extractedtext';
 						}else{
