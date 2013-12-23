@@ -1824,6 +1824,11 @@ class Mongo_db
 		try
 		{
 			$this->_connection = new Mongo($this->_connection_string, $options);
+
+
+			$url = parse_url($this->_connection_string);
+			$this->_dbname = preg_replace('/\/(.*)/', '$1', $url['path']);
+			
 			$this->_dbhandle = $this->_connection->{$this->_dbname};
 			return $this;	
 		} 
