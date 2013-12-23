@@ -109,7 +109,6 @@ class reddit{
 						$item->kind = 'misc';
 						$record = $this->_ci->storage->getArticle($item->data->url);
 						if($record) {
-							echo '<pre>'; print_r($record); echo '</pre>';
 							if(isset($record['article'])) {
 								$item->data->article = $record;
 								if($item->data->article['article']['body']) {
