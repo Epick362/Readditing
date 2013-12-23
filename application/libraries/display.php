@@ -37,9 +37,9 @@ class Display
 	}
 
 	public function extractedtext($post) {
-		$pos = strpos($post->data->article->body, ' ', 250);
-		$short = substr($post->data->article->body,0,$pos ); 
-		return $short.'&hellip; <a class="btn btn-default btn-mini btn-block showmore">Show More</a> <div class="full-text" style="display:none">'.$post->data->article->body.'</div>';
+		$pos = strpos($post->data['article']['body'], ' ', 250);
+		$short = substr($post->data['article']['body'],0,$pos ); 
+		return $short.'&hellip; <a class="btn btn-default btn-mini btn-block showmore">Show More</a> <div class="full-text" style="display:none">'.$post->data['article']['body'].'</div>';
 	}
 
 	public function misc($post) { 

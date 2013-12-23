@@ -108,16 +108,15 @@ class reddit{
 					}else{
 						$item->kind = 'misc';
 						$record = $this->_ci->storage->getArticle($item->data->url);
-						echo '<pre>'; print_r($record); echo '</pre>';
 						if($record) {
-							if(isset($record->data->article)) {
-								$item->data->article = $record->data->article;
-								if($record->data->article->body) {
-									if(strlen($record->data->article->body) >= 250) {
+							if(isset($record->data['article'])) {
+								$item->data['article'] = $record->data['article'];
+								if($record->data['article']['body']) {
+									if(strlen($record->data['article']['body']) >= 250) {
 										$item->kind = 'extractedtext';
-									}elseif(isset($record->data->image) && $record->data->image->width >= 300) {
+									}elseif(isset($record->data['image']) && $record->data['image']['width'] >= 300) {
 										$item->kind = 'image';
-										$item->data->url = $record->data->image->src;
+										$item->data->url = $record->data['image']['src'];
 									}
 								}
 							}
