@@ -126,7 +126,7 @@ var Frontpage = function()
 				  crossDomain: true,
 				  success: function(data){
 					$.ajax({
-					  type: 'GET',
+					  type: 'POST',
 					  url: 'http://readditing.herokuapp.com/ajax/saveArticle',
 					  data: {'url': url, 'data': data}
 					});
