@@ -1847,7 +1847,6 @@ class Mongo_db
 	private function _connection_string() 
 	{		
 		$MONGOHQ_URL = getenv("MONGOHQ_URL");
-		print_r($MONGOHQ_URL);
 		if($MONGOHQ_URL) {
 			$this->_connection_string = $MONGOHQ_URL;
 		}else{
