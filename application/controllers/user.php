@@ -9,6 +9,7 @@ class User extends Main_Controller {
 
 		$this->template->set('title', $username.'\'s user profile');
 		
+		$data = new stdClass();
 		$data->username = $username;
 		$data->subreddit = '';
 		$data->show = '';
