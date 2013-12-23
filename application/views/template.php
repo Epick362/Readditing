@@ -91,7 +91,8 @@
 						</div>
 					</div>
 <? } ?>
-					<?=anchor('#', 'About')?> · <?=anchor('#', 'ToS')?> · <?=anchor('#', 'Contact')?>
+					<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#about">About</button> · <?=anchor('#', 'ToS')?> · <?=anchor('#', 'Contact')?>
+					<?=$this->load->view('pages/about') ?>
 				</div>
 			</div>
 		</div>
