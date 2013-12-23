@@ -106,9 +106,19 @@ class reddit{
 					}elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
 						$item->kind = 'image';
 					}else{
-						$article = $this->_ci->storage->getArticle($item->data->url);
-						if($article) {
-							$item->kind = 'extractedtext';
+						$record = $this->_ci->storage->getArticle($item->data->url);
+						if($record) {
+							if(isset($record->article)) {
+								$item->data->article = $record->article;
+								if($record->article->body) {
+									if(strlen($record->article->body) >= 250) {
+										$item->kind = 'extractedtext';
+									}elseif(isset($record->image) && $record->image->width >= 300) {
+										$item->kind = 'image';
+										$item->data->url = $record->image->src;
+									}
+								}
+							}
 						}else{
 							$item->kind = 'ajax_extractedtext';
 						}
