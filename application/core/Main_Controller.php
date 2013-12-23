@@ -10,6 +10,5 @@ class Main_Controller extends MY_Controller
 		}else{
 			$this->user = null;
 		}
-		echo '<pre>'; print_r($_SERVER); echo '</pre>'; 
    }
 }
