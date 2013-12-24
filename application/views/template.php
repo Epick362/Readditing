@@ -80,7 +80,7 @@
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
 <? if(isset($subreddits)) { ?>
-					<div class="panel panel-reddit">
+					<div class="panel panel-reddit subbredits-list">
 						<div class="panel-heading">Subreddits</div>
 						<div class="panel-body">
 <?
@@ -103,7 +103,7 @@
 </div>
 <div id="footer">
 	<div class="container">
-		<p class="text-muted credit">Readditing &copy; All rights reserved. Elapsed Time: {elapsed_time} seconds.</p>
+		<p class="credit">REDDIT and the ALIEN Logo are registered trademarks of reddit inc., Elapsed Time: {elapsed_time} seconds.</p>
 	</div>
 </div>
 <?=$this->load->view('include/footer', array('subreddit' => $subreddit, 'show' => $show)) ?>

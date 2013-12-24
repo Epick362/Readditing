@@ -50,7 +50,7 @@ body {
 
 .container .credit {
 	margin: 20px 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .navbar-reddit {
@@ -209,6 +209,16 @@ body {
 
 .panel-reddit > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #dddddd;
+}
+
+.subreddits-list {
+  margin-bottom: 20px;
+}
+
+.subreddits-list > .panel-body {
+  max-height: 450px;
+  overflow: auto;
+
 }
 
 .extracted-text {
