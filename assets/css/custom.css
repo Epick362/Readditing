@@ -261,7 +261,7 @@ body {
 }
 
 .img-post {
-  max-width: 816px;
+  max-width: 718px;
   width: auto;
 }
 
@@ -294,7 +294,7 @@ body {
 
 @media (max-width: 1200px) {
   .img-post {
-    max-width: 666px;
+    max-width: 585px;
   }
 }
 
@@ -326,6 +326,6 @@ body {
   }
 
   .img-post {
-    max-width: 688px;
+    width: auto;
   }  
 }
