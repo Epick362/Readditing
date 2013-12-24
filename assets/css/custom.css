@@ -326,6 +326,6 @@ body {
   }
 
   .img-post {
-    width: auto;
+    width: 100%;
   }  
 }
