@@ -65,7 +65,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-offset-1 col-md-8 visible-md visible-lg" role="main">
+			<div class="col-md-offset-1 col-md-8" role="main">
 <?
 		if($this->session->flashdata('message') && $this->session->flashdata('message_type')) {
 ?>
