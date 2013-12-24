@@ -299,6 +299,10 @@ body {
 }
 
 @media (max-width: 992px) {
+  .navbar-reddit {
+    opacity: 0.85;
+  }
+
   .img-post {
     max-width: 688px;
   }
