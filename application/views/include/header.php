@@ -17,3 +17,6 @@
    <link rel="icon" href="<?=base_url('assets/img/favicon.ico')?>" type="image/x-icon">
 </head>
 <body>
+   <?=$this->load->view('pages/about') ?>
+   <?=$this->load->view('pages/tos') ?>
+   <?=$this->load->view('pages/contact') ?>
