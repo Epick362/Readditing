@@ -7,11 +7,11 @@
         <h4 class="modal-title" id="aboutLabel">About</h4>
       </div>
       <div class="modal-body">
-        <b>Readditing&trade;</b> is a <b>reddit&copy;</b> browser with integrated article extractor and many visual and functional improvements.
+        <b>Readditing&trade;</b> is a <b>reddit</b> browser with integrated article extractor and many visual and functional improvements.
         <hr />
-        <b>Readditing&trade;</b> enables you to connect to your friends and see what they are up to!
+        <b>Readditing</b> enables you to connect to your friends on reddit and see what they like and post!
         <hr />
-        Please keep in mind that <b>Readditing&trade;</b> is currently in <div class="label label-info">BETA</div> and not all functions are working yet.
+        Please, keep in mind that <b>Readditing</b> is currently in <div class="label label-info">BETA</div> and not all functions are working yet.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
