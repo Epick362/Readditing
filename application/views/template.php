@@ -91,7 +91,11 @@
 						</div>
 					</div>
 <? } ?>
-					<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#about">About</button> · <?=anchor('#', 'ToS')?> · <?=anchor('#', 'Contact')?>
+					<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#about">About</button>
+					 · 
+					<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#tos">ToS</button>
+					 · 
+					<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#contact">Contact</button>
 				</div>
 			</div>
 		</div>
