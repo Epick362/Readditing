@@ -75,30 +75,32 @@ var Frontpage = function()
 
 	 function comments() {
 	 	$('.comments-btn').on('click', function() {
-	 		var button = $(this);
-	 		var panel = $(this).closest('.panel');
-			var postID = panel.data('post');
-			var subreddit = panel.data('subreddit');
-	 		button.html('<i class="icon-refresh icon-spin"></i> Loading...');
-			 $.ajax({
-				  type: 'POST',
-				  url: 'http://readditing.herokuapp.com/ajax/getComments',
-				  data: {'subreddit': subreddit, 'article': postID},
-				  success: function(data){
-				  	console.log('request success');
-					panel.find('.media-list').append(data);
-					panel.find('.comments-container').slideDown();
-					button.removeClass('btn-primary');
-					button.addClass('btn-success');
-					button.html('Loaded');
-				  },
-				  error: function() {
-				  	button.removeClass('btn-primary');
-				  	button.addClass('btn-danger');
-				  	button.html('Could not fetch comments');
-				  },
-				  dataType: 'html'
-			 });
+	 		if( !$('.comments-btn').hasClass('btn-success') ) {
+		 		var button = $(this);
+		 		var panel = $(this).closest('.panel');
+				var postID = panel.data('post');
+				var subreddit = panel.data('subreddit');
+		 		button.html('<i class="icon-refresh icon-spin"></i> Loading...');
+				 $.ajax({
+					  type: 'POST',
+					  url: 'http://readditing.herokuapp.com/ajax/getComments',
+					  data: {'subreddit': subreddit, 'article': postID},
+					  success: function(data){
+					  	console.log('request success');
+						panel.find('.media-list').append(data);
+						panel.find('.comments-container').slideDown();
+						button.removeClass('btn-primary');
+						button.addClass('btn-success');
+						button.html('Loaded');
+					  },
+					  error: function() {
+					  	button.removeClass('btn-primary');
+					  	button.addClass('btn-danger');
+					  	button.html('Could not fetch comments');
+					  },
+					  dataType: 'html'
+				 });
+	 		}
 		});
 	 }
 	 exports.comments = comments;
