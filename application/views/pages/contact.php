@@ -10,7 +10,7 @@
 		<address>
 		  <strong>Readditing</strong><br>
 		  <strong>Filip Hajek</strong><br>
-		  <a>flp.hajek[at]gmail.com</a>
+		  <?=safe_mailto('flp.hajek@gmail.com', 'flp.hajek[at]gmail.com')?>
 		</address>
       </div>
       <div class="modal-footer">
