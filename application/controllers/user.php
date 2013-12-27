@@ -65,4 +65,16 @@ class User extends Main_Controller {
 			redirect(base_url());
 		}
 	}
+
+	public function nsfw() {
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nsfw', 'NSFW', 'trim|xss_clean');
+		if ($this->form_validation->run() && !$this->session->userdata('nsfw')) {
+			$this->session->set_userdata('nsfw', 1);
+		}else{
+			$this->session->unset_userdata('nsfw');
+		}
+
+		redirect(base_url());
+	}
 }

@@ -95,7 +95,7 @@ class reddit{
 
 		foreach($feed as $item) {
 			if($item->kind == 't3') {
-				if($item->data->over_18 == TRUE) { // NSFW FILTER
+				if($item->data->over_18 == TRUE && !$this->_ci->session->userdata('nsfw')) { // NSFW FILTER
 					$item->kind = 'nsfw';
 					$item->data->title = NULL;
 				}else{

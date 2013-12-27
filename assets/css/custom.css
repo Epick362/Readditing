@@ -187,6 +187,10 @@ body {
 	font-size: 2em;
 }
 
+.nsfw {
+  border: 1px solid #e74c3c;
+}
+
 .panel-reddit {
 	border-color: #dddddd;
 	line-height: 1.4;
@@ -216,7 +220,7 @@ body {
 }
 
 .subreddits-list > .panel-heading {
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .subreddits-list > .panel-body {

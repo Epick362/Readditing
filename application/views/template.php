@@ -30,6 +30,12 @@
 					</div>
 					<?=form_close()?>
 				</div>
+				<div class="col-sm-2 col-md-2">
+					<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'))?>
+						<input type="checkbox" name="nsfw" checked>
+						<?=form_submit(array('class' => 'btn btn-primary'), 'Set')?>
+					<?=form_close()?>
+				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 <? if($user) { ?>
