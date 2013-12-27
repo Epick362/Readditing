@@ -75,21 +75,11 @@
 <?
 		}
 ?>
+				<?=$this->load->view('settings_template', array('user' => $user)) ?>
 				<?=$contents ?>
 			</div>
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
-<? if($user) { ?>
-					<div class="sidebar panel panel-reddit">
-						<div class="panel-heading">Settings</div>
-						<div class="panel-body">
-							<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'), array('back' => uri_string(current_url())))?>
-								<?=form_label('Show NSFW', 'nsfw')?>
-								<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-on="success" data-off="danger" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
-							<?=form_close()?>
-						</div>
-					</div>
-<? } ?>
 <? if(isset($subreddits)) { ?>
 					<div class="sidebar panel panel-reddit">
 						<div class="panel-heading">Popular Subreddits</div>
