@@ -36,7 +36,7 @@ class User extends Main_Controller {
 
 		$this->form_validation->set_rules('user', 'Username', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('passwd', 'Password', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('back', 'Back', 'required|xss_clean');
+		$this->form_validation->set_rules('back', 'Back', 'xss_clean');
 		if ($this->form_validation->run())
 		{
 			$login = $this->reddit->login($this->input->post('user'), $this->input->post('passwd'));
@@ -69,7 +69,7 @@ class User extends Main_Controller {
 
 	public function nsfw() {
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('back', 'Back', 'required|xss_clean');
+		$this->form_validation->set_rules('back', 'Back', 'xss_clean');
 		$this->form_validation->set_rules('nsfw', 'NSFW', 'trim|xss_clean');
 		if ($this->form_validation->run() && !$this->session->userdata('nsfw')) {
 			$this->session->set_userdata('nsfw', 1);
