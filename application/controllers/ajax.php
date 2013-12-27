@@ -29,7 +29,7 @@ class Ajax extends Main_Controller {
 	}
 
 	public function vote() {
-		if($this->input->post('fullname') && $this->input->post('dir')) {
+		if($this->input->post('fullname') && $this->input->post('dir') != '') {
 			$response = $this->reddit->addVote($this->input->post('fullname'), $this->input->post('dir'));
 		}else{
 			http_response_code(400);
