@@ -50,7 +50,7 @@
 <? }else{ ?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-large"></i> Sign In </a>
 						<div class="dropdown-menu" style="width:200px;padding:10px;">
-							<?=form_open(base_url('user/login'), array('class' => 'form-signin'))?>
+							<?=form_open(base_url('user/login'), array('class' => 'form-signin'), array('back' => uri_string(current_url())))?>
 								<?=form_input(array('name' => 'user', 'class' => 'form-control', 'placeholder' => 'Username', 'type' => 'text')) ?>
 								<?=form_input(array('name' => 'passwd', 'class' => 'form-control', 'placeholder' => 'Password', 'type' => 'password')) ?>
 								<div class="alert alert-info"><i>Please note that we <b>DO NOT</b> store your password</i></div>
@@ -83,8 +83,8 @@
 					<div class="sidebar panel panel-reddit">
 						<div class="panel-heading">Settings</div>
 						<div class="panel-body">
-							<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'))?>
-								<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW" data-on="success" data-off="danger" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
+							<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'), array('back' => uri_string(current_url()))))?>
+								<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-on="success" data-off="danger" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
 							<?=form_close()?>
 						</div>
 					</div>
