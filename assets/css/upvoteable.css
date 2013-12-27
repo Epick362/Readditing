@@ -42,6 +42,10 @@ div.opening div.circle {
   -moz-backface-visibility: visible;
 }
 
+.inner-circle {
+  margin-top: 10px;
+}
+
 figure {
   display: block;
   position: relative;
@@ -59,9 +63,6 @@ figure.upvote {
 }
 
 .upvote.complete a.upvoteobject div.opening div.circle {
-  background-image: url('../img/heart.png');
-  background-position: center; 
-  background-repeat: no-repeat;
   background-color: #FF4400;
   background-size: 80%;
   -moz-background-size: 80%;
@@ -103,6 +104,11 @@ a.count p span.dont-move {
 a.upvoteobject {
   display: block;
   cursor: pointer;
+  color: #FFF;
+}
+
+a.upvoteobject:hover {
+  color: #FFF;
 }
 
 .upvote.active a.upvoteobject div.opening div.circle {

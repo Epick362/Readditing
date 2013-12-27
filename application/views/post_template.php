@@ -3,7 +3,7 @@
 		<figure class="upvote <? if($user) {echo 'upvoteable';} ?> <? if($post->data->likes) {echo 'complete';} ?>">
 			<a class="upvoteobject">
 				<div class="opening">
-					<div class="circle">&nbsp;</div>
+					<div class="circle"><div class="inner-circle"><i class="icon-arrow-up icon-2x"></i></div></div>
 				</div>
 			</a>
 
