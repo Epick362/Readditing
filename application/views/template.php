@@ -87,6 +87,7 @@
 								<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW" data-on="success" data-off="warning" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
 							<?=form_close()?>
 						</div>
+					</div>
 <? } ?>
 <? if(isset($subreddits)) { ?>
 					<div class="sidebar panel panel-reddit">
