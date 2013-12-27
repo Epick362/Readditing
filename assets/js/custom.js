@@ -67,6 +67,7 @@ var Frontpage = function()
 	 	showMore();
 	 	scrollPosts();
 	 	comments();
+	 	nsfw();
 
 		$("figure.upvoteable").upvoteable();
 	 	upvotesHandler();
@@ -74,6 +75,12 @@ var Frontpage = function()
 	 	$('#nsfw-checkbox').bootstrapSwitch();
 	 }
 	 exports.init = init;
+
+	 function nsfw() {
+		$('#nsfw-checkbox').change(function() {
+		    $(this).closest('form').submit();
+		});
+	 }
 
 	 function comments() {
 	 	$('.comments-btn').on('click', function() {
