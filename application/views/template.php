@@ -30,9 +30,9 @@
 					</div>
 					<?=form_close()?>
 				</div>
-				<div class="col-sm-2 col-md-2">
+				<div class="col-sm-3 col-md-3">
 					<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'))?>
-						<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW">
+						<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
 						<?=form_submit(array('class' => 'btn btn-primary'), 'Set')?>
 					<?=form_close()?>
 				</div>

@@ -188,7 +188,7 @@ body {
 }
 
 .nsfw {
-  border: 1px solid #e74c3c;
+  border-color: #e74c3c !important;
 }
 
 .panel-reddit {

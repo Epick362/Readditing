@@ -1,4 +1,4 @@
-<div class="<? if($post->data->over_18) {echo 'nsfw';} ?> panel panel-reddit" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>">
+<div class="panel panel-reddit <? if($post->data->over_18) {echo 'nsfw';} ?>" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>">
 	<div class="upvote-wrapper">
 		<figure class="upvote <? if($user) {echo 'upvoteable';} ?> <? if($post->data->likes) {echo 'complete';} ?>">
 			<a class="upvoteobject">
