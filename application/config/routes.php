@@ -49,6 +49,7 @@ $route['u/(:any)'] = 'user/index/$1';
 $route['user/login'] = 'user/login';
 $route['user/logout'] = 'user/logout';
 $route['user/go'] = 'user/go';
+$route['user/nsfw'] = 'user/nsfw';
 $route['user/(:any)'] = 'user/index/$1';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

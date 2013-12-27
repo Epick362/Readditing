@@ -32,7 +32,7 @@
 				</div>
 				<div class="col-sm-2 col-md-2">
 					<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'))?>
-						<input type="checkbox" name="nsfw" checked>
+						<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW">
 						<?=form_submit(array('class' => 'btn btn-primary'), 'Set')?>
 					<?=form_close()?>
 				</div>
