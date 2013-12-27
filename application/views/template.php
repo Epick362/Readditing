@@ -84,7 +84,7 @@
 						<div class="panel-heading">Settings</div>
 						<div class="panel-body">
 							<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'))?>
-								<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW" data-on="success" data-off="warning" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
+								<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW" data-on="success" data-off="danger" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
 							<?=form_close()?>
 						</div>
 					</div>
