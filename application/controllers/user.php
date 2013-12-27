@@ -16,7 +16,7 @@ class User extends Main_Controller {
 		$data->user = $this->user;
 		$data->category = $category;
 
-		if($username == $this->user->data->name) {
+		if($this->user && $username == $this->user->data->name) {
 			$categories = array('overview', 'comments', 'submitted', 'gilded', 'liked', 'disliked', 'saved');
 		}else{
 			$categories = array('overview', 'comments', 'submitted', 'gilded');
