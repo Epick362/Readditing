@@ -71,8 +71,6 @@ var Frontpage = function()
 
 		$("figure.upvoteable").upvoteable();
 	 	upvotesHandler();
-
-	 	$('#nsfw-checkbox').bootstrapSwitch();
 	 }
 	 exports.init = init;
 

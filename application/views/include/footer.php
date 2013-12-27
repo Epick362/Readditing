@@ -9,6 +9,8 @@
 		$(function(){
 			var lastID = $('#feed').children('.panel').last().data('post');
 
+	 		$('#nsfw-checkbox').bootstrapSwitch();
+
 			$('#feed').scrollPagination({
 				'contentPage': '<?=base_url('ajax/displayFeed')?>', // the url you are fetching the results
 				'contentData': {'subreddit': '<?=$subreddit?>',
