@@ -30,11 +30,6 @@
 					</div>
 					<?=form_close()?>
 				</div>
-				<div class="col-sm-3 col-md-3">
-					<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'))?>
-						<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW" data-on="success" data-off="warning" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
-					<?=form_close()?>
-				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 <? if($user) { ?>
@@ -84,6 +79,15 @@
 			</div>
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
+<? if($user) { ?>
+					<div class="subreddits-list panel panel-reddit">
+						<div class="panel-heading">Settings</div>
+						<div class="panel-body">
+							<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'))?>
+								<input type="checkbox" name="nsfw" id="nsfw-checkbox" data-text-label="NSFW" data-on="success" data-off="warning" <? if($this->session->userdata('nsfw')) { echo 'checked'; }?>>
+							<?=form_close()?>
+						</div>
+<? } ?>
 <? if(isset($subreddits)) { ?>
 					<div class="subreddits-list panel panel-reddit">
 						<div class="panel-heading">Popular Subreddits</div>
