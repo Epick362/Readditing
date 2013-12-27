@@ -80,8 +80,8 @@
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
 <? if(isset($subreddits)) { ?>
-					<div class="panel panel-reddit subreddits-list">
-						<div class="panel-heading">Subreddits</div>
+					<div class="subreddits-list panel panel-reddit">
+						<div class="panel-heading">Popular Subreddits</div>
 						<div class="panel-body">
 <?
 							foreach($subreddits as $_subreddit) {

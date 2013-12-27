@@ -215,6 +215,10 @@ body {
   margin-bottom: 20px;
 }
 
+.subreddits-list > .panel-heading {
+  font-size: 1.5em;
+}
+
 .subreddits-list > .panel-body {
   max-height: 450px;
   overflow: auto;
