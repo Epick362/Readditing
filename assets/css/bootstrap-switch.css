@@ -148,8 +148,6 @@
 }
 .has-switch span.switch-left {
   color: #f00;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
 }
 .has-switch span.switch-right {
   color: #000;
