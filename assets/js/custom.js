@@ -224,10 +224,10 @@ var Frontpage = function()
 				  url: 'http://readditing.herokuapp.com/ajax/vote',
 				  data: {'fullname': 't3_'+post, 'dir': '0'},
 				  success: function(data){
-				  	alert('upvote removed!');
+				  	//alert('upvote removed!');
 				  },
 				  error: function() {
-				  	alert('error');
+				  	//alert('error');
 				  },
 				  dataType: 'html'
 			 });

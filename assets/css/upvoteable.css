@@ -62,7 +62,7 @@ figure.upvote {
   background-image: url('../img/heart.png');
   background-position: center; 
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color: #FF4400;
   background-size: 80%;
   -moz-background-size: 80%;
 }
