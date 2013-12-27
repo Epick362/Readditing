@@ -80,7 +80,7 @@
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
 <? if($user) { ?>
-					<div class="subreddits-list panel panel-reddit">
+					<div class="sidebar panel panel-reddit">
 						<div class="panel-heading">Settings</div>
 						<div class="panel-body">
 							<?=form_open(base_url('user/nsfw'), array('class' => 'navbar-form'))?>
@@ -89,7 +89,7 @@
 						</div>
 <? } ?>
 <? if(isset($subreddits)) { ?>
-					<div class="subreddits-list panel panel-reddit">
+					<div class="sidebar panel panel-reddit">
 						<div class="panel-heading">Popular Subreddits</div>
 						<div class="panel-body">
 <?

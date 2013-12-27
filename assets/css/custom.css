@@ -215,15 +215,15 @@ body {
   border-bottom-color: #dddddd;
 }
 
-.subreddits-list {
+.sidebar {
   margin-bottom: 20px;
 }
 
-.subreddits-list > .panel-heading {
+.sidebar > .panel-heading {
   font-size: 1.4em;
 }
 
-.subreddits-list > .panel-body {
+.sidebar > .panel-body {
   max-height: 450px;
   overflow: auto;
 
