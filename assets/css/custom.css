@@ -268,11 +268,6 @@ body {
   border-top-right-radius: 0;
 }
 
-.img-post {
-  max-width: 718px;
-  width: auto;
-}
-
 .media-body {
   font-family: 'Roboto', 'Montserrat', Arial;
   font-size: 14px;
@@ -300,19 +295,9 @@ body {
   position: relative;
 }
 
-@media (max-width: 1200px) {
-  .img-post {
-    max-width: 585px;
-  }
-}
-
 @media (max-width: 992px) {
   .navbar-reddit {
     opacity: 0.85;
-  }
-
-  .img-post {
-    max-width: 688px;
   }
 }
 
@@ -336,8 +321,4 @@ body {
     border-left: none;
     border-right: none;
   }
-
-  .img-post {
-    width: 100%;
-  }  
 }

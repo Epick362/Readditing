@@ -150,7 +150,7 @@ var Frontpage = function()
 								panel.parent().append('<div class="full-text" style="display:none;">'+content+'</div>');
 					  			showMore();
 					  		}else if(data.article.image != null && data.article.image.width >= 300) {
-					  			panel.parent().html('<center><img class="img-rounded img-post" src="'+data.article.image.src+'" /></center>');
+					  			panel.parent().html('<center><img class="img-rounded img-responsive" src="'+data.article.image.src+'" /></center>');
 					  		}else{
 					  			panel.html('<div class="alert alert-warning"><p>We couldn\'t extract the content of this link for you. Sorry about that</p><p>To open the link in new window click: <a href="'+url+'" target="_blank">Here</a></p></div>');
 					  		}
