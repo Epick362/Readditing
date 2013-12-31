@@ -21,6 +21,7 @@ class User extends Main_Controller {
 		}else{
 			$categories = array('overview', 'comments', 'submitted', 'gilded');
 		}
+		$data->categories = $categories;
 
 		if(in_array($category, $categories)) {
 			$data->listing = $this->reddit->getUserListings($username, $category);

@@ -1,5 +1,18 @@
-<h1><?=ucfirst($category)?> by <?=$username?></h1>
-<hr />
+<h1><?=$username?></h1>
+<ul class="nav nav-tabs nav-justified">
+<?
+	foreach($categories as $_category) {
+		if($category == $_category) {
+			$_class = 'active';
+		}else{
+			$_class = null;
+		}
+?>
+	<li class="<?=$_class?>"><?=anchor(base_url('user/'.$username.'/'.$_category), ucfirst($_category))?></li>
+<?
+	}
+?>
+</ul>
 <div id="listing">
 <?
 	foreach($feed as $key => $post) {
