@@ -15,12 +15,16 @@
 </ul>
 <div id="listing">
 <?
-	foreach($feed as $key => $post) {
-		if($post->kind == 'comment') {
-			echo $this->load->view('templates/comment_template', array('comment' => $post));
-		}else{
-			echo $this->load->view('templates/post_template', array('post' => $post, 'user' => $user));
+	if($feed) {
+		foreach($feed as $key => $post) {
+			if($post->kind == 'comment') {
+				echo $this->load->view('templates/comment_template', array('comment' => $post));
+			}else{
+				echo $this->load->view('templates/post_template', array('post' => $post, 'user' => $user));
+			}
 		}
+	}else{
+		echo '<i>Dust...</i>';
 	}
 ?>
 </div>
