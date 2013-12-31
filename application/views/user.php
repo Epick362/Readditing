@@ -1,7 +1,5 @@
-<div class="page-header">
-  <h1><?=$username?></h1>
-</div>
 <ul class="nav nav-tabs nav-justified" style="margin-bottom:5px">
+	<li><?=$username?></li>
 <?
 	foreach($categories as $_category) {
 		if($category == $_category) {
