@@ -75,7 +75,7 @@
 <?
 		}
 ?>
-				<?=$this->load->view('settings_template', array('user' => $user)) ?>
+				<? if($subreddit) { echo $this->load->view('settings_template', array('user' => $user)); } ?>
 				<?=$contents ?>
 			</div>
 			<div class="col-md-3 visible-md visible-lg">
