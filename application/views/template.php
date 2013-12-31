@@ -75,23 +75,13 @@
 <?
 		}
 ?>
-				<? if($subreddit) { echo $this->load->view('settings_template', array('user' => $user)); } ?>
+				<? if($subreddit) { echo $this->load->view('templates/settings_template', array('user' => $user)); } ?>
 				<?=$contents ?>
 			</div>
 			<div class="col-md-3 visible-md visible-lg">
 				<div class="container right-sidebar">
-<? if(isset($subreddits)) { ?>
-					<div class="sidebar panel panel-reddit">
-						<div class="panel-heading">Popular Subreddits</div>
-						<div class="panel-body">
-<?
-							foreach($subreddits as $_subreddit) {
-								echo anchor(base_url('r/'.$_subreddit->data->display_name), $_subreddit->data->display_name).'<br />';
-							}
-?>							
-						</div>
-					</div>
-<? } ?>
+					<? if(isset($subreddits)) { echo $this->load->view('templates/subreddits_template', array('subreddits' => $subreddits)); } ?>
+
 					<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#about">About</button>
 					 · 
 					<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#tos">ToS</button>

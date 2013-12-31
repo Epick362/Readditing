@@ -1,5 +1,7 @@
-<h1><?=$username?></h1>
-<ul class="nav nav-tabs nav-justified">
+<div class="page-header">
+  <h1><?=$username?></h1>
+</div>
+<ul class="nav nav-tabs nav-justified" style="margin-bottom:5px">
 <?
 	foreach($categories as $_category) {
 		if($category == $_category) {
@@ -17,9 +19,9 @@
 <?
 	foreach($feed as $key => $post) {
 		if($post->kind == 'comment') {
-			echo $this->load->view('comment_template', array('comment' => $post));
+			echo $this->load->view('templates/comment_template', array('comment' => $post));
 		}else{
-			echo $this->load->view('post_template', array('post' => $post, 'user' => $user));
+			echo $this->load->view('templates/post_template', array('post' => $post, 'user' => $user));
 		}
 	}
 ?>
