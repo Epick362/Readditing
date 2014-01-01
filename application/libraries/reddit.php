@@ -93,6 +93,10 @@ class reddit{
 	public function displayFeed($feed) {
 		$imageTypes = array('gif', 'jpg', 'jpeg', 'png');
 
+		if(!$feed) {
+			return null;
+		}
+
 		foreach($feed as $item) {
 			if($item->kind == 't3') {
 				if($item->data->over_18 == TRUE && !$this->_ci->session->userdata('nsfw')) { // NSFW FILTER
