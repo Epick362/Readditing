@@ -82,12 +82,12 @@ var Frontpage = function()
 
 	 function comments() {
 	 	$('.comments-btn').on('click', function() {
-	 		if( !$(this).hasClass('btn-success') && !$(this).hasClass('in-progress') ) {
+	 		if( !$(this).hasClass('btn-success') && !$(this).hasClass('pressed') ) {
 		 		var button = $(this);
 		 		var panel = $(this).closest('.panel');
 				var postID = panel.data('post');
 				var subreddit = panel.data('subreddit');
-		 		button.html('<i class="icon-refresh icon-spin"></i> Loading...').addClass('in-progress');
+		 		button.html('<i class="icon-refresh icon-spin"></i> Loading...').addClass('pressed');
 				 $.ajax({
 					  type: 'POST',
 					  url: 'http://readditing.herokuapp.com/ajax/getComments',
@@ -102,7 +102,6 @@ var Frontpage = function()
 					  },
 					  dataType: 'html'
 				 });
-				button.removeClass('in-progress');
 	 		}
 		});
 	 }
