@@ -1,1 +1,1 @@
-<pre><?=$post?></pre>
+<pre><?print_r($post)?></pre>
