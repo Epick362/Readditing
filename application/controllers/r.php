@@ -29,7 +29,7 @@ class R extends Main_Controller {
 			$this->template->set('title', $data->subreddit);
 			$this->template->frontpage('r', $data);
 		}else{
-			$data->post = $this->reddit->getComments($subreddit, $after); // AFTER IS POST ID IN THIS CASE
+			$data->post = $this->reddit->getComments($subreddit, $after, false); // AFTER IS POST ID IN THIS CASE
 			$this->template->set('title', '#');
 			$this->template->frontpage('comments', $data);			
 		}

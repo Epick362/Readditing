@@ -194,9 +194,13 @@ class reddit{
 	* Get comments from article
 	*/
 	
-	public function getComments($subreddit, $postID) {
+	public function getComments($subreddit, $postID, $justComments = true) {
 		$response = $this->restQuery('get', 'r/'.$subreddit.'/comments/'.$postID.'.json', array('depth' => 3));
-		return $response[1]->data->children;
+		if($justComments) {
+			return $response[1]->data->children;
+		}else{
+			return $response;
+		}
 	}
 
 	/*
