@@ -29,8 +29,9 @@ class R extends Main_Controller {
 			$this->template->set('title', $data->subreddit);
 			$this->template->frontpage('r', $data);
 		}else{
-			$data->post = $this->reddit->getComments($subreddit, $after, false); // AFTER IS POST ID IN THIS CASE
-			
+			$data->comments = $this->reddit->getComments($subreddit, $after, false); // AFTER IS POST ID IN THIS CASE
+			$data->post = $this->reddit->displayFeed($data->comments[0]->data->children);
+
 			$this->template->set('title', 'Post');
 			$this->template->frontpage('comments', $data);			
 		}
