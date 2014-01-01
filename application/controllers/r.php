@@ -11,24 +11,29 @@ class R extends Main_Controller {
 		$data->show = $show;
 		$data->user = $this->user;
 
-		$params = array('limit' => 15);
+		if ($show != 'comments') {
+			$params = array('limit' => 15);
 
-		if($after) {
-			$params['after'] = 't3_'.$after;
-		}
+			if($after) {
+				$params['after'] = 't3_'.$after;
+			}
 
-		$data->feed = $this->reddit->getFeed($subreddit, $show, $params);
+			$data->feed = $this->reddit->getFeed($subreddit, $show, $params);
 
-		if($this->user) {
-			$data->subreddits = $this->reddit->getSubscriptions();
+			if($this->user) {
+				$data->subreddits = $this->reddit->getSubscriptions();
+			}else{
+				$data->subreddits = $this->reddit->getPopular();
+			}
+
+			$this->template->set('title', $data->subreddit);
+			$this->template->frontpage('r', $data);
 		}else{
-			$data->subreddits = $this->reddit->getPopular();
+			$data->post = $this->reddit->getComments($subreddit, $after); // AFTER IS POST ID IN THIS CASE
+			$this->template->set('title', $data->post[0]->data->title);
+			$this->template->frontpage('comments', $data);			
 		}
-
-		$this->template->set('title', $data->subreddit);
-		$this->template->frontpage('r', $data);
 	}
-
 }
 
 /* End of file frontpage.php */
