@@ -1,1 +1,1 @@
-<pre><?=$this->post?></pre>
+<pre><?=$post?></pre>
