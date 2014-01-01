@@ -1,0 +1,1 @@
+<pre><?=$this->post?></pre>
