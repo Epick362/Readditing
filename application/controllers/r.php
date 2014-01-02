@@ -1,10 +1,7 @@
 <?php if (!defined('BASEPATH')) die();
 class R extends Main_Controller {
-	function __construct() {
-		$this->stencil->layout('template');
-	}
-
 	public function index($subreddit = null, $show = 'hot', $after = null) {
+		$this->stencil->layout('template');
 		$data = new stdClass();
 
 		if(!$subreddit){
