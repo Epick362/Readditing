@@ -115,8 +115,8 @@
 				<p class="credit">REDDIT and the ALIEN Logo are registered trademarks of reddit inc., Elapsed Time: {elapsed_time} seconds.</p>
 			</div>
 		</div>
-		<?=jquery('1.9.1') ?>
-		<?=add_css(array('bootstrap.min', 'bootstrap-switch.min', 'scrollpagination', 'upvoteable', 'scrollTo.min', 'custom')) ?>
+		<?=jquery() ?>
+		<?=add_js(array('bootstrap.min', 'bootstrap-switch.min', 'scrollpagination', 'upvoteable', 'scrollTo.min', 'custom')) ?>
 		<script type="text/javascript">
 			$(function(){
 				var lastID = $('#feed').children('.panel').last().data('post');
