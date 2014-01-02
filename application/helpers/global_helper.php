@@ -7,5 +7,5 @@
 
 	function recursiveComments($post) {
 		$CI =& get_instance();
-		return $CI->load->view('templates/comments_template', array('post' => $post), TRUE);
+		return $CI->load->view('templates/comments_template', array('comment' => $post), TRUE);
 	}
