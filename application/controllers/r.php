@@ -1,5 +1,9 @@
 <?php if (!defined('BASEPATH')) die();
 class R extends Main_Controller {
+	function __construct() {
+		$this->stencil->layout('template');
+	}
+
 	public function index($subreddit = null, $show = 'hot', $after = null) {
 		$data = new stdClass();
 
@@ -26,14 +30,14 @@ class R extends Main_Controller {
 				$data->subreddits = $this->reddit->getPopular();
 			}
 
-			$this->template->set('title', $data->subreddit);
-			$this->template->frontpage('r', $data);
+			$this->stencil->title($data->subreddit);
+			$this->stencil->paint('r', $data);
 		}else{
 			$data->comments = $this->reddit->getComments($subreddit, $after, false); // AFTER IS POST ID IN THIS CASE
-			$data->post = $this->reddit->displayFeed($data->comments[0]->data->children);
+			$data->post = $this->reddit->displayFeed($data->comments[0]->data->children)[0];
 
-			$this->template->set('title', 'Post');
-			$this->template->frontpage('comments', $data);			
+			$this->stencil->title($data->post->data->title);
+			$this->stencil->paint('comments', $data);			
 		}
 	}
 }

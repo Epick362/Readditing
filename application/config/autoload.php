@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('REST', 'display', 'template', 'session', 'reddit', 'cimongo', 'storage');
+$autoload['libraries'] = array('REST', 'display', 'template', 'session', 'reddit', 'cimongo', 'storage', 'stencil', 'slices');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('REST', 'display', 'template', 'session', 'reddit
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'form', 'global');
+$autoload['helper'] = array('url', 'form', 'global', 'stencil');
 
 
 /*

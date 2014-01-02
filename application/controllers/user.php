@@ -6,8 +6,9 @@ class User extends Main_Controller {
 		}elseif(!$username){
 			redirect(base_url());
 		}
-
-		$this->template->set('title', $username.'\'s user profile');
+		
+		$this->stencil->layout('template');
+		$this->stencil->title($username.'\'s user profile');
 		
 		$data = new stdClass();
 		$data->username = $username;
@@ -26,7 +27,7 @@ class User extends Main_Controller {
 		if(in_array($category, $categories)) {
 			$data->listing = $this->reddit->getUserListings($username, $category);
 			$data->feed = $this->reddit->displayFeed($data->listing);
-			$this->template->frontpage('user', $data);
+			$this->stencil->paint('user', $data);
 		}else{
 			redirect(base_url('user/'));
 		}
