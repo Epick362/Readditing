@@ -9,7 +9,7 @@
 			if($comment->data->replies) {
 				foreach($comment->data->replies->data->children as $reply) {
 					if($reply->kind == 't1') {
-						echo $this->load->view('templates/comments_template', array('comment' => $reply));
+						echo recursiveComments($reply);
 					}
 				}
 			}
