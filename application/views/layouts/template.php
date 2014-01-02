@@ -94,7 +94,7 @@
 				}
 		?>
 						<? if($subreddit) { echo $this->load->view('templates/settings_template', array('user' => $user)); } ?>
-						<?=$contents ?>
+						<?=$content ?>
 					</div>
 					<div class="col-md-3 visible-md visible-lg">
 						<div class="container right-sidebar">
