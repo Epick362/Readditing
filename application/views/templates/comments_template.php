@@ -9,7 +9,7 @@
 			if($comment->data->replies) {
 				foreach($comment->data->replies->data->children as $reply) {
 					if($reply->kind == 't1') {
-						echo $this->template->view('templates/comment_template', array('comment' => $reply));
+						echo $this->load->view('templates/comment_template', array('comment' => $reply));
 					}
 				}
 			}
