@@ -43,7 +43,7 @@ class Display
 	public function extractedtext($post) {
 		$pos = strpos($post->data->article['article']['body'], ' ', 250);
 		$short = substr($post->data->article['article']['body'],0,$pos ); 
-		return '<div class="extracted-text">'.$short.'&hellip; <a class="btn btn-default btn-mini btn-block showmore">Show More</a></div> <div class="full-text" style="display:none">'.nl2br(auto_url($post->data->article['article']['body'], 'both', TRUE)).'</div>';
+		return '<div class="extracted-text">'.$short.'&hellip; <a class="btn btn-default btn-mini btn-block showmore">Show More</a></div> <div class="full-text" style="display:none">'.nl2br(auto_link($post->data->article['article']['body'], 'both', TRUE)).'</div>';
 	}
 
 	public function misc($post) { 
