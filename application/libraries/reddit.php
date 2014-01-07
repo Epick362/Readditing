@@ -105,6 +105,8 @@ class reddit{
 				}else{
 					if($item->data->selftext_html) {
 						$item->kind = 'selftext';
+					}elseif(!$item->data->selftext_html && $item->data->domain == 'reddit.com') {
+						$item->kind = 'no_selftext';
 					}elseif($item->data->media) {
 						$item->kind = 'media';
 					}elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {

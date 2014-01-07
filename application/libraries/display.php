@@ -32,6 +32,10 @@ class Display
 		return false;
 	}
 
+	public function no_selftext($post) {
+		return null;
+	}
+
 	public function ajax_extractedtext($post) {
 		return '<div class="extracted-text" data-post="'.$post->data->id.'" data-url="'.$post->data->url.'"><div class="alert alert-info"><i class="icon-refresh icon-spin"></i> Loading...</div></div>';
 	}
