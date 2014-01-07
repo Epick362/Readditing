@@ -105,7 +105,7 @@ class reddit{
 				}else{
 					if($item->data->selftext_html) {
 						$item->kind = 'selftext';
-					}elseif(!$item->data->selftext_html && $item->data->domain == 'reddit.com') {
+					}elseif(!$item->data->selftext_html && ($item->data->domain == 'reddit.com' || substr($item->data->domain,0,strrpos($item->data->domain,'.')) == 'self')) {
 						$item->kind = 'no_selftext';
 					}elseif($item->data->media) {
 						$item->kind = 'media';
