@@ -37,13 +37,13 @@ class Display
 	}
 
 	public function ajax_extractedtext($post) {
-		return '<div class="extracted-text" data-post="'.$post->data->id.'" data-url="'.$post->data->url.'"><div class="alert alert-info"><i class="icon-refresh icon-spin"></i> Loading...</div></div>';
+		return '<div class="extracted-text" data-post="'.$post->data->id.'" data-url="'.$post->data->url.'"><div class="alert alert-info"><i class="icon-refresh icon-spin"></i> The content of this website is being extracted. Please wait...</div></div>';
 	}
 
 	public function extractedtext($post) {
 		$pos = strpos($post->data->article['article']['body'], ' ', 250);
 		$short = substr($post->data->article['article']['body'],0,$pos ); 
-		return '<div class="extracted-text">'.$short.'&hellip; <a class="btn btn-default btn-mini btn-block showmore">Show More</a></div> <div class="full-text" style="display:none">'.nl2br($post->data->article['article']['body']).'</div>';
+		return '<div class="extracted-text">'.$short.'&hellip; <a class="btn btn-default btn-mini btn-block showmore">Show More</a></div> <div class="full-text" style="display:none">'.nl2br(auto_url($post->data->article['article']['body'])).'</div>';
 	}
 
 	public function misc($post) { 
@@ -51,6 +51,6 @@ class Display
 	}
 
 	public function nsfw($post) {
-		return '<div class="alert alert-danger">This content is NSFW.</div>';
+		return '<div class="alert alert-danger">This content is NSFW. Login or enable NSFW posts to view this.</div>';
 	}
 }

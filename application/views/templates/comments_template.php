@@ -7,11 +7,11 @@
 			<?=anchor(base_url('user/'.$comment->data->author), $comment->data->author)?> 
 			<small>
 				<span class="text-warning">
-					<i class="icon-arrow-up"></i> <?=$comment->data->ups?> upvotes
+					<i class="icon-arrow-up"></i> <?=$comment->data->ups?>
 				</span>
 
 				<span class="text-info">
-					<i class="icon-arrow-down"></i> <?=$comment->data->downs?> downvotes
+					<i class="icon-arrow-down"></i> <?=$comment->data->downs?>
 				</span>
 			</small>
 		</h4>
@@ -35,11 +35,11 @@
 						<?=anchor(base_url('user/'.$reply->data->author), $reply->data->author)?>
 						<small>
 							<span class="text-warning">
-								<i class="icon-arrow-up"></i> <?=$reply->data->ups?> upvotes
+								<i class="icon-arrow-up"></i> <?=$reply->data->ups?>
 							</span>
 
 							<span class="text-info">
-								<i class="icon-arrow-down"></i> <?=$reply->data->downs?> downvotes
+								<i class="icon-arrow-down"></i> <?=$reply->data->downs?>
 							</span>
 						</small>
 					</h4>
@@ -63,11 +63,11 @@
 								<?=anchor(base_url('user/'.$reply2->data->author), $reply2->data->author)?> 
 								<small>
 									<span class="text-warning">
-										<i class="icon-arrow-up"></i> <?=$reply2->data->ups?> upvotes
+										<i class="icon-arrow-up"></i> <?=$reply2->data->ups?>
 									</span>
 
 									<span class="text-info">
-										<i class="icon-arrow-down"></i> <?=$reply2->data->downs?> downvotes
+										<i class="icon-arrow-down"></i> <?=$reply2->data->downs?>
 									</span>
 								</small>
 							</h4>
