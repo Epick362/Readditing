@@ -32,14 +32,14 @@
 				</a>
 				<div class="media-body">
 					<h4 class="media-heading">
-						<?=anchor(base_url('user/'.$comment->data->author), $comment->data->author)?> 
+						<?=anchor(base_url('user/'.$reply->data->author), $reply->data->author)?>
 						<small>
 							<span class="text-warning">
-								<i class="icon-arrow-up"></i> <?=$comment->data->ups?> upvotes
+								<i class="icon-arrow-up"></i> <?=$reply->data->ups?> upvotes
 							</span>
 
 							<span class="text-info">
-								<i class="icon-arrow-down"></i> <?=$comment->data->downs?> downvotes
+								<i class="icon-arrow-down"></i> <?=$reply->data->downs?> downvotes
 							</span>
 						</small>
 					</h4>
@@ -60,14 +60,14 @@
 						</a>
 						<div class="media-body">
 							<h4 class="media-heading">
-								<?=anchor(base_url('user/'.$comment->data->author), $comment->data->author)?> 
+								<?=anchor(base_url('user/'.$reply2->data->author), $reply2->data->author)?> 
 								<small>
 									<span class="text-warning">
-										<i class="icon-arrow-up"></i> <?=$comment->data->ups?> upvotes
+										<i class="icon-arrow-up"></i> <?=$reply2->data->ups?> upvotes
 									</span>
 
 									<span class="text-info">
-										<i class="icon-arrow-down"></i> <?=$comment->data->downs?> downvotes
+										<i class="icon-arrow-down"></i> <?=$reply2->data->downs?> downvotes
 									</span>
 								</small>
 							</h4>
