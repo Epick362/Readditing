@@ -100,6 +100,13 @@
 						<div class="container right-sidebar">
 							<? if(isset($subreddits)) { echo $this->load->view('templates/subreddits_template', array('subreddits' => $subreddits)); } ?>
 
+							<button style="width:32px;height:32px" class="btn btn-default">N</button>
+							Next post
+							<br />
+							<button style="width:32px;height:32px" class="btn btn-default">P</button>
+							Previous post
+							<br />			
+
 							<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#about">About</button>
 							 · 
 							<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#tos">ToS</button>
