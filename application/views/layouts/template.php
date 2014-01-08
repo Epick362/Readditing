@@ -99,13 +99,15 @@
 					<div class="col-md-3 visible-md visible-lg">
 						<div class="container right-sidebar">
 							<? if(isset($subreddits)) { echo $this->load->view('templates/subreddits_template', array('subreddits' => $subreddits)); } ?>
+							<div>
+								<button class="btn btn-default btn-disabled">N</button>
+								Next post								
+							</div>
 
-							<button style="width:32px;height:32px" class="btn btn-default">N</button>
-							Next post
-							<br />
-							<button style="width:32px;height:32px" class="btn btn-default">P</button>
-							Previous post
-							<br />			
+							<div>
+								<button class="btn btn-default btn-disabled">P</button>
+								Previous post							
+							</div>
 
 							<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#about">About</button>
 							 · 
