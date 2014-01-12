@@ -32,7 +32,7 @@
 			<div class="col-lg-6"><?=anchor(base_url('r/'.$post->data->subreddit), $post->data->subreddit)?> <span class="text-muted">by</span> <?=anchor(base_url('u/'.$post->data->author), $post->data->author)?></div>
 			<div class="col-lg-6">
 				<div class="pull-right">
-					<button class="btn btn-primary btn-xs comments-btn" data-post="<?=$post->data->id?>" data-toggle="modal" data-target="#<?=$rand_id?>">
+					<button class="btn btn-primary btn-xs comments-btn" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>" data-toggle="modal" data-target="#<?=$rand_id?>">
 						<i class="icon-comments"></i> <?=$post->data->num_comments?> comments</a>
 					</button>
 				</div>
@@ -47,14 +47,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><?=$rand_id?></h4>
+        <h4 class="modal-title" id="myModalLabel"><?=$post->data->title?></h4>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
