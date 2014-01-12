@@ -51,6 +51,7 @@
 			  data: opts.contentData,
 			  success: function(data){
 				$(obj).append(data); 
+				$('.modal').modal('hide');
 				var objectsRendered = $(obj).children('[rel!=loaded]');
 				
 				if (opts.afterLoad != null){
