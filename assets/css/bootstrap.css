@@ -5731,7 +5731,7 @@ body.modal-open,
   .modal-dialog {
     right: auto;
     left: 50%;
-    width: 70%;
+    width: 600px;
     padding-top: 30px;
     padding-bottom: 30px;
   }

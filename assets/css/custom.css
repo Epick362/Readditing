@@ -295,6 +295,21 @@ body {
   position: relative;
 }
 
+@media screen and (min-width: 768px) {
+  .modal-dialog {
+    right: auto;
+    left: 50%;
+    width: 65%;
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+}
+
+.navbar-fixed-top .navbar-reddit {
+  top: 0;
+  z-index: 1050;
+}
+
 @media (max-width: 992px) {
   .navbar-reddit {
     opacity: 0.85;
