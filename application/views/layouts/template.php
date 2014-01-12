@@ -115,7 +115,7 @@
 			</div>
 		</div>
 		<?=jquery() ?>
-		<?=add_js(array('bootstrap.min', 'bootstrap-switch.min', 'scrollpagination', 'upvoteable', 'scrollTo.min', 'custom')) ?>
+		<?=add_js(array('bootstrap', 'bootstrap-switch.min', 'scrollpagination', 'upvoteable', 'scrollTo.min', 'custom')) ?>
 		<script type="text/javascript">
 			$(function(){
 				var lastID = $('#feed').children('.panel').last().data('post');
