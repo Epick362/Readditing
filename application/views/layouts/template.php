@@ -10,7 +10,7 @@
 	   <meta name="author" content="Filip Hajek">
 
 	   <title>Readditing.com | <?=$title?></title>
-	   <?=add_css(array('bootstrap.min', 'bootstrap-switch', 'font-awesome', 'custom', 'upvoteable', 'http://fonts.googleapis.com/css?family=Montserrat|Roboto'))?>
+	   <?=add_css(array('bootstrap', 'bootstrap-switch', 'font-awesome', 'custom', 'upvoteable', 'http://fonts.googleapis.com/css?family=Montserrat|Roboto'))?>
 	   <?=favicons() ?>
 	</head>
 	<body>
