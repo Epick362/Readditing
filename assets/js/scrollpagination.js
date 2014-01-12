@@ -50,8 +50,7 @@
 			  url: opts.contentPage,
 			  data: opts.contentData,
 			  success: function(data){
-				$(obj).append(data); 
-				$('.modal').modal('hide');
+				$(obj).append(data);
 				var objectsRendered = $(obj).children('[rel!=loaded]');
 				
 				if (opts.afterLoad != null){
