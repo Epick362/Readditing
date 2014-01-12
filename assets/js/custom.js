@@ -83,7 +83,7 @@ var Frontpage = function()
 	 function comments() {
 	 	$('.comments-btn').on('click', function() {
 	 		var button = $(this);
-	 		var modal = $(button.data('target')).find('modal-body');
+	 		var modal = $(button.data('target')).find('.modal-body');
 			var postID = button.data('post');
 			var subreddit = button.data('subreddit');
 			modal.html('<i class="icon-refresh icon-spin"></i> Loading...');
