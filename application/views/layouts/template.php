@@ -133,7 +133,7 @@
 					},
 					'afterLoad': function(elementsLoaded){ // after loading content, you can use this function to animate your new elements
 						 $('#loading').fadeOut();
-						 $(elementsLoaded).fadeIn();
+						 $(elementsLoaded).find('.panel').fadeIn();
 						 frontpage.init();
 					}
 				});
