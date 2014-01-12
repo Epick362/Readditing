@@ -32,7 +32,7 @@
 			<div class="col-lg-6"><?=anchor(base_url('r/'.$post->data->subreddit), $post->data->subreddit)?> <span class="text-muted">by</span> <?=anchor(base_url('u/'.$post->data->author), $post->data->author)?></div>
 			<div class="col-lg-6">
 				<div class="pull-right">
-					<button class="btn btn-primary btn-xs" data-post="<?=$post->data->id?>" data-toggle="modal" data-target="#<?=$rand_id?>">
+					<button class="btn btn-primary btn-xs comments-btn" data-post="<?=$post->data->id?>" data-toggle="modal" data-target="#<?=$rand_id?>">
 						<i class="icon-comments"></i> <?=$post->data->num_comments?> comments</a>
 					</button>
 				</div>
