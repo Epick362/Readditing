@@ -71,10 +71,6 @@ var Frontpage = function()
 
 		$("figure.upvoteable").upvoteable();
 	 	upvotesHandler();
-
-	 	$('.modal').on('click', function() {
-	 		$(this).removeClass('hide');
-	 	});
 	 }
 	 exports.init = init;
 

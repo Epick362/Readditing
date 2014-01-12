@@ -897,6 +897,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
       that.$element
         .addClass('in')
+        .removeClass('hide')
         .attr('aria-hidden', false)
 
       that.enforceFocus()
