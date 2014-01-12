@@ -42,7 +42,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="<?=$rand_id?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="<?=$rand_id?>" tabindex="-1" role="dialog" aria-labelledby="<?=$post->data->title?>" aria-hidden="true" style="display:none;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
