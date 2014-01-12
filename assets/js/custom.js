@@ -82,27 +82,25 @@ var Frontpage = function()
 
 	 function comments() {
 	 	$('.comments-btn').on('click', function() {
-	 		if( !$(this).hasClass('btn-success') && !$(this).hasClass('pressed') ) {
-		 		var button = $(this);
-		 		var panel = $(this).closest('.panel');
-				var postID = panel.data('post');
-				var subreddit = panel.data('subreddit');
-		 		button.html('<i class="icon-refresh icon-spin"></i> Loading...').addClass('pressed');
-				 $.ajax({
-					  type: 'POST',
-					  url: 'http://readditing.herokuapp.com/ajax/getComments',
-					  data: {'subreddit': subreddit, 'article': postID},
-					  success: function(data){
-						panel.find('.media-list').append(data);
-						panel.find('.comments-container').slideDown();
-						button.removeClass('btn-primary').addClass('btn-success').html('Loaded');
-					  },
-					  error: function() {
-					  	button.removeClass('btn-primary').addClass('btn-danger').html('Could not fetch comments');
-					  },
-					  dataType: 'html'
-				 });
-	 		}
+	 		var button = $(this);
+	 		var modal = $(button.data('target')).find('modal-body');
+			var postID = button.data('post');
+			var subreddit = button.data('subreddit');
+			modal.html('<i class="icon-refresh icon-spin"></i> Loading...');
+			 $.ajax({
+				  type: 'POST',
+				  url: 'http://readditing.herokuapp.com/ajax/getComments',
+				  data: {'subreddit': subreddit, 'article': postID},
+				  success: function(data){
+				  	modal.html('<ul class="media-list"></ul>');
+					modal.find('ul').append(data);
+					modal.find('ul').slideDown();
+				  },
+				  error: function() {
+				  	modal.html('Error');
+				  },
+				  dataType: 'html'
+			 });	 		
 		});
 	 }
 	 exports.comments = comments;
