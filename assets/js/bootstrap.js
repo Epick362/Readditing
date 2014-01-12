@@ -889,7 +889,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         that.$element.appendTo(document.body) // don't move modals dom position
       }
 
-      that.$element.show()
+      //that.$element.show()
 
       if (transition) {
         that.$element[0].offsetWidth // force reflow
@@ -897,7 +897,6 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
       that.$element
         .addClass('in')
-        .removeClass('hide')
         .attr('aria-hidden', false)
 
       that.enforceFocus()
