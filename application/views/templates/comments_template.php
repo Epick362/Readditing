@@ -1,6 +1,6 @@
 <li class="media">
 	<a class="pull-left" href="#">
-		<img class="media-object" alt="64x64" style="width: 64px; height: 64px;" style=" display: none;">
+		<img class="media-object" alt="64x64" style="width: 64px; height: 64px; display: none;">
 	</a>
 	<div class="media-body">
 		<h4 class="media-heading">
