@@ -86,6 +86,10 @@ var Frontpage = function()
 	 		var modal = $(button.data('target')).find('.modal-body');
 			var postID = button.data('post');
 			var subreddit = button.data('subreddit');
+			if(modal.hasClass('loaded')) {
+				return;
+			}
+
 			modal.html('<i class="icon-refresh icon-spin"></i> Loading...');
 			 $.ajax({
 				  type: 'POST',
@@ -95,6 +99,7 @@ var Frontpage = function()
 				  	modal.html('<ul class="media-list"></ul>');
 					modal.find('ul').append(data);
 					modal.find('ul').slideDown();
+					modal.addClass('loaded');
 				  },
 				  error: function() {
 				  	modal.html('Error');
