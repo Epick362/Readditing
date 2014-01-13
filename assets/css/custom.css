@@ -310,10 +310,6 @@ body {
   z-index: 1050;
 }
 
-body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
-  margin-right: 0;
-}
-
 @media (max-width: 992px) {
   .navbar-reddit {
     opacity: 0.85;
