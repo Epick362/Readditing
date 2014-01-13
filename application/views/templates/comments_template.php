@@ -21,7 +21,7 @@
 		</h4>
 		<p><?=htmlspecialchars_decode($comment->data->body_html)?></p>
 		<form class="replyForm">
-			<textarea id="<?=$comment->data->id?>" class="form-control" rows="3" style="display:none"></textarea>
+			<textarea class="form-control <?=$comment->data->id?>" rows="3" style="display:none"></textarea>
 		</form>
 		<?
 			if($comment->data->replies) {
