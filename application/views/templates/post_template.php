@@ -1,5 +1,5 @@
 <?
-	$rand_id = substr(md5(mt_rand(1,200)), 0, 12);
+	$rand_id = substr(md5(microtime()), 0, 12);
 ?>
 <div class="panel panel-reddit <? if($post->data->over_18) {echo 'nsfw';} ?>" data-post="<?=$post->data->id?>" data-subreddit="<?=$post->data->subreddit?>">
 	<div class="upvote-wrapper">
