@@ -68,11 +68,23 @@ var Frontpage = function()
 	 	scrollPosts();
 	 	comments();
 	 	nsfw();
+	 	showReplyBox();
 
 		$("figure.upvoteable").upvoteable();
 	 	upvotesHandler();
 	 }
 	 exports.init = init;
+
+	 function showReplyBox() {
+	 	$('.reply-btn').on('click', function() {
+	 		replyBox = $(this).closest('media').find('#'+$(this).data('id'));
+	 		replyBox.show();
+	 	});
+	 }
+
+	 function reply() {
+	 	//$('.replyForm')
+	 }
 
 	 function nsfw() {
 		$('#nsfw-checkbox').change(function() {

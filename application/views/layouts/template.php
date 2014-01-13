@@ -9,7 +9,7 @@
 	   <meta name="keywords" content="reddit social friends news information readdit readditing">
 	   <meta name="author" content="Filip Hajek">
 
-	   <title>Readditing.com | <?=$title?></title>
+	   <title>Readditing | <?=$title?></title>
 	   <?=add_css(array('bootstrap', 'bootstrap-switch', 'font-awesome', 'custom', 'upvoteable', 'http://fonts.googleapis.com/css?family=Montserrat|Roboto'))?>
 	   <?=favicons() ?>
 	</head>

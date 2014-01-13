@@ -13,9 +13,16 @@
 				<span class="text-info">
 					<i class="icon-arrow-down"></i> <?=$comment->data->downs?>
 				</span>
+
+				<span class="text-muted">
+					<button data-id="<?=$comment->data->id?>" class="reply-btn">reply</button>
+				</span>
 			</small>
 		</h4>
 		<p><?=htmlspecialchars_decode($comment->data->body_html)?></p>
+		<form class="replyForm">
+			<textarea id="<?=$comment->data->id?>" class="form-control" rows="3" style="display:none"></textarea>
+		</form>
 		<?
 			if($comment->data->replies) {
 				foreach($comment->data->replies->data->children as $reply) {
