@@ -77,7 +77,7 @@ var Frontpage = function()
 
 	 function showReplyBox() {
 	 	$('.reply-btn').on('click', function() {
-	 		replyBox = $(this).closest('media').find('#'+$(this).data('id'));
+	 		replyBox = $(this).closest('.media').find('#'+$(this).data('id'));
 	 		replyBox.show();
 	 	});
 	 }

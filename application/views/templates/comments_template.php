@@ -15,7 +15,7 @@
 				</span>
 
 				<span class="text-muted">
-					<button data-id="<?=$comment->data->id?>" class="reply-btn">reply</button>
+					<button data-id="<?=$comment->data->id?>" class="btn btn-link reply-btn">reply</button>
 				</span>
 			</small>
 		</h4>
