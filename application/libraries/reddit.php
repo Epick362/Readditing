@@ -107,6 +107,8 @@ class reddit{
 						$item->kind = 'selftext';
 					}elseif(!$item->data->selftext_html && ($item->data->domain == 'reddit.com' || substr($item->data->domain,0,strrpos($item->data->domain,'.')) == 'self')) {
 						$item->kind = 'no_selftext';
+					}elseif(!$item->data->selftext_html && $item->data->domain == 'twitter.com') {
+						$item->kind = 'tweet';
 					}elseif($item->data->media) {
 						$item->kind = 'media';
 					}elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
