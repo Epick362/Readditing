@@ -54,7 +54,7 @@ class Display
 		return '<div class="alert alert-danger">This content is NSFW. Login or enable NSFW posts to view this.</div>';
 	}
 
-	public function tweet() {
+	public function tweet($post) {
 		$this->_ci->rest->initialize(array('server' => 'https://api.twitter.com/1/'));
 		$tweet = $this->_ci->rest->get('statuses/oembed.json?url='.urlencode($post->data->url));
 
