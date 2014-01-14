@@ -56,7 +56,7 @@ class Display
 
 	public function tweet($post) {
 		$this->_ci->rest->initialize(array('server' => 'https://api.twitter.com/1/'));
-		$tweet = $this->_ci->rest->get('statuses/oembed.json?width=600&align=center&url='.urlencode($post->data->url));
+		$tweet = $this->_ci->rest->get('statuses/oembed.json?maxwidth=600&align=center&url='.urlencode($post->data->url));
 
 		if(isset($tweet->html)) {
 			return $tweet->html;
