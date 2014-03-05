@@ -105,7 +105,7 @@ var Frontpage = function()
 			modal.html('<i class="icon-refresh icon-spin"></i> Loading...');
 			 $.ajax({
 				  type: 'POST',
-				  url: 'http://readditing.herokuapp.com/ajax/getComments',
+				  url: 'http://readditing.com/ajax/getComments',
 				  data: {'subreddit': subreddit, 'article': postID},
 				  success: function(data){
 				  	modal.html('<ul class="media-list"></ul>');
@@ -147,7 +147,7 @@ var Frontpage = function()
 					  success: function(data){
 						$.ajax({
 						  type: 'POST',
-						  url: 'http://readditing.herokuapp.com/ajax/saveArticle',
+						  url: 'http://readditing.com/ajax/saveArticle',
 						  data: {'url': url, 'data': data}
 						});
 
@@ -222,7 +222,7 @@ var Frontpage = function()
 			var post = $(this).closest('.panel').data('post');
 			 $.ajax({
 				  type: 'POST',
-				  url: 'http://readditing.herokuapp.com/ajax/vote',
+				  url: 'http://readditing.com/ajax/vote',
 				  data: {'fullname': 't3_'+post, 'dir': '1'},
 				  success: function(data){
 				  	//alert('upvoted!');
@@ -238,7 +238,7 @@ var Frontpage = function()
 			var post = $(this).closest('.panel').data('post');
 			 $.ajax({
 				  type: 'POST',
-				  url: 'http://readditing.herokuapp.com/ajax/vote',
+				  url: 'http://readditing.com/ajax/vote',
 				  data: {'fullname': 't3_'+post, 'dir': '0'},
 				  success: function(data){
 				  	//alert('upvote removed!');
