@@ -125,7 +125,8 @@ var Frontpage = function()
 
 	 function togglePost() {
 	 	$('.toggle-post').on('click', function() {
-	 		var post = $(this).closest('.media-body');
+	 		console.log("click");
+	 		var post = $(this).closest('.media');
 	 		post.slideToggle('slow');
 	 	});
 	 }
