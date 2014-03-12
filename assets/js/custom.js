@@ -124,13 +124,12 @@ var Frontpage = function()
 	 exports.comments = comments;
 
 	 function togglePost() {
-	 	$('.toggle-post').on('click', function() {
+	 	$('.togglePost').on('click', function() {
 	 		console.log("click");
 	 		var post = $(this).closest('.media');
 	 		post.slideToggle('slow');
 	 	});
 	 }
-	 exports.togglePost = togglePost;
 
 	 function showMore() {
 	 	$('.showmore').on('click', function() {
