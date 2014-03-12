@@ -4,7 +4,7 @@
 	</a>
 	<div class="media-body">
 		<h4 class="media-heading">
-			<a class="btn btn-mini btn-default togglePost"><i class="icon-minus"></i></a> <?=anchor(base_url('user/'.$comment->data->author), $comment->data->author)?> 
+			<button class="btn btn-mini btn-default togglePost"><i class="icon-minus"></i></button> <?=anchor(base_url('user/'.$comment->data->author), $comment->data->author)?> 
 			<small>
 				<span class="text-warning">
 					<i class="icon-arrow-up"></i> <?=$comment->data->ups?>
@@ -12,10 +12,6 @@
 
 				<span class="text-info">
 					<i class="icon-arrow-down"></i> <?=$comment->data->downs?>
-				</span>
-
-				<span class="text-muted">
-					<button data-id="<?=$comment->data->id?>" class="btn btn-link reply-btn">reply</button>
 				</span>
 			</small>
 		</h4>
