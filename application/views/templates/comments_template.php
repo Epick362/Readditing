@@ -4,7 +4,7 @@
 	</a>
 	<div class="media-body">
 		<h4 class="media-heading">
-			<?=anchor(base_url('user/'.$comment->data->author), $comment->data->author)?> 
+			<a class="toggle-post"><i class="icon-minus"></i></a> <?=anchor(base_url('user/'.$comment->data->author), $comment->data->author)?> 
 			<small>
 				<span class="text-warning">
 					<i class="icon-arrow-up"></i> <?=$comment->data->ups?>

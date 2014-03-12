@@ -69,6 +69,7 @@ var Frontpage = function()
 	 	comments();
 	 	nsfw();
 	 	showReplyBox();
+	 	togglePost();
 
 		$("figure.upvoteable").upvoteable();
 	 	upvotesHandler();
@@ -122,6 +123,13 @@ var Frontpage = function()
 	 }
 	 exports.comments = comments;
 
+	 function togglePost() {
+	 	$('.toggle-post').on('click', function() {
+	 		var post = $(this).closest('.media-body');
+	 		post.slideToggle('slow');
+	 	});
+	 }
+	 exports.togglePost = togglePost;
 
 	 function showMore() {
 	 	$('.showmore').on('click', function() {
