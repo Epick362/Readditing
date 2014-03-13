@@ -98,7 +98,7 @@ var Frontpage = function()
 	 function showNotifications() {
 	 	var notifications = $('.notifications').children();
 	 	$.each(notifications, function() {
-	 		var id = this.attr('id');
+	 		var id = $(this).attr('id');
 	 		if($.cookie(id) != "undefined") {
 	 			this.hide();
 	 		}
