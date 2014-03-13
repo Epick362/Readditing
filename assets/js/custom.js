@@ -88,7 +88,7 @@ var Frontpage = function()
 
 	 function togglePost() {
 	 	$('.togglePost').on('click', function() {
-	 		var post = this.closest('.media');
+	 		var post = $(this).closest('.media');
 	 		post.slideToggle('slow');
 	 	});
 	 }
@@ -96,9 +96,9 @@ var Frontpage = function()
 
 	 function showNotifications() {
 	 	$('.notification').each( function() {
-	 		var id = this.attr('id');
+	 		var id = $(this).attr('id');
 	 		if($.cookie(id) != "undefined") {
-	 			this.hide();
+	 			$(this).hide();
 	 		}
 	 	});
 	 }
@@ -106,7 +106,7 @@ var Frontpage = function()
 
 	 function readNotification() {
 	 	$('.closeNotification').on('click', function() {
-	 		var notification = this.closest('.alert');
+	 		var notification = $(this).closest('.alert');
 	 		notification.slideUp();
 	 		$.cookie(notification.attr('id'), 1, { expires: 7 });
 	 	});
