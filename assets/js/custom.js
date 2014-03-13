@@ -70,6 +70,8 @@ var Frontpage = function()
 	 	nsfw();
 	 	showReplyBox();
 	 	togglePost();
+	 	showNotifications();
+	 	readNotification();
 
 		$("figure.upvoteable").upvoteable();
 	 	upvotesHandler();
@@ -82,6 +84,36 @@ var Frontpage = function()
 	 		replyBox.show();
 	 	});
 	 }
+
+
+	 function togglePost() {
+	 	$('.togglePost').on('click', function() {
+	 		console.log("click");
+	 		var post = $(this).closest('.media');
+	 		post.slideToggle('slow');
+	 	});
+	 }
+	 exports.togglePost = togglePost;
+
+	 function showNotifications() {
+	 	var notifications = $('.notifications').children();
+	 	$.each(notifications, function() {
+	 		var id = this.attr('id');
+	 		if($.cookie(id) != "undefined") {
+	 			this.hide();
+	 		}
+	 	});
+	 }
+	 exports.showNotifications = showNotifications;
+
+	 function readNotification() {
+	 	$('.closeNotification').on('click', function() {
+	 		var notification = this.closest('.alert');
+	 		notification.slideUp();
+	 		$.cookie(notification.attr('id'), 1, { expires: 7 });
+	 	});
+	 }
+	 exports.readNotification = readNotification;
 
 	 function reply() {
 	 	//$('.replyForm')
@@ -122,33 +154,6 @@ var Frontpage = function()
 		});
 	 }
 	 exports.comments = comments;
-
-	 function togglePost() {
-	 	$('.togglePost').on('click', function() {
-	 		console.log("click");
-	 		var post = $(this).closest('.media');
-	 		post.slideToggle('slow');
-	 	});
-	 }
-	 exports.togglePost = togglePost;
-
-	 function showNotifications() {
-	 	var notifications = $('.notifications').children();
-	 	$.each(notifications, function() {
-	 		var id = this.attr('id');
-	 		if($.cookie(id) != "undefined") {
-	 			this.hide();
-	 		}
-	 	});
-	 }
-
-	 function readNotification() {
-	 	$('.closeNotification').on('click', function() {
-	 		var notification = this.closest('.alert');
-	 		notification.slideUp();
-	 		$.cookie(notification.attr('id'), 1, { expires: 7 });
-	 	});
-	 }
 
 	 function showMore() {
 	 	$('.showmore').on('click', function() {
