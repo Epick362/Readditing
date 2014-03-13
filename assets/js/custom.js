@@ -88,17 +88,15 @@ var Frontpage = function()
 
 	 function togglePost() {
 	 	$('.togglePost').on('click', function() {
-	 		console.log("click");
-	 		var post = $(this).closest('.media');
+	 		var post = this.closest('.media');
 	 		post.slideToggle('slow');
 	 	});
 	 }
 	 exports.togglePost = togglePost;
 
 	 function showNotifications() {
-	 	var notifications = $('.notifications').children();
-	 	$.each(notifications, function() {
-	 		var id = $(this).attr('id');
+	 	$('.notification').each( function() {
+	 		var id = this.attr('id');
 	 		if($.cookie(id) != "undefined") {
 	 			this.hide();
 	 		}
