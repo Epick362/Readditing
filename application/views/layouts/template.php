@@ -94,11 +94,11 @@
 				}
 		?>
 						<div class="notifications">
-							<div class="alert alert-info notification" id="nowOpenSource">
+							<div class="alert alert-info notification" id="nowOpenSource" style="display:none">
 								<button type="button" class="close closeNotification" aria-hidden="true">&times;</button>
 								<b>Heads Up!</b> Readditing is now open-source and you can find it on <?=anchor('http://epick362.github.com/readditing', 'GitHub.com') ?>
 							</div>
-							<div class="alert alert-warning notifications" id="noResponseApology">
+							<div class="alert alert-warning notifications" id="noResponseApology" style="display:none">
 								<button type="button" class="close closeNotification" aria-hidden="true">&times;</button>
 								reddit.com sometimes doesn't reply with any data. We do not know what is causing this and we are looking into it. We apologize for any inconvenience.
 							</div>
