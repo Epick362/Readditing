@@ -97,7 +97,7 @@ var Frontpage = function()
 	 function showNotifications() {
 	 	$('.notification').each( function() {
 	 		var id = $(this).attr('id');
-	 		if($.cookie(id) != 1) {
+	 		if($.cookie(id) == 1) {
 	 			$(this).hide();
 	 		}
 	 	});
