@@ -66,7 +66,7 @@
 									<li><a href="<?=base_url('user/logout')?>">Logout</a></li>
 								</ul>
 		<? }else{ ?>
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-large"></i> Sign In </a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-large"></i> Sign In to reddit.com</a>
 								<div class="dropdown-menu" style="width:200px;padding:10px;">
 									<?=form_open(base_url('user/login'), array('class' => 'form-signin'), array('back' => uri_string(current_url())))?>
 										<?=form_input(array('name' => 'user', 'class' => 'form-control', 'placeholder' => 'Username', 'type' => 'text')) ?>
@@ -93,6 +93,16 @@
 		<?
 				}
 		?>
+						<div class="notifications">
+							<div class="alert alert-info notification" id="nowOpenSource">
+								<button type="button" class="close closeNotification" aria-hidden="true">&times;</button>
+								<b>Heads Up!</b> Readditing is now open-source and you can find it on <?=anchor('http://epick362.github.com/readditing', 'GitHub.com') ?>
+							</div>
+							<div class="alert alert-warning notifications" id="noResponseApology">
+								<button type="button" class="close closeNotification" aria-hidden="true">&times;</button>
+								reddit.com sometimes doesn't reply with any data. We do not know what is causing this and we are looking into it. We apologize for any inconvenience.
+							</div>
+						</div>
 						<? if($subreddit) { echo $this->load->view('templates/settings_template', array('user' => $user)); } ?>
 						<?=$content ?>
 					</div>
@@ -115,7 +125,7 @@
 			</div>
 		</div>
 		<?=jquery() ?>
-		<?=add_js(array('bootstrap', 'bootstrap-switch.min', 'scrollpagination', 'upvoteable', 'scrollTo.min', 'custom')) ?>
+		<?=add_js(array('bootstrap', 'bootstrap-switch.min', 'scrollpagination', 'upvoteable', 'scrollTo.min', 'jquery.cookie', 'custom')) ?>
 		<script type="text/javascript">
 			$(function(){
 				var lastID = $('#feed').children('.panel').last().data('post');

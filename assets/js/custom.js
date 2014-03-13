@@ -130,6 +130,25 @@ var Frontpage = function()
 	 		post.slideToggle('slow');
 	 	});
 	 }
+	 exports.togglePost = togglePost;
+
+	 function showNotifications() {
+	 	var notifications = $('.notifications').children();
+	 	$.each(notifications, function() {
+	 		var id = this.attr('id');
+	 		if($.cookie(id) != "undefined") {
+	 			this.hide();
+	 		}
+	 	});
+	 }
+
+	 function readNotification() {
+	 	$('.closeNotification').on('click', function() {
+	 		var notification = this.closest('.alert');
+	 		notification.slideUp();
+	 		$.cookie(notification.attr('id'), 1, { expires: 7 });
+	 	});
+	 }
 
 	 function showMore() {
 	 	$('.showmore').on('click', function() {
