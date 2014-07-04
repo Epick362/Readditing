@@ -103,6 +103,7 @@
 								reddit.com sometimes doesn't reply with any data. We do not know what is causing this and we are looking into it. We apologize for any inconvenience.
 							</div>
 						</div>
+						<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=readditing-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=YPDG2FFE57EMFIHF" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 						<? if($subreddit) { echo $this->load->view('templates/settings_template', array('user' => $user)); } ?>
 						<?=$content ?>
 					</div>
