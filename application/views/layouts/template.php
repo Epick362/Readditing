@@ -10,7 +10,7 @@
 	   <meta name="author" content="Filip Hajek">
 
 	   <title>Readditing | <?=$title?></title>
-	   <?=add_css(array('bootstrap', 'bootstrap-switch', 'font-awesome', 'custom', 'upvoteable', 'http://fonts.googleapis.com/css?family=Montserrat|Roboto'))?>
+	   <?=add_css(array('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', 'bootstrap-switch', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', 'custom', 'upvoteable', 'http://fonts.googleapis.com/css?family=Montserrat|Roboto'))?>
 	   <?=favicons() ?>
 	</head>
 	<body>
@@ -103,7 +103,9 @@
 								reddit.com sometimes doesn't reply with any data. We do not know what is causing this and we are looking into it. We apologize for any inconvenience.
 							</div>
 						</div>
-						<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=readditing-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=YPDG2FFE57EMFIHF" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+						<center style="margin-bottom: 20px">
+							<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=readditing-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=YPDG2FFE57EMFIHF" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+						</center>
 						<? if($subreddit) { echo $this->load->view('templates/settings_template', array('user' => $user)); } ?>
 						<?=$content ?>
 					</div>
@@ -126,7 +128,7 @@
 			</div>
 		</div>
 		<?=jquery() ?>
-		<?=add_js(array('bootstrap', 'bootstrap-switch.min', 'scrollpagination', 'upvoteable', 'scrollTo.min', 'jquery.cookie', 'custom')) ?>
+		<?=add_js(array('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', 'bootstrap-switch.min', 'scrollpagination', 'upvoteable', 'scrollTo.min', 'jquery.cookie', 'custom')) ?>
 		<script type="text/javascript">
 			$(function(){
 				var lastID = $('#feed').children('.panel').last().data('post');
