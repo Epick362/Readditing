@@ -2,6 +2,6 @@
   "require": {
     "php": "~5.5.12",
     "ext-memcached": "*",
-    "ext-mongo": "*",
+    "ext-mongo": "*"
   }
 }
