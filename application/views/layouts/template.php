@@ -92,7 +92,7 @@
 						</div>
 		<?
 				}
-		?>
+		?> 
 						<div class="notifications">
 							<div class="alert alert-info notification" id="nowOpenSource" style="display:none">
 								<button type="button" class="close closeNotification" aria-hidden="true">&times;</button>
