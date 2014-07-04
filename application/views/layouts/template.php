@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<center style="margin-bottom: 20px">
-							<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=readditing-20&o=1&p=48&l=ur1&category=musicandentertainmentrot&f=ifr&linkID=YPDG2FFE57EMFIHF" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+							<?= $this->load->view('slices/ad-leaderboard') ?>
 						</center>
 						<? if($subreddit) { echo $this->load->view('templates/settings_template', array('user' => $user)); } ?>
 						<?=$content ?>
@@ -112,6 +112,7 @@
 					<div class="col-md-3 visible-md visible-lg">
 						<div class="container right-sidebar">
 							<? if(isset($subreddits)) { echo $this->load->view('templates/subreddits_template', array('subreddits' => $subreddits)); } ?>
+							<center><?=$this->load->view('slices/ad-square')?></center>
 							<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#about">About</button>
 							 · 
 							<button class="btn btn-default btn-sm" data-toggle="modal" data-target="#tos">ToS</button>
