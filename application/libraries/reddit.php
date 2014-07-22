@@ -99,38 +99,33 @@ class reddit{
 
 		foreach($feed as $item) {
 			if($item->kind == 't3') {
-				if($item->data->over_18 == TRUE && !$this->_ci->session->userdata('nsfw')) { // NSFW FILTER
-					$item->kind = 'nsfw';
-					$item->data->title = NULL;
+				if($item->data->selftext_html) {
+					$item->kind = 'selftext';
+				}elseif(!$item->data->selftext_html && ($item->data->domain == 'reddit.com' || substr($item->data->domain,0,strrpos($item->data->domain,'.')) == 'self')) {
+					$item->kind = 'no_selftext';
+				}elseif(!$item->data->selftext_html && $item->data->domain == 'twitter.com') {
+					$item->kind = 'tweet';
+				}elseif($item->data->media) {
+					$item->kind = 'media';
+				}elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
+					$item->kind = 'image';
 				}else{
-					if($item->data->selftext_html) {
-						$item->kind = 'selftext';
-					}elseif(!$item->data->selftext_html && ($item->data->domain == 'reddit.com' || substr($item->data->domain,0,strrpos($item->data->domain,'.')) == 'self')) {
-						$item->kind = 'no_selftext';
-					}elseif(!$item->data->selftext_html && $item->data->domain == 'twitter.com') {
-						$item->kind = 'tweet';
-					}elseif($item->data->media) {
-						$item->kind = 'media';
-					}elseif(in_array(substr(strrchr($item->data->url,'.'),1), $imageTypes)) {
-						$item->kind = 'image';
-					}else{
-						$item->kind = 'misc';
-						$record = $this->_ci->storage->getArticle($item->data->url);
-						if($record) {
-							if(isset($record['article'])) {
-								$item->data->article = $record;
-								if($item->data->article['article']['body']) {
-									if(strlen($item->data->article['article']['body']) >= 250) {
-										$item->kind = 'extractedtext';
-									}elseif(isset($item->data->article['image']) && $item->data->article['image']['width'] >= 300) {
-										$item->kind = 'image';
-										$item->data->url = $item->data->article['image']['src'];
-									}
+					$item->kind = 'misc';
+					$record = $this->_ci->storage->getArticle($item->data->url);
+					if($record) {
+						if(isset($record['article'])) {
+							$item->data->article = $record;
+							if($item->data->article['article']['body']) {
+								if(strlen($item->data->article['article']['body']) >= 250) {
+									$item->kind = 'extractedtext';
+								}elseif(isset($item->data->article['image']) && $item->data->article['image']['width'] >= 300) {
+									$item->kind = 'image';
+									$item->data->url = $item->data->article['image']['src'];
 								}
 							}
-						}else{
-							$item->kind = 'ajax_extractedtext';
 						}
+					}else{
+						$item->kind = 'ajax_extractedtext';
 					}
 				}
 
