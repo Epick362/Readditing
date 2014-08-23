@@ -84,14 +84,10 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-md-offset-1 col-md-8" role="main">
 						<div class="alert alert-info">
 							Hey, I made a blog at <a href="http://blog.readditing.com/">http://blog.readditing.com/</a> because I wanted to inform everybody about what's been going on with the project and what are the plans for the future.
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-offset-1 col-md-8" role="main">
 		<?
 				if($this->session->flashdata('message') && $this->session->flashdata('message_type')) {
 		?>
