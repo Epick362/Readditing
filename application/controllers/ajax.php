@@ -16,8 +16,9 @@ class Ajax extends Main_Controller {
 
 			if(!$over18) {
 				echo $ad;
-				echo $posts;
 			}
+
+			echo $posts;
 		}else{
 			http_response_code(400);
 			echo 'No input';
