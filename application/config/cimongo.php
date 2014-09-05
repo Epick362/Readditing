@@ -5,7 +5,7 @@ $config['host'] = "localhost";
 // Generally 27017
 $config['port'] = 27017;
 // The database you want to work on
-$config['db'] = "";
+$config['db'] = "readditing";
 // Required if Mongo is running in auth mode
 $config['user'] = "";
 $config['pass'] = "";
