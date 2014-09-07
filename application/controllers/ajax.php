@@ -3,7 +3,19 @@ class Ajax extends Main_Controller {
 	public function displayFeed() {
 		if($this->input->post('subreddit') && $this->input->post('show')) {
 			$feed = $this->reddit->getFeed($this->input->post('subreddit'), $this->input->post('show'), array('after' => $this->input->post('after'), 'limit' => 10));
-			echo $this->load->view('slices/ad-leaderboard');
+			$over18 = false;
+
+			foreach($feed as $_tmpPost) {
+				if($_tmpPost['data']['over_18']) {
+					$over18 = true;
+					break;
+				}
+			}
+
+			if(!$over18) {
+				echo $this->load->view('slices/ad-leaderboard', array());
+			}
+			
 			foreach($feed as $key => $post) {
 				echo $this->load->view('templates/post_template', array('post' => $post, 'user' => $this->user));
 			}
