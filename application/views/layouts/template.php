@@ -108,7 +108,7 @@
 							</div>
 						</div>
 						<?
-							if(isset($over18) && !$over_18) {
+							if(isset($over18) && !$over18) {
 								echo $this->load->view('slices/ad-leaderboard');
 							}
 						?>
