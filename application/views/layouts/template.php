@@ -107,9 +107,11 @@
 								reddit.com sometimes doesn't reply with any data. We do not know what is causing this and we are looking into it. We apologize for any inconvenience.
 							</div>
 						</div>
-						<center style="margin-bottom: 20px">
-							<?= $this->load->view('slices/ad-leaderboard') ?>
-						</center>
+						<?
+							if(isset($over18) && !$over_18) {
+								echo $this->load->view('slices/ad-leaderboard');
+							}
+						?>
 						<? if($subreddit) { echo $this->load->view('templates/settings_template', array('user' => $user)); } ?>
 						<?=$content ?>
 					</div>

@@ -1,4 +1,3 @@
-<!--
 <center style="margin-bottom: 20px">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<ins class="adsbygoogle"
@@ -9,4 +8,3 @@
 	(adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
 </center>
--->

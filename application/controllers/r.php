@@ -21,6 +21,15 @@ class R extends Main_Controller {
 
 			$data->feed = $this->reddit->getFeed($subreddit, $show, $params);
 
+			$data->over18 = false;
+
+			foreach($data->feed as $_tmpPost) {
+				if($_tmpPost['data']['over_18']) {
+					$data->over18 = true;
+					break;
+				}
+			}
+
 			if($this->user) {
 				$data->subreddits = $this->reddit->getSubscriptions();
 			}else{
