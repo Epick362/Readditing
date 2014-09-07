@@ -6,7 +6,7 @@ class Ajax extends Main_Controller {
 			$over18 = false;
 
 			foreach($feed as $_tmpPost) {
-				if($_tmpPost['data']['over_18']) {
+				if($_tmpPost->data->over_18) {
 					$over18 = true;
 					break;
 				}

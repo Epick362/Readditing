@@ -24,7 +24,7 @@ class R extends Main_Controller {
 			$data->over18 = false;
 
 			foreach($data->feed as $_tmpPost) {
-				if($_tmpPost['data']['over_18']) {
+				if($_tmpPost->data->over_18) {
 					$data->over18 = true;
 					break;
 				}
