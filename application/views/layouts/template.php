@@ -32,7 +32,7 @@
 					<div class="collapse navbar-collapse">
 		<? if($subreddit) { ?>
 						<ul class="nav navbar-nav">
-							<li><a href="http://blog.readditing.com"><i class="fa fa-pencil"></i> Blog</a></li>
+							<li><a href="https://reddit.com/r/readditingcom" target="_blank">Blog</a></li>
 							<li class="<?=($show=='hot')? 'active' : ''; ?>"><a href="<?=base_url('r/'.$subreddit.'/hot')?>">Hot</a></li>
 							<li class="<?=($show=='new')? 'active' : ''; ?>"><a href="<?=base_url('r/'.$subreddit.'/new')?>">New</a></li>
 							<li class="<?=($show=='rising')? 'active' : ''; ?>"><a href="<?=base_url('r/'.$subreddit.'/rising')?>">Rising</a></li>
@@ -86,7 +86,7 @@
 				<div class="row">
 					<div class="col-md-offset-1 col-md-8" role="main">
 						<div class="alert alert-info">
-							Hey, I made a blog at <a href="http://blog.readditing.com/">http://blog.readditing.com/</a> because I wanted to inform everybody about what's been going on with the project and what are the plans for the future.
+							Hello Readditers, I came up with an idea to use reddit as our discussion and announcement channel (duh) so I created <a href="https://reddit.com/r/readditingcom" target="_blank" rel="nofollow">subreddit</a> .<br /> Thank you for your attention!
 						</div>
 		<?
 				if($this->session->flashdata('message') && $this->session->flashdata('message_type')) {
