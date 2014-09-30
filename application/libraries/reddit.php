@@ -176,6 +176,12 @@ class reddit{
 			$listing = $this->restQuery('get', 'r/'.$sr.'/'.$show.'.json', $params)->data->children;
 		}
 
+		foreach($listing as &$item) {
+			if($item->data->author === 'KanetoShindo') {
+				unset($item);
+			}
+		}
+
 		return $listing;
 	}
 
@@ -207,6 +213,10 @@ class reddit{
 	*/
 	
 	public function getUserListings($username, $category) {
+		if($username === 'KanetoShindo') {
+			return false;
+		}
+
 		$response = $this->restQuery('get', 'user/'.$username.'/'.$category.'.json');
 		if($response->data->children) {
 			return $response->data->children;
