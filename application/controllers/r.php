@@ -33,7 +33,7 @@ class R extends Main_Controller {
 			$data->comments = $this->reddit->getComments($subreddit, $after, false); // AFTER IS POST ID IN THIS CASE
 			$data->post = $this->reddit->displayFeed($data->comments[0]->data->children)[0];
 
-			if(strtolower($data->post->author) === 'kanetoshindo') {
+			if(strtolower($data->post->data->author) === 'kanetoshindo') {
 				return show_404();
 			}
 
