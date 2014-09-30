@@ -177,7 +177,7 @@ class reddit{
 		}
 
 		foreach($listing as &$item) {
-			if($item->data->author === 'KanetoShindo') {
+			if(strtolower($item->data->author) === 'kanetoshindo' {
 				unset($item);
 			}
 		}
@@ -213,7 +213,7 @@ class reddit{
 	*/
 	
 	public function getUserListings($username, $category) {
-		if($username === 'KanetoShindo') {
+		if(strtolower($username) === 'kanetoshindo') {
 			return false;
 		}
 
